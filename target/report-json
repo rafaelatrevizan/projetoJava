@@ -17,7 +17,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2988280567,
+              "duration": 2816309405,
               "status": "passed"
             },
             "line": 9,
@@ -33,7 +33,7 @@
         "before": [
           {
             "result": {
-              "duration": 6714900561,
+              "duration": 6395114931,
               "status": "passed"
             },
             "match": {
@@ -45,12 +45,23 @@
         "name": "Deve validar a reserva",
         "description": "",
         "id": "validar-reseva;deve-validar-a-reserva;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 6047181407,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Login.tearDown()"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Esquema do Cenário",
         "steps": [
           {
             "result": {
-              "duration": 926529557,
+              "duration": 2008837873,
               "status": "passed"
             },
             "line": 13,
@@ -71,11 +82,11 @@
           },
           {
             "result": {
-              "duration": 660290366,
+              "duration": 2430340849,
               "status": "passed"
             },
             "line": 14,
-            "name": "preencher as datas \"20062018\" e \"25062018\"",
+            "name": "preencher as datas \"20062018\" e \"025062018\"",
             "match": {
               "arguments": [
                 {
@@ -83,7 +94,7 @@
                   "offset": 20
                 },
                 {
-                  "val": "25062018",
+                  "val": "025062018",
                   "offset": 33
                 }
               ],
@@ -97,7 +108,7 @@
           },
           {
             "result": {
-              "duration": 31394,
+              "duration": 36827,
               "status": "passed"
             },
             "line": 15,
@@ -109,8 +120,8 @@
           },
           {
             "result": {
-              "duration": 2600227,
-              "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat br.com.RafaelaTrevizan.steps.Login.selecionarOHotel(Login.java:65)\r\n\tat ✽.E selecionar o hotel(src/test/resources/Features/Reservar.feature:16)\r\n",
+              "duration": 2214449,
+              "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat br.com.RafaelaTrevizan.steps.Login.selecionarOHotel(Login.java:68)\r\n\tat ✽.E selecionar o hotel(src/test/resources/Features/Reservar.feature:16)\r\n",
               "status": "pending"
             },
             "line": 16,

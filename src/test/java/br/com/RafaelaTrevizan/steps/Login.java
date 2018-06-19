@@ -11,6 +11,7 @@ import Pages.HomePage;
 import Pages.LoginPage;
 import Pages.ReservarPage;
 import cucumber.api.PendingException;
+import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Então;
@@ -25,6 +26,7 @@ public class Login {
 	public void setUp() {
 		nav = new ChromeDriver();
 		nav.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//		WebDriverWait wait = new WebDriverWait(nav,10);
 		nav.manage().window().maximize();
 		nav.get("http://192.168.15.100:8080/infotravel/login.xhtml");
 	}
@@ -44,7 +46,8 @@ public class Login {
 		
 		ReservarPage res = new ReservarPage(nav);
 		res.fillDestino(arg1);
-	    
+							
+		   
 	}
 
 	@Quando("^preencher as datas \"([^\"]*)\" e \"([^\"]*)\"$")
@@ -79,17 +82,15 @@ public class Login {
 
 
 
-	
-//
-//	@After
-//	public void tearDown() {
-//
-//		try {
-//			Thread.sleep(1000);
-//		} catch (InterruptedException ex) {
-//		}
-//
-//		nav.quit();
-//	}
+	@After
+	public void tearDown() {
+
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException ex) {
+		}
+
+		nav.quit();
+	}
 
 }

@@ -69,7 +69,7 @@ formatter.examples({
       "cells": [
         "Caldas Novas",
         "20062018",
-        "25062018"
+        "025062018"
       ],
       "line": 22,
       "id": "validar-reseva;deve-validar-a-reserva;;2"
@@ -78,7 +78,7 @@ formatter.examples({
   "keyword": "Exemplos"
 });
 formatter.before({
-  "duration": 6714900561,
+  "duration": 6395114931,
   "status": "passed"
 });
 formatter.background({
@@ -97,7 +97,7 @@ formatter.match({
   "location": "Login.queEstejaNaHomeDoPortal()"
 });
 formatter.result({
-  "duration": 2988280567,
+  "duration": 2816309405,
   "status": "passed"
 });
 formatter.scenario({
@@ -118,7 +118,7 @@ formatter.step({
 });
 formatter.step({
   "line": 14,
-  "name": "preencher as datas \"20062018\" e \"25062018\"",
+  "name": "preencher as datas \"20062018\" e \"025062018\"",
   "matchedColumns": [
     1,
     2
@@ -155,7 +155,7 @@ formatter.match({
   "location": "Login.clicarNoMenuReservaEPreencherOCampo(String)"
 });
 formatter.result({
-  "duration": 926529557,
+  "duration": 2008837873,
   "status": "passed"
 });
 formatter.match({
@@ -165,29 +165,29 @@ formatter.match({
       "offset": 20
     },
     {
-      "val": "25062018",
+      "val": "025062018",
       "offset": 33
     }
   ],
   "location": "Login.preencherAsDatasE(String,String)"
 });
 formatter.result({
-  "duration": 660290366,
+  "duration": 2430340849,
   "status": "passed"
 });
 formatter.match({
   "location": "Login.clicarNoBotãoPesquisar()"
 });
 formatter.result({
-  "duration": 31394,
+  "duration": 36827,
   "status": "passed"
 });
 formatter.match({
   "location": "Login.selecionarOHotel()"
 });
 formatter.result({
-  "duration": 2600227,
-  "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat br.com.RafaelaTrevizan.steps.Login.selecionarOHotel(Login.java:65)\r\n\tat ✽.E selecionar o hotel(src/test/resources/Features/Reservar.feature:16)\r\n",
+  "duration": 2214449,
+  "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat br.com.RafaelaTrevizan.steps.Login.selecionarOHotel(Login.java:68)\r\n\tat ✽.E selecionar o hotel(src/test/resources/Features/Reservar.feature:16)\r\n",
   "status": "pending"
 });
 formatter.match({
@@ -201,5 +201,9 @@ formatter.match({
 });
 formatter.result({
   "status": "skipped"
+});
+formatter.after({
+  "duration": 6047181407,
+  "status": "passed"
 });
 });

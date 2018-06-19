@@ -19,5 +19,5 @@ E a reserva deverá ser feita com sucesso
 
 Exemplos:
 |destino				|entrada		|saida	 |
-|Caldas Novas 	|20062018		|25062018|
+|Caldas Novas 	|20062018		|025062018|
 
