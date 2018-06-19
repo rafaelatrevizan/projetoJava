@@ -1,0 +1,154 @@
+[
+  {
+    "comments": [
+      {
+        "line": 1,
+        "value": "#language: pt"
+      }
+    ],
+    "line": 3,
+    "elements": [
+      {
+        "line": 8,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Contexto",
+        "steps": [
+          {
+            "result": {
+              "duration": 2988280567,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "que desejo fazer uma reserva",
+            "match": {
+              "location": "Login.queEstejaNaHomeDoPortal()"
+            },
+            "keyword": "Dado "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 6714900561,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Login.setUp()"
+            }
+          }
+        ],
+        "line": 22,
+        "name": "Deve validar a reserva",
+        "description": "",
+        "id": "validar-reseva;deve-validar-a-reserva;;2",
+        "type": "scenario",
+        "keyword": "Esquema do Cenário",
+        "steps": [
+          {
+            "result": {
+              "duration": 926529557,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "clicar no menu Reserva e preencher o campo \"Caldas Novas\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Caldas Novas",
+                  "offset": 44
+                }
+              ],
+              "location": "Login.clicarNoMenuReservaEPreencherOCampo(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "duration": 660290366,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "preencher as datas \"20062018\" e \"25062018\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "20062018",
+                  "offset": 20
+                },
+                {
+                  "val": "25062018",
+                  "offset": 33
+                }
+              ],
+              "location": "Login.preencherAsDatasE(String,String)"
+            },
+            "matchedColumns": [
+              1,
+              2
+            ],
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 31394,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "clicar no botão pesquisar",
+            "match": {
+              "location": "Login.clicarNoBotãoPesquisar()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 2600227,
+              "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat br.com.RafaelaTrevizan.steps.Login.selecionarOHotel(Login.java:65)\r\n\tat ✽.E selecionar o hotel(src/test/resources/Features/Reservar.feature:16)\r\n",
+              "status": "pending"
+            },
+            "line": 16,
+            "name": "selecionar o hotel",
+            "match": {
+              "location": "Login.selecionarOHotel()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "os campos para reserva devem ser preenchidos",
+            "match": {
+              "location": "Login.osCamposParaReservaDevemSerPreenchidos()"
+            },
+            "keyword": "Então "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 18,
+            "name": "a reserva deverá ser feita com sucesso",
+            "match": {
+              "location": "Login.aReservaDeveráSerFeitaComSucesso()"
+            },
+            "keyword": "E "
+          }
+        ]
+      }
+    ],
+    "name": "Validar reseva",
+    "description": "Eu como Operador\r\nQuero entrar no Portal \r\nPara fazer uma reserva",
+    "id": "validar-reseva",
+    "keyword": "Funcionalidade",
+    "uri": "src/test/resources/Features/Reservar.feature"
+  }
+]
