@@ -7,6 +7,8 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import Pages.ClientePage;
+import Pages.ComprovantePage;
 import Pages.HomePage;
 import Pages.LoginPage;
 import Pages.ReservarPage;
@@ -29,9 +31,10 @@ public class Login {
 //		WebDriverWait wait = new WebDriverWait(nav,10);
 		nav.manage().window().maximize();
 		nav.get("http://192.168.15.100:8080/infotravel/login.xhtml");
+		System.out.println("Começando");
 	}
 
-	@Dado("^que desejo fazer uma reserva$")
+	@Dado("^que esteja na home$")
 	public void queEstejaNaHomeDoPortal() throws Throwable {
 		LoginPage login = new LoginPage(nav);
 		login.doLogin("homo", "homolog", "123456");
@@ -42,43 +45,80 @@ public class Login {
 	@Quando("^clicar no menu Reserva e preencher o campo \"([^\"]*)\"$")
 	public void clicarNoMenuReservaEPreencherOCampo(String arg1) throws Throwable {
 		HomePage home = new HomePage(nav);
-		home.clickMenu();
+		ReservarPage reservar = new ReservarPage(nav);
 		
-		ReservarPage res = new ReservarPage(nav);
-		res.fillDestino(arg1);
-							
+		home.clickMenu();		
+		reservar.fillDestino(arg1);					
 		   
 	}
 
 	@Quando("^preencher as datas \"([^\"]*)\" e \"([^\"]*)\"$")
 	public void preencherAsDatasE(String arg1, String arg2) throws Throwable {
-		ReservarPage res = new ReservarPage(nav);
-		res.fillDates(arg1, arg2);
+		ReservarPage reservar = new ReservarPage(nav);
+		reservar.fillDates(arg1, arg2);	
 	   
 	}
 
 	@Quando("^clicar no botão pesquisar$")
 	public void clicarNoBotãoPesquisar() throws Throwable {
-	    
-	}
+		ReservarPage reservar = new ReservarPage(nav);
+		reservar.clickPesquisar();
+		}
 
 	@Quando("^selecionar o hotel$")
 	public void selecionarOHotel() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		ReservarPage reservar = new ReservarPage(nav);
+		reservar.selectHotel();
+	
 	}
 
 	@Então("^os campos para reserva devem ser preenchidos$")
 	public void osCamposParaReservaDevemSerPreenchidos() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+	    ClientePage clientes = new ClientePage(nav);
+	     		
+	    clientes.fillNames1();	   
+	    clientes.fillDocument("81627258736");    
+	    clientes.fillSexo1();	    
+	    clientes.fillDate1();
+	    
+	    clientes.fillNames2();
+	    clientes.fillDocument1("32040476601");
+	    clientes.fillSexo2();
+	    clientes.fillDate2();
+	    
+	    clientes.textArea("teste rafa");
+	    clientes.politica();
+	    clientes.dadosDoCLiente("11123456789");
+	    clientes.clickReservar();
+	    
 	}
 
 	@Então("^a reserva deverá ser feita com sucesso$")
 	public void aReservaDeveráSerFeitaComSucesso() throws Throwable {
+		ComprovantePage comp = new ComprovantePage(nav);
+		comp.idReserva();
+	}
+	
+	//FEATURE: PRODUTO
+	
+	@Quando("^clicar para dicionar um novo hotel$")
+	public void clicarParaDicionarUmNovoHotel() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new PendingException();
 	}
+
+	@Quando("^preencher todas as informações$")
+	public void preencherTodasAsInformações() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@Então("^o hotel deverá ser cadastrado com sucesso$")
+	public void oHotelDeveráSerCadastradoComSucesso() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
 
 
 

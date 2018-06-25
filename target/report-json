@@ -6,10 +6,10 @@
         "value": "#language: pt"
       }
     ],
-    "line": 3,
+    "line": 4,
     "elements": [
       {
-        "line": 8,
+        "line": 9,
         "name": "",
         "description": "",
         "type": "background",
@@ -17,11 +17,11 @@
         "steps": [
           {
             "result": {
-              "duration": 2816309405,
+              "duration": 3512687199,
               "status": "passed"
             },
-            "line": 9,
-            "name": "que desejo fazer uma reserva",
+            "line": 10,
+            "name": "que esteja na home",
             "match": {
               "location": "Login.queEstejaNaHomeDoPortal()"
             },
@@ -33,7 +33,7 @@
         "before": [
           {
             "result": {
-              "duration": 6395114931,
+              "duration": 7332530183,
               "status": "passed"
             },
             "match": {
@@ -41,14 +41,14 @@
             }
           }
         ],
-        "line": 22,
-        "name": "Deve validar a reserva",
+        "line": 13,
+        "name": "Deve validar a cadastro de hotel",
         "description": "",
-        "id": "validar-reseva;deve-validar-a-reserva;;2",
+        "id": "cadastrar-um-hotel;deve-validar-a-cadastro-de-hotel",
         "after": [
           {
             "result": {
-              "duration": 6047181407,
+              "duration": 5949858548,
               "status": "passed"
             },
             "match": {
@@ -57,109 +57,48 @@
           }
         ],
         "type": "scenario",
-        "keyword": "Esquema do Cenário",
+        "keyword": "Cenário",
         "steps": [
           {
             "result": {
-              "duration": 2008837873,
-              "status": "passed"
+              "status": "undefined"
             },
-            "line": 13,
-            "name": "clicar no menu Reserva e preencher o campo \"Caldas Novas\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Caldas Novas",
-                  "offset": 44
-                }
-              ],
-              "location": "Login.clicarNoMenuReservaEPreencherOCampo(String)"
-            },
-            "matchedColumns": [
-              0
-            ],
+            "line": 14,
+            "name": "clicar para dicionar um novo hotel",
+            "match": {},
             "keyword": "Quando "
           },
           {
             "result": {
-              "duration": 2430340849,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "preencher as datas \"20062018\" e \"025062018\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "20062018",
-                  "offset": 20
-                },
-                {
-                  "val": "025062018",
-                  "offset": 33
-                }
-              ],
-              "location": "Login.preencherAsDatasE(String,String)"
-            },
-            "matchedColumns": [
-              1,
-              2
-            ],
-            "keyword": "E "
-          },
-          {
-            "result": {
-              "duration": 36827,
-              "status": "passed"
+              "status": "undefined"
             },
             "line": 15,
-            "name": "clicar no botão pesquisar",
-            "match": {
-              "location": "Login.clicarNoBotãoPesquisar()"
-            },
+            "name": "preencher todas as informações",
+            "match": {},
             "keyword": "E "
           },
           {
             "result": {
-              "duration": 2214449,
-              "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat br.com.RafaelaTrevizan.steps.Login.selecionarOHotel(Login.java:68)\r\n\tat ✽.E selecionar o hotel(src/test/resources/Features/Reservar.feature:16)\r\n",
-              "status": "pending"
+              "status": "undefined"
             },
             "line": 16,
-            "name": "selecionar o hotel",
-            "match": {
-              "location": "Login.selecionarOHotel()"
-            },
-            "keyword": "E "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 17,
-            "name": "os campos para reserva devem ser preenchidos",
-            "match": {
-              "location": "Login.osCamposParaReservaDevemSerPreenchidos()"
-            },
+            "name": "o hotel deverá ser cadastrado com sucesso",
+            "match": {},
             "keyword": "Então "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 18,
-            "name": "a reserva deverá ser feita com sucesso",
-            "match": {
-              "location": "Login.aReservaDeveráSerFeitaComSucesso()"
-            },
-            "keyword": "E "
           }
         ]
       }
     ],
-    "name": "Validar reseva",
-    "description": "Eu como Operador\r\nQuero entrar no Portal \r\nPara fazer uma reserva",
-    "id": "validar-reseva",
+    "name": "Cadastrar um hotel",
+    "description": "Eu como Operador\r\nQuero entrar no Portal \r\nPara fazer um cadastro de hotel",
+    "id": "cadastrar-um-hotel",
     "keyword": "Funcionalidade",
-    "uri": "src/test/resources/Features/Reservar.feature"
+    "uri": "Produtos_Hotel.feature",
+    "tags": [
+      {
+        "line": 3,
+        "name": "@produtos"
+      }
+    ]
   }
 ]

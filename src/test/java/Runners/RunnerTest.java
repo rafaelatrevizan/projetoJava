@@ -17,14 +17,14 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 
 @CucumberOptions(
-		features = "src/test/resources/Features/Reservar.feature",
+		features = "src/test/resources/Features",
 		glue = "br.com.RafaelaTrevizan.steps",
 		plugin = {"pretty", "html:target/report-html", "json:target/report-json"},
 		monochrome = false,		
 		dryRun = false,
 		strict = false,
 		snippets = SnippetType.CAMELCASE,
-		tags = {}
+		tags = {"@produtos"}
 		)
 
 public class RunnerTest {

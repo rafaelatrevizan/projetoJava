@@ -1,12 +1,12 @@
 #language: pt
 
-Funcionalidade: Validar reseva
+Funcionalidade: Reservar
 Eu como Operador
 Quero entrar no Portal 
 Para fazer uma reserva
 
 Contexto: 
-Dado que desejo fazer uma reserva
+Dado que esteja na home
 
 
 Esquema do Cenário: Deve validar a reserva
@@ -19,5 +19,7 @@ E a reserva deverá ser feita com sucesso
 
 Exemplos:
 |destino				|entrada		|saida	 |
-|Caldas Novas 	|20062018		|025062018|
+|Caldas novas 	|25062018		|30062018|
+
+
 
