@@ -63,7 +63,7 @@ public class ReservarPage extends BasePage {
 		return this;
 	}
 	
-	public ReservarPage comboClientes () {
+	public ReservarPage comboQtClientes () {
 		WebElement lala = nav.findElement(By.xpath("//i[@class =\"icon-edit-1 Fs18\"]"));
 		lala.click();
 		

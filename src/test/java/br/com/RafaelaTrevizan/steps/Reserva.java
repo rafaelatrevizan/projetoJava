@@ -3,60 +3,78 @@ package br.com.RafaelaTrevizan.steps;
 
 import org.easetech.easytest.runner.DataDrivenTestRunner;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
+import Pages.ClientePage;
+import Pages.ComprovantePage;
 import Pages.HomePage;
-import cucumber.api.java.After;
+import Pages.ReservarPage;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
 
 @RunWith(DataDrivenTestRunner.class)
 
-public class Reserva{
-	private WebDriver nav;
+public class Reserva extends AbstractPage{
+	
+	WebDriver nav = getDriver();
+	
 		
-//	@Quando("^clicar no menu Reservar$")
-//	public void clicarNoMenuReservar() throws Throwable {
-////	nav.findElement(By.xpath("//a[contains(text(), \"Reservar\")]")).click();
-//		HomePage home = new HomePage(nav);
-//		home.clickMenu();
-//	}
+	// FEATURE: RESERVAR
 
-//	@Quando("^preencher os campos Cidade ou hotel de destino, data de partida e retorno$")
-//	public void preencherOsCamposCidadeOuHotelDeDestinoDataDePartidaERetorno() throws Throwable {
-//	   
-//	}
-//
-//	@Quando("^ser exibido todos os hotéis compatíveis$")
-//	public void serExibidoTodosOsHotéisCompatíveis() throws Throwable {
-//	    
-//	}
-//
-//	@Então("^deverá selecionar o hotel$")
-//	public void deveráSelecionarOHotel() throws Throwable {
-//
-//
-//	}
-//
-//	@Então("^deverá ser preenchido todas as informações necessárias e realizar a reserva$")
-//	public void deveráSerPreenchidoTodasAsInformaçõesNecessáriasERealizarAReserva() throws Throwable {
-//
-//
-//	}
-	
-//	@After
-//    public void tearDown (){
-//		
-//		try { 
-//	    	Thread.sleep (3000); 
-//	    	} catch (InterruptedException ex) {}
-//		
-//		
-//		 nav.quit();       
-//    }
-//	
-	
+		@Quando("^clicar no menu Reserva e preencher o campo \"([^\"]*)\"$")
+		public void clicarNoMenuReservaEPreencherOCampo(String arg1) throws Throwable {
+			HomePage home = new HomePage(nav);
+			ReservarPage reservar = new ReservarPage(nav);
+			
+			home.clickMenu();		
+			reservar.fillDestino(arg1);					
+			   
+		}
 
+		@Quando("^preencher as datas \"([^\"]*)\" e \"([^\"]*)\"$")
+		public void preencherAsDatasE(String arg1, String arg2) throws Throwable {
+			ReservarPage reservar = new ReservarPage(nav);
+			reservar.fillDates(arg1, arg2);	
+		   
+		}
+
+		@Quando("^clicar no botão pesquisar$")
+		public void clicarNoBotãoPesquisar() throws Throwable {
+			ReservarPage reservar = new ReservarPage(nav);
+			reservar.clickPesquisar();
+			}
+
+		@Quando("^selecionar o hotel$")
+		public void selecionarOHotel() throws Throwable {
+			ReservarPage reservar = new ReservarPage(nav);
+			reservar.selectHotel();
+		
+		}
+
+		@Então("^os campos para reserva devem ser preenchidos$")
+		public void osCamposParaReservaDevemSerPreenchidos() throws Throwable {
+		    ClientePage clientes = new ClientePage(nav);
+		     		
+		    clientes.fillNames1();	   
+		    clientes.fillDocument("81627258736");    
+		    clientes.fillSexo1();	    
+		    clientes.fillDate1();
+		    
+		    clientes.fillNames2();
+		    clientes.fillDocument1("32040476601");
+		    clientes.fillSexo2();
+		    clientes.fillDate2();
+		    
+		    clientes.textArea("teste rafa");
+		    clientes.politica();
+		    clientes.dadosDoCLiente("11123456789");
+		    clientes.clickReservar();
+		    
+		}
+
+		@Então("^a reserva deverá ser feita com sucesso$")
+		public void aReservaDeveráSerFeitaComSucesso() throws Throwable {
+			ComprovantePage comp = new ComprovantePage(nav);
+			comp.idReserva();
+		}
 }

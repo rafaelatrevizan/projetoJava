@@ -1,6 +1,6 @@
 #language: pt
 
-@produtos
+@facilidades
 Funcionalidade: Cadastrar um hotel
 Eu como Operador
 Quero entrar no Portal 
@@ -11,9 +11,9 @@ Dado que esteja na home
 
 
 Cenário: Deve validar a cadastro de hotel
-Quando clicar para dicionar um novo hotel
-E preencher todas as informações
-Então o hotel deverá ser cadastrado com sucesso 
+Quando clicar para dicionar uma nova facilidade
+E preencher todas as informações da facilidade
+Então a facilidade deverá ser cadastrada com sucesso
 
 
 

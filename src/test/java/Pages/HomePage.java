@@ -18,4 +18,23 @@ public class HomePage extends BasePage {
 		return new ReservarPage(nav);
 	}
 	
+	public HotelPage clickHotel() {
+		nav.findElement(By.id("menuform:sm_leftmenu_5")).click();
+		nav.findElement(By.id("menuform:sm_leftmenu_5_0")).click();
+		nav.findElement(By.id("menuform:sm_leftmenu_5_0_0")).click();		
+		return new HotelPage(nav);
+	}
+	
+	public HotelPage clickFacilidades() {
+		nav.findElement(By.id("menuform:sm_leftmenu_5")).click();
+		nav.findElement(By.id("menuform:sm_leftmenu_5_0")).click();
+		
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException ex) {}
+		
+		nav.findElement(By.id("menuform:sm_leftmenu_5_0_1")).click();		
+		return new HotelPage(nav);
+	}
+	
 }

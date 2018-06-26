@@ -13,7 +13,7 @@ Dado que esteja na home
 Cenário: Deve validar a cadastro de hotel
 Quando clicar para dicionar um novo hotel
 E preencher todas as informações
-Então o hotel deverá ser cadastrado com sucesso
+Então o hotel deverá ser cadastrado com sucesso 
 
 
 

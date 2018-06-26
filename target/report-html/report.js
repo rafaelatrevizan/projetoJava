@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Produtos_Hotel.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Produtos_Hotel_Facilidades.feature");
 formatter.feature({
   "comments": [
     {
@@ -14,12 +14,12 @@ formatter.feature({
   "tags": [
     {
       "line": 3,
-      "name": "@produtos"
+      "name": "@facilidades"
     }
   ]
 });
 formatter.before({
-  "duration": 7332530183,
+  "duration": 6208072475,
   "status": "passed"
 });
 formatter.background({
@@ -35,10 +35,10 @@ formatter.step({
   "keyword": "Dado "
 });
 formatter.match({
-  "location": "Login.queEstejaNaHomeDoPortal()"
+  "location": "Common_StepDefinition.queEstejaNaHomeDoPortal()"
 });
 formatter.result({
-  "duration": 3512687199,
+  "duration": 2846952476,
   "status": "passed"
 });
 formatter.scenario({
@@ -51,33 +51,43 @@ formatter.scenario({
 });
 formatter.step({
   "line": 14,
-  "name": "clicar para dicionar um novo hotel",
+  "name": "clicar para dicionar uma nova facilidade",
   "keyword": "Quando "
 });
 formatter.step({
   "line": 15,
-  "name": "preencher todas as informações",
+  "name": "preencher todas as informações da facilidade",
   "keyword": "E "
 });
 formatter.step({
   "line": 16,
-  "name": "o hotel deverá ser cadastrado com sucesso",
+  "name": "a facilidade deverá ser cadastrada com sucesso",
   "keyword": "Então "
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
+formatter.match({
+  "location": "Produto_Hotel_Facilidades.clicarParaDicionarUmaNovaFacilidade()"
 });
-formatter.match({});
 formatter.result({
-  "status": "undefined"
+  "duration": 2824736747,
+  "status": "passed"
 });
-formatter.match({});
+formatter.match({
+  "location": "Produto_Hotel_Facilidades.preencherTodasAsInformações()"
+});
 formatter.result({
-  "status": "undefined"
+  "duration": 35619,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Produto_Hotel_Facilidades.aFacilidadeDeveráSerCadastradaComSucesso()"
+});
+formatter.result({
+  "duration": 2778325,
+  "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat br.com.RafaelaTrevizan.steps.Produto_Hotel_Facilidades.aFacilidadeDeveráSerCadastradaComSucesso(Produto_Hotel_Facilidades.java:35)\r\n\tat ✽.Então a facilidade deverá ser cadastrada com sucesso(Produtos_Hotel_Facilidades.feature:16)\r\n",
+  "status": "pending"
 });
 formatter.after({
-  "duration": 5949858548,
+  "duration": 6092524484,
   "status": "passed"
 });
 });
