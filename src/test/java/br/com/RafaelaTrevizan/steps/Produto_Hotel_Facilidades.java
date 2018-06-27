@@ -2,8 +2,8 @@ package br.com.RafaelaTrevizan.steps;
 
 import org.openqa.selenium.WebDriver;
 
-import Pages.FacilidadesPage;
-import Pages.HomePage;
+import Pages.Hotel_Facilidades_Page;
+import Pages.Home_Page;
 import cucumber.api.PendingException;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
@@ -11,13 +11,12 @@ import cucumber.api.java.pt.Quando;
 public class Produto_Hotel_Facilidades extends AbstractPage{
 	
 	WebDriver nav = getDriver();
+	private Hotel_Facilidades_Page facil = new Hotel_Facilidades_Page(nav);
+	private Home_Page home = new Home_Page(nav);	
 
 	
 	@Quando("^clicar para dicionar uma nova facilidade$")
-	public void clicarParaDicionarUmaNovaFacilidade() throws Throwable {
-		HomePage home = new HomePage(nav);
-		FacilidadesPage facil = new FacilidadesPage(nav);
-		
+	public void clicarParaDicionarUmaNovaFacilidade() throws Throwable {		
 		home.clickFacilidades();
 		facil.addFacility();		
 		
@@ -25,14 +24,17 @@ public class Produto_Hotel_Facilidades extends AbstractPage{
 	
 	@Quando("^preencher todas as informações da facilidade$")
 	public void preencherTodasAsInformações() throws Throwable {
-						
+		facil.fillName("Piscina");
+		facil.fillItens("Boias", "teste", "Para as crianças se divertirem");
+		
 		
 	}
 
 	@Então("^a facilidade deverá ser cadastrada com sucesso$")
 	public void aFacilidadeDeveráSerCadastradaComSucesso() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+	    facil.salvaritem();
+	    facil.salvarFacil();    
+	    
 	}
 
 

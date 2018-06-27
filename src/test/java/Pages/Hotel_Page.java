@@ -9,29 +9,29 @@ import org.openqa.selenium.WebElement;
 
 import com.github.javafaker.Faker;
 
-public class HotelPage extends BasePage {
+public class Hotel_Page extends Base_Page {
 	private Faker faker = new Faker();
 //	private String hotelllllll;
 	
 
-	public HotelPage(WebDriver nav) {
+	public Hotel_Page(WebDriver nav) {
 		super(nav);
 		// TODO Auto-generated constructor stub
 	}
 		
-	public HotelPage buttonAdicionar() {
+	public Hotel_Page buttonAdicionar() {
 		
 		nav.findElement(By.xpath("//button[@type = \"submit\"]/span/following-sibling::span[text() = \"Adicionar\"]")).click();	
 		return this;
 	}
 	
-	public HotelPage buttonPesquisar() {	
+	public Hotel_Page buttonPesquisar() {	
 		
 		nav.findElement(By.xpath("//button[@type = \"submit\"]/span/following-sibling::span[text() = \"Pesquisar\"]")).click();		
 		return this;
 	}
 	
-	public HotelPage fillInformations(String nomeHotel) {
+	public Hotel_Page fillInformations(String nomeHotel) {
 		
 		WebElement add = nav.findElement(By.id("idQtEstrela_input"));	
 		
@@ -40,7 +40,7 @@ public class HotelPage extends BasePage {
 		return this;
 	}
 	
-	public HotelPage fillStar() {
+	public Hotel_Page fillStar() {
 		//idQtEstrela_0  = Não definido
 		//idQtEstrela_1  = 1 Estrela
 		//idQtEstrela_2  = 1,5 Estrela
@@ -61,7 +61,7 @@ public class HotelPage extends BasePage {
 		return this;
 	}
 	
-	public HotelPage fillActive() {
+	public Hotel_Page fillActive() {
 		//idAtivo_0  = Sim
 		//idAtivo_1  = Não		
 	
@@ -74,14 +74,14 @@ public class HotelPage extends BasePage {
 		return this;
 	}
 	
-	public HotelPage fillDescription(String descricao) {	
+	public Hotel_Page fillDescription(String descricao) {	
 		
 		nav.findElement(By.id("pasteConteudo")).sendKeys(descricao);
 		
 		return this;
 	}
 	
-	public HotelPage fillCoin() {	
+	public Hotel_Page fillCoin() {	
 		//idMoeda_0  = Selecione
 		//idMoeda_1  = Real
 		//idMoeda_2  = Dolar	
@@ -98,7 +98,7 @@ public class HotelPage extends BasePage {
 		return this;
 	}
 	
-	public HotelPage fillAdmin() {	
+	public Hotel_Page fillAdmin() {	
 		//idAdminLocal_0  = Sim
 		//idAdminLocal_1  = Não			
 		
@@ -111,7 +111,7 @@ public class HotelPage extends BasePage {
 		return this;
 	}
 	
-	public HotelPage fillMsgDisponivel() {	
+	public Hotel_Page fillMsgDisponivel() {	
 		//idInfoFaltaDisponibilidade_0  = Sim
 		//idInfoFaltaDisponibilidade_1 = Não
 		
@@ -124,12 +124,12 @@ public class HotelPage extends BasePage {
 		return this;
 	}
 	
-	public HotelPage fillMinDeNoites(String noites) {
+	public Hotel_Page fillMinDeNoites(String noites) {
 		nav.findElement(By.id("idMinDiaria")).sendKeys(noites);		
 		return this;
 	}
 	
-	public HotelPage fillPhones() {	
+	public Hotel_Page fillPhones() {	
 		//TELEFONE FIXO
 		String telFixo = faker.phoneNumber().phoneNumber();
 		WebElement fixo = nav.findElement(By.id("idTelefoneFixo"));
@@ -148,13 +148,13 @@ public class HotelPage extends BasePage {
 		return this;
 	}
 		
-	public HotelPage fillEmail() {
+	public Hotel_Page fillEmail() {
 		String email = faker.internet().emailAddress();
 		nav.findElement(By.id("idEmail")).sendKeys(email);		
 		return this;
 	}
 	
-	public HotelPage fillEndereco(String cep, String rua, String local) {
+	public Hotel_Page fillEndereco(String cep, String rua, String local) {
 		//PREENCHER O CEP
 //		String cepp = faker.address().zipCode();
 		nav.findElement(By.id("idCep")).sendKeys(cep);	
@@ -169,7 +169,7 @@ public class HotelPage extends BasePage {
 		return this;
 	}
 	
-	public HotelPage localizacoes(String lugar) {
+	public Hotel_Page localizacoes(String lugar) {
 		WebElement inputPlace = nav.findElement(By.id("idOrigem_input"));
 		inputPlace.sendKeys(lugar);
 		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
@@ -177,12 +177,12 @@ public class HotelPage extends BasePage {
 		return this;
 	}
 	
-	public HotelPage Salvar() {
+	public Hotel_Page Salvar() {
 		nav.findElement(By.xpath("//span[text() = \"Salvar\"]")).click();		
 		return this;
 	}
 	
-	public HotelPage Cancelar() {
+	public Hotel_Page Cancelar() {
 		nav.findElement(By.xpath("//span[text() = \"Cancelar\"]")).click();		
 		return this;
 	}

@@ -7,12 +7,12 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import Pages.ClientePage;
-import Pages.ComprovantePage;
-import Pages.HomePage;
-import Pages.HotelPage;
-import Pages.LoginPage;
-import Pages.ReservarPage;
+import Pages.Reserva_Cliente_Page;
+import Pages.Comprovante_Page;
+import Pages.Home_Page;
+import Pages.Hotel_Page;
+import Pages.Common_Page;
+import Pages.Reservar_Page;
 import Suporte.Frame;
 import cucumber.api.PendingException;
 import cucumber.api.java.After;
@@ -38,7 +38,7 @@ public class Common_StepDefinition extends AbstractPage {
 
 	@Dado("^que esteja na home$")
 	public void queEstejaNaHomeDoPortal() throws Throwable {
-		LoginPage login = new LoginPage(nav);
+		Common_Page login = new Common_Page(nav);
 		login.doLogin("homo", "homolog", "123456");
 	}
 

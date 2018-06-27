@@ -7,34 +7,43 @@ import org.openqa.selenium.WebDriver;
 
 @RunWith(DataDrivenTestRunner.class)
 
-public class HomePage extends BasePage {
+public class Home_Page extends Base_Page {
 
-	public HomePage(WebDriver nav) {
+	public Home_Page(WebDriver nav) {
 		super(nav);		
 	}	
 	
-	public ReservarPage clickMenu() {
+	public Reservar_Page clickMenuReservar() {
 		nav.findElement(By.xpath("//a[contains(text(), \"Reservar\")]")).click();			
-		return new ReservarPage(nav);
+		return new Reservar_Page(nav);
 	}
 	
-	public HotelPage clickHotel() {
+	public Hotel_Page clickHotel() {
 		nav.findElement(By.id("menuform:sm_leftmenu_5")).click();
 		nav.findElement(By.id("menuform:sm_leftmenu_5_0")).click();
 		nav.findElement(By.id("menuform:sm_leftmenu_5_0_0")).click();		
-		return new HotelPage(nav);
+		return new Hotel_Page(nav);
 	}
 	
-	public HotelPage clickFacilidades() {
+	public Hotel_Page clickFacilidades() {
 		nav.findElement(By.id("menuform:sm_leftmenu_5")).click();
 		nav.findElement(By.id("menuform:sm_leftmenu_5_0")).click();
 		
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException ex) {}
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		
 		nav.findElement(By.id("menuform:sm_leftmenu_5_0_1")).click();		
-		return new HotelPage(nav);
+		return new Hotel_Page(nav);
 	}
+	
+	public Hotel_Page clickAereoTarifario() {
+		nav.findElement(By.id("menuform:sm_leftmenu_5")).click();
+		nav.findElement(By.id("menuform:sm_leftmenu_5_1")).click();
+		
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		
+		nav.findElement(By.id("menuform:sm_leftmenu_5_1_2")).click();		
+		return new Hotel_Page(nav);
+	}
+	
 	
 }

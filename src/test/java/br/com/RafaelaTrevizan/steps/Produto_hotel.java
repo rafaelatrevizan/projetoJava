@@ -3,9 +3,9 @@ package br.com.RafaelaTrevizan.steps;
 import org.easetech.easytest.runner.DataDrivenTestRunner;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import Pages.BasePage;
-import Pages.HomePage;
-import Pages.HotelPage;
+import Pages.Base_Page;
+import Pages.Home_Page;
+import Pages.Hotel_Page;
 import Suporte.Frame;
 import cucumber.api.PendingException;
 import cucumber.api.java.pt.Então;
@@ -13,7 +13,7 @@ import cucumber.api.java.pt.Quando;
 
 @RunWith(DataDrivenTestRunner.class)
 
-public class Produto_hotel extends AbstractPage{
+public class Produto_Hotel extends AbstractPage{
 	
 	WebDriver nav = getDriver();
 	
@@ -21,8 +21,8 @@ public class Produto_hotel extends AbstractPage{
 	
 		@Quando("^clicar para dicionar um novo hotel$")
 		public void clicarParaDicionarUmNovoHotel() throws Throwable {
-		  HomePage homeHotel = new HomePage(nav);
-		  HotelPage hotel = new HotelPage(nav);
+		  Home_Page homeHotel = new Home_Page(nav);
+		  Hotel_Page hotel = new Hotel_Page(nav);
 		  Frame frame  = new Frame(nav);
 		  
 		  homeHotel.clickHotel();   
@@ -32,7 +32,7 @@ public class Produto_hotel extends AbstractPage{
 
 		@Quando("^preencher todas as informações$")
 		public void preencherTodasAsInformações() throws Throwable {
-			HotelPage hotel = new HotelPage(nav);
+			Hotel_Page hotel = new Hotel_Page(nav);
 					hotel.fillInformations("Automação teste");
 					hotel.fillStar();
 //					hotel.fillActive();
@@ -55,7 +55,7 @@ public class Produto_hotel extends AbstractPage{
 		public void oHotelDeveráSerCadastradoComSucesso() throws Throwable {
 			// PARA VOLTAR PARA O IFRAME ANTERIOR
 			nav.switchTo().parentFrame();
-			HotelPage hotel = new HotelPage(nav);
+			Hotel_Page hotel = new Hotel_Page(nav);
 			hotel.Salvar();
 //			hotel.checkHotel();
 			

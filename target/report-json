@@ -17,7 +17,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2846952476,
+              "duration": 2870172194,
               "status": "passed"
             },
             "line": 10,
@@ -33,7 +33,7 @@
         "before": [
           {
             "result": {
-              "duration": 6208072475,
+              "duration": 6698103833,
               "status": "passed"
             },
             "match": {
@@ -42,13 +42,13 @@
           }
         ],
         "line": 13,
-        "name": "Deve validar a cadastro de hotel",
+        "name": "Deve validar a cadastro de tarifário de aéreo",
         "description": "",
-        "id": "cadastrar-um-hotel;deve-validar-a-cadastro-de-hotel",
+        "id": "cadastrar-tarifário-para-aéreo;deve-validar-a-cadastro-de-tarifário-de-aéreo",
         "after": [
           {
             "result": {
-              "duration": 6092524484,
+              "duration": 5913180681,
               "status": "passed"
             },
             "match": {
@@ -61,53 +61,53 @@
         "steps": [
           {
             "result": {
-              "duration": 2824736747,
+              "duration": 2747899957,
               "status": "passed"
             },
             "line": 14,
-            "name": "clicar para dicionar uma nova facilidade",
+            "name": "clicar para adicionar um novo tarifário de aéreo",
             "match": {
-              "location": "Produto_Hotel_Facilidades.clicarParaDicionarUmaNovaFacilidade()"
+              "location": "Produto_Aereo_Tarifarios.clicarParaDicionarUmNovoTarifárioDeAéreo()"
             },
             "keyword": "Quando "
           },
           {
             "result": {
-              "duration": 35619,
+              "duration": 575136713,
               "status": "passed"
             },
             "line": 15,
-            "name": "preencher todas as informações da facilidade",
+            "name": "preencher todas as informações de tarifário",
             "match": {
-              "location": "Produto_Hotel_Facilidades.preencherTodasAsInformações()"
+              "location": "Produto_Aereo_Tarifarios.preencherTodasAsInformaçõesDeTarifário()"
             },
             "keyword": "E "
           },
           {
             "result": {
-              "duration": 2778325,
-              "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat br.com.RafaelaTrevizan.steps.Produto_Hotel_Facilidades.aFacilidadeDeveráSerCadastradaComSucesso(Produto_Hotel_Facilidades.java:35)\r\n\tat ✽.Então a facilidade deverá ser cadastrada com sucesso(Produtos_Hotel_Facilidades.feature:16)\r\n",
+              "duration": 3234134,
+              "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat br.com.RafaelaTrevizan.steps.Produto_Aereo_Tarifarios.aTarifaDeveráSerCadastradaComSucesso(Produto_Aereo_Tarifarios.java:34)\r\n\tat ✽.Então a tarifa deverá ser cadastrada com sucesso(Produtos_Aereo_Tarifarios.feature:16)\r\n",
               "status": "pending"
             },
             "line": 16,
-            "name": "a facilidade deverá ser cadastrada com sucesso",
+            "name": "a tarifa deverá ser cadastrada com sucesso",
             "match": {
-              "location": "Produto_Hotel_Facilidades.aFacilidadeDeveráSerCadastradaComSucesso()"
+              "location": "Produto_Aereo_Tarifarios.aTarifaDeveráSerCadastradaComSucesso()"
             },
             "keyword": "Então "
           }
         ]
       }
     ],
-    "name": "Cadastrar um hotel",
-    "description": "Eu como Operador\r\nQuero entrar no Portal \r\nPara fazer um cadastro de hotel",
-    "id": "cadastrar-um-hotel",
+    "name": "Cadastrar tarifário para aéreo",
+    "description": "Eu como Operador\r\nQuero entrar no Portal \r\nPara fazer um cadastro de tarifário de aéreo",
+    "id": "cadastrar-tarifário-para-aéreo",
     "keyword": "Funcionalidade",
-    "uri": "Produtos_Hotel_Facilidades.feature",
+    "uri": "Produtos_Aereo_Tarifarios.feature",
     "tags": [
       {
         "line": 3,
-        "name": "@facilidades"
+        "name": "@tarifario"
       }
     ]
   }

@@ -7,20 +7,20 @@ import org.openqa.selenium.WebDriver;
 
 @RunWith(DataDrivenTestRunner.class)
 
-public class LoginPage extends BasePage {
+public class Common_Page extends Base_Page {
 
-	public LoginPage(WebDriver nav) {
+	public Common_Page(WebDriver nav) {
 		super(nav);
 	}
 	
-	public HomePage doLogin (String usuario, String senha, String senha2) {
+	public Home_Page doLogin (String usuario, String senha, String senha2) {
 		nav.findElement(By.xpath("//input[@id=\"j_idt15:j_idt17\"]")).sendKeys(usuario);
 		nav.findElement(By.xpath("//input[@placeholder = \"Senha\"]")).sendKeys(senha);	
 		nav.findElement(By.xpath("//button[@id=\"j_idt15:j_idt21\"]")).click();
 		nav.findElement(By.xpath("//input[@id=\"frmAuth:j_idt42\"]")).sendKeys(senha2);
 		nav.findElement(By.xpath("//span[contains(@class, \"ui-button-text ui-c\")]")).click();
 		nav.findElement(By.xpath("//div[contains(@style, \"text-align:\")]"));
-		return new HomePage(nav);
+		return new Home_Page(nav);
 	}
 
 	

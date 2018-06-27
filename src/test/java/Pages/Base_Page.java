@@ -8,11 +8,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 @RunWith(DataDrivenTestRunner.class)
 
-public class BasePage {
+public class Base_Page {
 
     protected WebDriver nav;
    
-    public BasePage(WebDriver nav){
+    public Base_Page(WebDriver nav){
         this.nav = nav;
     }
      

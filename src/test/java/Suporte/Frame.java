@@ -2,10 +2,10 @@ package Suporte;
 
 import org.openqa.selenium.WebDriver;
 
-import Pages.BasePage;
-import Pages.HotelPage;
+import Pages.Base_Page;
+import Pages.Hotel_Page;
 
-public class Frame extends BasePage {
+public class Frame extends Base_Page {
 	
 	
 	public Frame(WebDriver nav) {

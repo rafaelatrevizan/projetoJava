@@ -1,17 +1,8 @@
 package Runners;
 
-import java.util.concurrent.TimeUnit;
-
-import org.junit.After;
-import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
-
-import cucumber.api.java.Before;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
@@ -24,7 +15,7 @@ import cucumber.api.junit.Cucumber;
 		dryRun = false,
 		strict = false,
 		snippets = SnippetType.CAMELCASE,
-		tags = {"@facilidades"}
+		tags = {"@tarifario"}
 		)
 
 public class RunnerTest {

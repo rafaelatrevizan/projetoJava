@@ -13,18 +13,18 @@ import java.io.IOException;
 
 
 
-public class ComprovantePage extends BasePage {
+public class Comprovante_Page extends Base_Page {
 	
 	private static final String FILE_NAME = "C:\\Users\\Laercio\\Documents\\Automação\\Infotera\\target\\Teste.xlsx";
 
-	public ComprovantePage(WebDriver nav) {
+	public Comprovante_Page(WebDriver nav) {
 		super(nav);
 		// TODO Auto-generated constructor stub
 	}
 
 	
 	
-	public ComprovantePage idReserva() {
+	public Comprovante_Page idReserva() {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException ex) {}

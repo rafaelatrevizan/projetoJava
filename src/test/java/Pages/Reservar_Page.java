@@ -17,13 +17,13 @@ import org.openqa.selenium.WebElement;
 
 @RunWith(DataDrivenTestRunner.class)
 
-public class ReservarPage extends BasePage {
+public class Reservar_Page extends Base_Page {
 
-	public ReservarPage(WebDriver nav) {
+	public Reservar_Page(WebDriver nav) {
 		super(nav);		
 	}
 	
-	public ReservarPage fillDestino(String destino) {
+	public Reservar_Page fillDestino(String destino) {
 		nav.switchTo().frame(0);
 		nav.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		WebElement webElement = nav.findElement(By.xpath("//input[contains(@id, \"frmMotorHotel:idDestinoHotel_input\")]"));
@@ -38,7 +38,7 @@ public class ReservarPage extends BasePage {
 		return this;
 	}
 	
-	public ReservarPage fillDates (String entrada, String saida) {
+	public Reservar_Page fillDates (String entrada, String saida) {
 		
 		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		
@@ -56,14 +56,14 @@ public class ReservarPage extends BasePage {
 		return this;
 	}
 	
-	public ReservarPage clickPesquisar () {
+	public Reservar_Page clickPesquisar () {
 		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		
 		nav.findElement(By.xpath("//form[@id = \"frmMotorHotel\"]/div/following-sibling::div/div/div/div/following-sibling::div/button")).click();
 		return this;
 	}
 	
-	public ReservarPage comboQtClientes () {
+	public Reservar_Page comboQtClientes () {
 		WebElement lala = nav.findElement(By.xpath("//i[@class =\"icon-edit-1 Fs18\"]"));
 		lala.click();
 		
@@ -75,12 +75,12 @@ public class ReservarPage extends BasePage {
 		return this;
 	}
 	
-	public ClientePage selectHotel() {
+	public Reserva_Cliente_Page selectHotel() {
 			
 		try {Thread.sleep(1000);} catch (InterruptedException ex) {}		
 		nav.findElement(By.xpath("//span[@id = \"pnlResultadoHotel\"]/div/div/div/div/following-sibling::div/div/div/div/div/following-sibling::div/button")).click();
 			
-		return new ClientePage(nav);
+		return new Reserva_Cliente_Page(nav);
 	}
 
 	
