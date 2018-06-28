@@ -198,6 +198,11 @@ public class Hotel_Page extends Base_Page {
 //		return this;
 //	}
 
+	public Hotel_Page pesquisarHotel(String nomeHotel) {
+		nav.findElement(By.id("idNomePesquisa")).sendKeys(nomeHotel);	
+		return this;
+	}
+	
 
 
 }

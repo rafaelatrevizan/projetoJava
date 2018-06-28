@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Produtos_Aereo_Tarifarios.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Produtos_Hotel.feature");
 formatter.feature({
   "comments": [
     {
@@ -7,19 +7,19 @@ formatter.feature({
     }
   ],
   "line": 4,
-  "name": "Cadastrar tarifário para aéreo",
-  "description": "Eu como Operador\r\nQuero entrar no Portal \r\nPara fazer um cadastro de tarifário de aéreo",
-  "id": "cadastrar-tarifário-para-aéreo",
+  "name": "Cadastrar um hotel",
+  "description": "Eu como Operador\r\nQuero entrar no Portal \r\nPara fazer um cadastro de hotel",
+  "id": "cadastrar-um-hotel",
   "keyword": "Funcionalidade",
   "tags": [
     {
       "line": 3,
-      "name": "@tarifario"
+      "name": "@produtos"
     }
   ]
 });
 formatter.before({
-  "duration": 6698103833,
+  "duration": 6796838796,
   "status": "passed"
 });
 formatter.background({
@@ -38,56 +38,65 @@ formatter.match({
   "location": "Common_StepDefinition.queEstejaNaHomeDoPortal()"
 });
 formatter.result({
-  "duration": 2870172194,
+  "duration": 3371700211,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 13,
-  "name": "Deve validar a cadastro de tarifário de aéreo",
+  "line": 19,
+  "name": "Validar cadastro de acomodação",
   "description": "",
-  "id": "cadastrar-tarifário-para-aéreo;deve-validar-a-cadastro-de-tarifário-de-aéreo",
+  "id": "cadastrar-um-hotel;validar-cadastro-de-acomodação",
   "type": "scenario",
-  "keyword": "Cenário"
+  "keyword": "Cenário",
+  "tags": [
+    {
+      "line": 18,
+      "name": "@acomod"
+    }
+  ]
 });
 formatter.step({
-  "line": 14,
-  "name": "clicar para adicionar um novo tarifário de aéreo",
+  "line": 20,
+  "name": "selencionar o hotel desejado",
   "keyword": "Quando "
 });
 formatter.step({
-  "line": 15,
-  "name": "preencher todas as informações de tarifário",
+  "line": 21,
+  "name": "preencher as informação da acomodação",
   "keyword": "E "
 });
 formatter.step({
-  "line": 16,
-  "name": "a tarifa deverá ser cadastrada com sucesso",
+  "line": 22,
+  "name": "a acomodação deverá ser cadastrada com sucesso",
   "keyword": "Então "
 });
 formatter.match({
-  "location": "Produto_Aereo_Tarifarios.clicarParaDicionarUmNovoTarifárioDeAéreo()"
+  "location": "Produto_Hotel_Acomodacao.selencionarOHotelDesejado()"
 });
 formatter.result({
-  "duration": 2747899957,
+  "duration": 2661541276,
   "status": "passed"
 });
 formatter.match({
-  "location": "Produto_Aereo_Tarifarios.preencherTodasAsInformaçõesDeTarifário()"
+  "location": "Produto_Hotel_Acomodacao.preencherAsInformaçãoDaAcomodação()"
 });
 formatter.result({
-  "duration": 575136713,
-  "status": "passed"
-});
-formatter.match({
-  "location": "Produto_Aereo_Tarifarios.aTarifaDeveráSerCadastradaComSucesso()"
-});
-formatter.result({
-  "duration": 3234134,
-  "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat br.com.RafaelaTrevizan.steps.Produto_Aereo_Tarifarios.aTarifaDeveráSerCadastradaComSucesso(Produto_Aereo_Tarifarios.java:34)\r\n\tat ✽.Então a tarifa deverá ser cadastrada com sucesso(Produtos_Aereo_Tarifarios.feature:16)\r\n",
+  "duration": 2605661,
+  "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat br.com.RafaelaTrevizan.steps.Produto_Hotel_Acomodacao.preencherAsInformaçãoDaAcomodação(Produto_Hotel_Acomodacao.java:37)\r\n\tat ✽.E preencher as informação da acomodação(Produtos_Hotel.feature:21)\r\n",
   "status": "pending"
 });
+formatter.match({
+  "location": "Produto_Hotel_Acomodacao.aAcomodaçãoDeveráSerCadastradaComSucesso()"
+});
+formatter.result({
+  "status": "skipped"
+});
 formatter.after({
-  "duration": 5913180681,
+  "duration": 503555917,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 5847782593,
   "status": "passed"
 });
 });

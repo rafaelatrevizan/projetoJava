@@ -15,6 +15,11 @@ Quando clicar para dicionar um novo hotel
 E preencher todas as informações
 Então o hotel deverá ser cadastrado com sucesso 
 
+@acomod
+Cenário: Validar cadastro de acomodação
+Quando selencionar o hotel desejado
+E preencher as informação da acomodação
+Então a acomodação deverá ser cadastrada com sucesso
 
 
 

@@ -17,7 +17,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2870172194,
+              "duration": 3371700211,
               "status": "passed"
             },
             "line": 10,
@@ -33,7 +33,7 @@
         "before": [
           {
             "result": {
-              "duration": 6698103833,
+              "duration": 6796838796,
               "status": "passed"
             },
             "match": {
@@ -41,14 +41,23 @@
             }
           }
         ],
-        "line": 13,
-        "name": "Deve validar a cadastro de tarifário de aéreo",
+        "line": 19,
+        "name": "Validar cadastro de acomodação",
         "description": "",
-        "id": "cadastrar-tarifário-para-aéreo;deve-validar-a-cadastro-de-tarifário-de-aéreo",
+        "id": "cadastrar-um-hotel;validar-cadastro-de-acomodação",
         "after": [
           {
             "result": {
-              "duration": 5913180681,
+              "duration": 503555917,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Common_StepDefinition.screenShot(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 5847782593,
               "status": "passed"
             },
             "match": {
@@ -61,53 +70,58 @@
         "steps": [
           {
             "result": {
-              "duration": 2747899957,
+              "duration": 2661541276,
               "status": "passed"
             },
-            "line": 14,
-            "name": "clicar para adicionar um novo tarifário de aéreo",
+            "line": 20,
+            "name": "selencionar o hotel desejado",
             "match": {
-              "location": "Produto_Aereo_Tarifarios.clicarParaDicionarUmNovoTarifárioDeAéreo()"
+              "location": "Produto_Hotel_Acomodacao.selencionarOHotelDesejado()"
             },
             "keyword": "Quando "
           },
           {
             "result": {
-              "duration": 575136713,
-              "status": "passed"
+              "duration": 2605661,
+              "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat br.com.RafaelaTrevizan.steps.Produto_Hotel_Acomodacao.preencherAsInformaçãoDaAcomodação(Produto_Hotel_Acomodacao.java:37)\r\n\tat ✽.E preencher as informação da acomodação(Produtos_Hotel.feature:21)\r\n",
+              "status": "pending"
             },
-            "line": 15,
-            "name": "preencher todas as informações de tarifário",
+            "line": 21,
+            "name": "preencher as informação da acomodação",
             "match": {
-              "location": "Produto_Aereo_Tarifarios.preencherTodasAsInformaçõesDeTarifário()"
+              "location": "Produto_Hotel_Acomodacao.preencherAsInformaçãoDaAcomodação()"
             },
             "keyword": "E "
           },
           {
             "result": {
-              "duration": 3234134,
-              "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat br.com.RafaelaTrevizan.steps.Produto_Aereo_Tarifarios.aTarifaDeveráSerCadastradaComSucesso(Produto_Aereo_Tarifarios.java:34)\r\n\tat ✽.Então a tarifa deverá ser cadastrada com sucesso(Produtos_Aereo_Tarifarios.feature:16)\r\n",
-              "status": "pending"
+              "status": "skipped"
             },
-            "line": 16,
-            "name": "a tarifa deverá ser cadastrada com sucesso",
+            "line": 22,
+            "name": "a acomodação deverá ser cadastrada com sucesso",
             "match": {
-              "location": "Produto_Aereo_Tarifarios.aTarifaDeveráSerCadastradaComSucesso()"
+              "location": "Produto_Hotel_Acomodacao.aAcomodaçãoDeveráSerCadastradaComSucesso()"
             },
             "keyword": "Então "
+          }
+        ],
+        "tags": [
+          {
+            "line": 18,
+            "name": "@acomod"
           }
         ]
       }
     ],
-    "name": "Cadastrar tarifário para aéreo",
-    "description": "Eu como Operador\r\nQuero entrar no Portal \r\nPara fazer um cadastro de tarifário de aéreo",
-    "id": "cadastrar-tarifário-para-aéreo",
+    "name": "Cadastrar um hotel",
+    "description": "Eu como Operador\r\nQuero entrar no Portal \r\nPara fazer um cadastro de hotel",
+    "id": "cadastrar-um-hotel",
     "keyword": "Funcionalidade",
-    "uri": "Produtos_Aereo_Tarifarios.feature",
+    "uri": "Produtos_Hotel.feature",
     "tags": [
       {
         "line": 3,
-        "name": "@tarifario"
+        "name": "@produtos"
       }
     ]
   }
