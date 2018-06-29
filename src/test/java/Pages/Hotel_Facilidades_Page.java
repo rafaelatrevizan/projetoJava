@@ -55,10 +55,11 @@ public class Hotel_Facilidades_Page extends Base_Page {
 //		java.util.List<WebElement> list = nav.findElements(By.xpath("//li[@role = \"tab\"]"));
 //		String bla = list.get(1).getText();
 //		System.out.println(bla);
-		
+//		
 //		for (WebElement element: list) {
-////		      System.out.println(element.getText());
-//			if (element.getText().contains(nomefacil)) {
+//		      System.out.println(element.getText());
+//		      String lista = element.getText();
+//			if (lista.contains(nomefacil)) {
 //				System.out.println("Existe");
 //			} else {
 //				System.out.println("Não Existe");

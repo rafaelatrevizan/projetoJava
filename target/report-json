@@ -17,7 +17,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3371700211,
+              "duration": 4503842684,
               "status": "passed"
             },
             "line": 10,
@@ -33,7 +33,7 @@
         "before": [
           {
             "result": {
-              "duration": 6796838796,
+              "duration": 8209868546,
               "status": "passed"
             },
             "match": {
@@ -41,14 +41,14 @@
             }
           }
         ],
-        "line": 19,
-        "name": "Validar cadastro de acomodação",
+        "line": 13,
+        "name": "Deve validar a cadastro de hotel",
         "description": "",
-        "id": "cadastrar-um-hotel;validar-cadastro-de-acomodação",
+        "id": "cadastrar-um-hotel;deve-validar-a-cadastro-de-hotel",
         "after": [
           {
             "result": {
-              "duration": 503555917,
+              "duration": 552153050,
               "status": "passed"
             },
             "match": {
@@ -57,7 +57,7 @@
           },
           {
             "result": {
-              "duration": 5847782593,
+              "duration": 5731958097,
               "status": "passed"
             },
             "match": {
@@ -70,58 +70,53 @@
         "steps": [
           {
             "result": {
-              "duration": 2661541276,
+              "duration": 3020894787,
               "status": "passed"
             },
-            "line": 20,
-            "name": "selencionar o hotel desejado",
+            "line": 14,
+            "name": "clicar para fazer um bloqueio de hotel",
             "match": {
-              "location": "Produto_Hotel_Acomodacao.selencionarOHotelDesejado()"
+              "location": "Bloqueio_Hotel.clicarParaFazerUmBloqueioDeHotel()"
             },
             "keyword": "Quando "
           },
           {
             "result": {
-              "duration": 2605661,
-              "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat br.com.RafaelaTrevizan.steps.Produto_Hotel_Acomodacao.preencherAsInformaçãoDaAcomodação(Produto_Hotel_Acomodacao.java:37)\r\n\tat ✽.E preencher as informação da acomodação(Produtos_Hotel.feature:21)\r\n",
-              "status": "pending"
+              "duration": 2774341733,
+              "status": "passed"
             },
-            "line": 21,
-            "name": "preencher as informação da acomodação",
+            "line": 15,
+            "name": "preencher todas as informações do bloqueio",
             "match": {
-              "location": "Produto_Hotel_Acomodacao.preencherAsInformaçãoDaAcomodação()"
+              "location": "Bloqueio_Hotel.preencherTodasAsInformaçõesDoBloqueio()"
             },
             "keyword": "E "
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 4547227,
+              "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat br.com.RafaelaTrevizan.steps.Bloqueio_Hotel.oBloqueioDeveráSerCadastradoComSucesso(Bloqueio_Hotel.java:45)\r\n\tat ✽.Então o bloqueio deverá ser cadastrado com sucesso(Produtos_Hotel_Bloqueio.feature:16)\r\n",
+              "status": "pending"
             },
-            "line": 22,
-            "name": "a acomodação deverá ser cadastrada com sucesso",
+            "line": 16,
+            "name": "o bloqueio deverá ser cadastrado com sucesso",
             "match": {
-              "location": "Produto_Hotel_Acomodacao.aAcomodaçãoDeveráSerCadastradaComSucesso()"
+              "location": "Bloqueio_Hotel.oBloqueioDeveráSerCadastradoComSucesso()"
             },
             "keyword": "Então "
-          }
-        ],
-        "tags": [
-          {
-            "line": 18,
-            "name": "@acomod"
           }
         ]
       }
     ],
     "name": "Cadastrar um hotel",
-    "description": "Eu como Operador\r\nQuero entrar no Portal \r\nPara fazer um cadastro de hotel",
+    "description": "Eu como Operador\r\nQuero entrar no Portal \r\nPara fazer um bloqueio de hotel",
     "id": "cadastrar-um-hotel",
     "keyword": "Funcionalidade",
-    "uri": "Produtos_Hotel.feature",
+    "uri": "Produtos_Hotel_Bloqueio.feature",
     "tags": [
       {
         "line": 3,
-        "name": "@produtos"
+        "name": "@bloqueioHotel"
       }
     ]
   }

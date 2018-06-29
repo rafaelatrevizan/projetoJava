@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Produtos_Hotel.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Produtos_Hotel_Bloqueio.feature");
 formatter.feature({
   "comments": [
     {
@@ -8,18 +8,18 @@ formatter.feature({
   ],
   "line": 4,
   "name": "Cadastrar um hotel",
-  "description": "Eu como Operador\r\nQuero entrar no Portal \r\nPara fazer um cadastro de hotel",
+  "description": "Eu como Operador\r\nQuero entrar no Portal \r\nPara fazer um bloqueio de hotel",
   "id": "cadastrar-um-hotel",
   "keyword": "Funcionalidade",
   "tags": [
     {
       "line": 3,
-      "name": "@produtos"
+      "name": "@bloqueioHotel"
     }
   ]
 });
 formatter.before({
-  "duration": 6796838796,
+  "duration": 8209868546,
   "status": "passed"
 });
 formatter.background({
@@ -38,65 +38,60 @@ formatter.match({
   "location": "Common_StepDefinition.queEstejaNaHomeDoPortal()"
 });
 formatter.result({
-  "duration": 3371700211,
+  "duration": 4503842684,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 19,
-  "name": "Validar cadastro de acomodação",
+  "line": 13,
+  "name": "Deve validar a cadastro de hotel",
   "description": "",
-  "id": "cadastrar-um-hotel;validar-cadastro-de-acomodação",
+  "id": "cadastrar-um-hotel;deve-validar-a-cadastro-de-hotel",
   "type": "scenario",
-  "keyword": "Cenário",
-  "tags": [
-    {
-      "line": 18,
-      "name": "@acomod"
-    }
-  ]
+  "keyword": "Cenário"
 });
 formatter.step({
-  "line": 20,
-  "name": "selencionar o hotel desejado",
+  "line": 14,
+  "name": "clicar para fazer um bloqueio de hotel",
   "keyword": "Quando "
 });
 formatter.step({
-  "line": 21,
-  "name": "preencher as informação da acomodação",
+  "line": 15,
+  "name": "preencher todas as informações do bloqueio",
   "keyword": "E "
 });
 formatter.step({
-  "line": 22,
-  "name": "a acomodação deverá ser cadastrada com sucesso",
+  "line": 16,
+  "name": "o bloqueio deverá ser cadastrado com sucesso",
   "keyword": "Então "
 });
 formatter.match({
-  "location": "Produto_Hotel_Acomodacao.selencionarOHotelDesejado()"
+  "location": "Bloqueio_Hotel.clicarParaFazerUmBloqueioDeHotel()"
 });
 formatter.result({
-  "duration": 2661541276,
+  "duration": 3020894787,
   "status": "passed"
 });
 formatter.match({
-  "location": "Produto_Hotel_Acomodacao.preencherAsInformaçãoDaAcomodação()"
+  "location": "Bloqueio_Hotel.preencherTodasAsInformaçõesDoBloqueio()"
 });
 formatter.result({
-  "duration": 2605661,
-  "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat br.com.RafaelaTrevizan.steps.Produto_Hotel_Acomodacao.preencherAsInformaçãoDaAcomodação(Produto_Hotel_Acomodacao.java:37)\r\n\tat ✽.E preencher as informação da acomodação(Produtos_Hotel.feature:21)\r\n",
+  "duration": 2774341733,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Bloqueio_Hotel.oBloqueioDeveráSerCadastradoComSucesso()"
+});
+formatter.result({
+  "duration": 4547227,
+  "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat br.com.RafaelaTrevizan.steps.Bloqueio_Hotel.oBloqueioDeveráSerCadastradoComSucesso(Bloqueio_Hotel.java:45)\r\n\tat ✽.Então o bloqueio deverá ser cadastrado com sucesso(Produtos_Hotel_Bloqueio.feature:16)\r\n",
   "status": "pending"
 });
-formatter.match({
-  "location": "Produto_Hotel_Acomodacao.aAcomodaçãoDeveráSerCadastradaComSucesso()"
-});
-formatter.result({
-  "status": "skipped"
-});
 formatter.after({
-  "duration": 503555917,
+  "duration": 552153050,
   "status": "passed"
 });
 formatter.after({
-  "duration": 5847782593,
+  "duration": 5731958097,
   "status": "passed"
 });
 });
