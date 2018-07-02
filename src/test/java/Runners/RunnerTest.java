@@ -15,7 +15,7 @@ import cucumber.api.junit.Cucumber;
 		dryRun = false,
 		strict = false,
 		snippets = SnippetType.CAMELCASE,
-		tags = {"@bloqueioHotel"}
+		tags = {"@reservarAereo"}
 		)
 
 public class RunnerTest {

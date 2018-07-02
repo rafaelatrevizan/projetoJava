@@ -25,24 +25,24 @@ public class Produto_Aereo_Tarifarios extends AbstractPage{
 
 	@Quando("^preencher todas as informações de tarifário$")
 	public void preencherTodasAsInformaçõesDeTarifário() throws Throwable {
-	    tarifa.fillName("Automação Tarifa Voo Rafa");
+	    tarifa.fillName("Automação Tarifa Voo Rafa VOLTA");
 	    tarifa.fillCiaAerea();
 	    tarifa.fillFornecedor();
 	    tarifa.fillMoeda();
 	    // Esses métodos precisam ser executados juntos, pois sem preencher a tarifa não é possível preencher o voo
-	    tarifa.abaTarifa("Automação test tarifa rafa", "500,00", "100,00", "50,00", "");
+	    tarifa.abaTarifa("Automação test tarifa rafa VOLTA", "500,00", "100,00", "50,00", "");
 	    try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 	    tarifa.abaVoos();
-	    tarifa.abaVoos_Data("01072018");
+	    tarifa.abaVoos_Data("10072018");
 	    tarifa.abaVoos_Aeronave();
 	    tarifa.abaVoos_CiaAerea();
 	    tarifa.abaVoos_Tipo();
 	    tarifa.abaVoos_Localizador("123456");
 	    tarifa.abaVoos_QtdPassangers("30");
 	    tarifa.abaVoos_Bagagem("2", "20");
-	    tarifa.abaVoos_Deadline("010720180000");
-	    tarifa.abaVoos_Obs("Automação teste voo rafa");
-	    tarifa.abaVoos_Trecho("Aut 123", "GRU", "CLV", "1000", "1200");  
+	    tarifa.abaVoos_Deadline("100720180000");
+	    tarifa.abaVoos_Obs("Automação teste voo rafa VOLTA");
+	    tarifa.abaVoos_Trecho("Aut 123", "CLV", "GRU", "1000", "1200");  
 	        
 	}
 

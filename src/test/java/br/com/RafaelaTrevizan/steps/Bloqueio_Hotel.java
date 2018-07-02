@@ -32,17 +32,19 @@ public class Bloqueio_Hotel extends AbstractPage {
 	@Quando("^preencher todas as informações do bloqueio$")
 	public void preencherTodasAsInformaçõesDoBloqueio() throws Throwable {
 	    frame.swithFrame(0);
-	    bloq.periodo("01072018", "02072018");
+	    bloq.periodo("02072018", "03072018");
 	    bloq.hotel("Automação teste");
 	    bloq.buttonPesquisar();
 	    bloq.buttonEditar();
 	    bloq.selectQuantidade();
+	    bloq.chooseQuantidade();
+	    bloq.Quantidade("30");
+	    bloq.select_Hotel();
 	    }
 
 	@Então("^o bloqueio deverá ser cadastrado com sucesso$")
 	public void oBloqueioDeveráSerCadastradoComSucesso() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+	    bloq.bloq_salvar();
 	}
 
 

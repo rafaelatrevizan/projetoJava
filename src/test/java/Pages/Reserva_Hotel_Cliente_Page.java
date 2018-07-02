@@ -11,14 +11,14 @@ import com.github.javafaker.Faker;
 
 import junit.framework.Assert;
 
-public class Reserva_Cliente_Page extends Base_Page {
+public class Reserva_Hotel_Cliente_Page extends Base_Page {
 	private Faker faker = new Faker();
 
-	public Reserva_Cliente_Page(WebDriver nav) {
+	public Reserva_Hotel_Cliente_Page(WebDriver nav) {
 		super(nav);
 	}
 
-	public Reserva_Cliente_Page fillNames1() {
+	public Reserva_Hotel_Cliente_Page fillNames1() {
 //		int numero = 0;
 //		do {
 //		WebElement teste1 = nav
@@ -42,7 +42,7 @@ public class Reserva_Cliente_Page extends Base_Page {
 
 		return this;
 	}
-	public Reserva_Cliente_Page fillNames2() {
+	public Reserva_Hotel_Cliente_Page fillNames2() {
 		
 		WebElement nomePessoa2 = nav
 				.findElement(By.xpath("//input[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:1:idNome\"]"));
@@ -58,7 +58,7 @@ public class Reserva_Cliente_Page extends Base_Page {
 		return this;
 	}
 
-	public Reserva_Cliente_Page fillDocument(String documento) {
+	public Reserva_Hotel_Cliente_Page fillDocument(String documento) {
 
 		nav.findElement(By.xpath(
 				"//label[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:0:idDocumentoTipo_label\"]/following-sibling::div"))
@@ -78,7 +78,7 @@ public class Reserva_Cliente_Page extends Base_Page {
 	}
 
 	
-	public Reserva_Cliente_Page fillDocument1(String documento1) {
+	public Reserva_Hotel_Cliente_Page fillDocument1(String documento1) {
 	
 		nav.findElement(By.xpath(
 				"//label[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:1:idDocumentoTipo_label\"]/following-sibling::div"))
@@ -91,7 +91,7 @@ public class Reserva_Cliente_Page extends Base_Page {
 		docPessoa2.sendKeys(documento1);
 		return this;
 	}
-	public Reserva_Cliente_Page fillSexo1() {
+	public Reserva_Hotel_Cliente_Page fillSexo1() {
 		nav.findElement(By.xpath(
 				"//label[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:0:idSexo_label\"]/following-sibling::div"))
 				.click();
@@ -99,7 +99,7 @@ public class Reserva_Cliente_Page extends Base_Page {
 		return this;
 	}
 	
-	public Reserva_Cliente_Page fillSexo2() {
+	public Reserva_Hotel_Cliente_Page fillSexo2() {
 		
 		nav.findElement(By.xpath(
 				"//label[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:1:idSexo_label\"]/following-sibling::div"))
@@ -108,7 +108,7 @@ public class Reserva_Cliente_Page extends Base_Page {
 		return this;
 	}
 
-	public Reserva_Cliente_Page fillDate1() {
+	public Reserva_Hotel_Cliente_Page fillDate1() {
 
 		WebElement datePessoa1 = nav
 				.findElement(By.xpath("//input[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:0:idDtNascimento\"]"));
@@ -118,7 +118,7 @@ public class Reserva_Cliente_Page extends Base_Page {
 				return this;
 	}
 	
-	public Reserva_Cliente_Page fillDate2() {
+	public Reserva_Hotel_Cliente_Page fillDate2() {
 		
 		WebElement datePessoa2 = nav
 				.findElement(By.xpath("//input[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:1:idDtNascimento\"]"));
@@ -129,14 +129,14 @@ public class Reserva_Cliente_Page extends Base_Page {
 		return this;
 	}
 	
-	public Reserva_Cliente_Page textArea(String texto) {
+	public Reserva_Hotel_Cliente_Page textArea(String texto) {
 		
 		nav.findElement(By.id("frmNomeEdit:hotel:0:quarto:0:idDsObservacao")).sendKeys(texto);
 		
 		return this;
 	}
 	
-	public Reserva_Cliente_Page politica() {
+	public Reserva_Hotel_Cliente_Page politica() {
 		String str = nav.findElement(By.xpath("//span[text() = \"Politicas\"]")).getText();		
 		
 		if(str.contains("Politicas")) {
@@ -146,7 +146,7 @@ public class Reserva_Cliente_Page extends Base_Page {
 		
 	}
 
-	public Reserva_Cliente_Page dadosDoCLiente(String numero) {
+	public Reserva_Hotel_Cliente_Page dadosDoCLiente(String numero) {
 		nav.findElement(By.xpath("//i[@class = \"icon-edit Fs18\"]")).click();
 		return this;
 	}

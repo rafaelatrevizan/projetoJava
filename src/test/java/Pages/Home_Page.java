@@ -13,9 +13,9 @@ public class Home_Page extends Base_Page {
 		super(nav);		
 	}	
 	
-	public Reservar_Page clickMenuReservar() {
+	public Reservar_Hotel_Page clickMenuReservar() {
 		nav.findElement(By.xpath("//a[contains(text(), \"Reservar\")]")).click();			
-		return new Reservar_Page(nav);
+		return new Reservar_Hotel_Page(nav);
 	}
 	
 	public Hotel_Page clickHotel() {

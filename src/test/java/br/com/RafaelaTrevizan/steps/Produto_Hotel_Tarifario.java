@@ -40,7 +40,7 @@ public class Produto_Hotel_Tarifario extends AbstractPage {
 		tarifario.descricao("Automação Tarifa teste Rafa");
 		tarifario.selectFornecedor();
 		tarifario.selectTipo();
-		tarifario.selectDataVenda("29062018", "31122018");
+		tarifario.selectDataVenda("02072018", "31122018");
 		tarifario.abaTarifario();
 		tarifario.infoTarifario("Automação tarifa Junho"); 
 		tarifario.tabela();

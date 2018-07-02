@@ -4,17 +4,16 @@ package br.com.RafaelaTrevizan.steps;
 import org.easetech.easytest.runner.DataDrivenTestRunner;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-
-import Pages.Reserva_Cliente_Page;
+import Pages.Reserva_Hotel_Cliente_Page;
 import Pages.Comprovante_Page;
 import Pages.Home_Page;
-import Pages.Reservar_Page;
+import Pages.Reservar_Hotel_Page;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
 
 @RunWith(DataDrivenTestRunner.class)
 
-public class Reserva extends AbstractPage{
+public class Reserva_Hotel extends AbstractPage{
 	
 	WebDriver nav = getDriver();
 	
@@ -24,7 +23,7 @@ public class Reserva extends AbstractPage{
 		@Quando("^clicar no menu Reserva e preencher o campo \"([^\"]*)\"$")
 		public void clicarNoMenuReservaEPreencherOCampo(String arg1) throws Throwable {
 			Home_Page home = new Home_Page(nav);
-			Reservar_Page reservar = new Reservar_Page(nav);
+			Reservar_Hotel_Page reservar = new Reservar_Hotel_Page(nav);
 			
 			home.clickMenuReservar();		
 			reservar.fillDestino(arg1);					
@@ -33,27 +32,27 @@ public class Reserva extends AbstractPage{
 
 		@Quando("^preencher as datas \"([^\"]*)\" e \"([^\"]*)\"$")
 		public void preencherAsDatasE(String arg1, String arg2) throws Throwable {
-			Reservar_Page reservar = new Reservar_Page(nav);
+			Reservar_Hotel_Page reservar = new Reservar_Hotel_Page(nav);
 			reservar.fillDates(arg1, arg2);	
 		   
 		}
 
 		@Quando("^clicar no botão pesquisar$")
 		public void clicarNoBotãoPesquisar() throws Throwable {
-			Reservar_Page reservar = new Reservar_Page(nav);
+			Reservar_Hotel_Page reservar = new Reservar_Hotel_Page(nav);
 			reservar.clickPesquisar();
 			}
 
 		@Quando("^selecionar o hotel$")
 		public void selecionarOHotel() throws Throwable {
-			Reservar_Page reservar = new Reservar_Page(nav);
+			Reservar_Hotel_Page reservar = new Reservar_Hotel_Page(nav);
 			reservar.selectHotel();
 		
 		}
 
 		@Então("^os campos para reserva devem ser preenchidos$")
 		public void osCamposParaReservaDevemSerPreenchidos() throws Throwable {
-		    Reserva_Cliente_Page clientes = new Reserva_Cliente_Page(nav);
+		    Reserva_Hotel_Cliente_Page clientes = new Reserva_Hotel_Cliente_Page(nav);
 		     		
 		    clientes.fillNames1();	   
 		    clientes.fillDocument("81627258736");    

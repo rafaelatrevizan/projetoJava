@@ -202,6 +202,7 @@ public class Aereo_Tarifario_Page extends Base_Page {
 	}
 	
 	public Aereo_Tarifario_Page salvarEativarVoo() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//span[text() = \"Salvar Ativar\"]")).click();
 		nav.findElement(By.xpath("//span[text() = \"Sim\"]")).click();
 		return this;

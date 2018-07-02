@@ -40,19 +40,39 @@ public class Hotel_Bloqueio_Page extends Base_Page {
 	}
 	
 	public Hotel_Bloqueio_Page selectQuantidade() {
+		try {Thread.sleep(2000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//form[@id = \"frmUhBloqueioEdit\"]/div/div/div/div/following-sibling::div")).click();
 		return this;
 	}
 	
 	
-//	public Hotel_Acomodacao_Page chooseQuantidade() {
-//		// idUhCapacidade_0 = selecione...	
-//		
-//		nav.findElement(By.xpath("//label[@id = \"idUhCapacidade_label\"]/following-sibling::div")).click();		
-//		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
-//		nav.findElement(By.id("idUhCapacidade_4")).click();
-//		return this;
-//	}
-//	
-	// 
+	public Hotel_Bloqueio_Page chooseQuantidade() {
+		// //li[text() = "selecione..."]
+		// //li[text() = "Aumentar"]
+		// //li[text() = "Diminuir"]
+		// //li[text() = "Fixar"]
+		
+		nav.findElement(By.xpath("//span[@id = \"pnlAltQtBloqueio\"]/div/div/span")).click();		
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		nav.findElement(By.xpath("//li[text() = \"Fixar\"]")).click();
+		return this;
+	}
+	
+	public Hotel_Bloqueio_Page Quantidade(String qtdd) {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		nav.findElement(By.xpath("//span[@id = \"pnlAltQtBloqueio\"]/div/following-sibling::input")).sendKeys(qtdd);
+		return this;
+	}
+	
+	public Hotel_Bloqueio_Page select_Hotel() {
+		nav.findElement(By.xpath(" //div[@class = \"ContainerIndent\"]/following-sibling::div/div[2]")).click();
+		return this;
+	}
+
+	
+	public Hotel_Bloqueio_Page bloq_salvar() {
+		nav.findElement(By.xpath(" //span[text() = \"Salvar\"]")).click();
+		return this;
+	}
+	 
 }
