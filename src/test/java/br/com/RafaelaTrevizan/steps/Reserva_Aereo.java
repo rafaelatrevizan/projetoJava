@@ -5,6 +5,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import Pages.Comprovante_Page;
 import Pages.Home_Page;
 import Pages.Reserva_Aereo_Cliente_Page;
 import Pages.Reservar_Aereo_Page;
@@ -22,6 +23,7 @@ public class Reserva_Aereo extends AbstractPage {
 	Frame frame = new Frame(nav);
 	Home_Page home = new Home_Page(nav);
 	Reserva_Aereo_Cliente_Page aereoCliente = new Reserva_Aereo_Cliente_Page(nav);
+	Comprovante_Page comp = new Comprovante_Page(nav);
 
 	// FEATURE: RESERVAR AEREO
 
@@ -69,12 +71,14 @@ public class Reserva_Aereo extends AbstractPage {
 		aereoCliente.fillDocument("33762977704");
 		aereoCliente.fillSexo1();
 		aereoCliente.fillDate1();
+//		aereoCliente.politica();
+		aereoCliente.dadosDoCliente();
 	}
 
 	@Então("^a reserva da passagem deverá ser feita com sucesso$")
 	public void aReservaDaPassagemDeveráSerFeitaComSucesso() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+		aereoCliente.clickReservar();		
+		comp.idReserva();
 	}
 
 }

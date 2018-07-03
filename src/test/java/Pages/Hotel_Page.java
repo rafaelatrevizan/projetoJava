@@ -176,6 +176,46 @@ public class Hotel_Page extends Base_Page {
 	//
 	// return this;
 	// }
+	
+	
+	public Hotel_Page popUpErro() {
+		java.util.List<WebElement> list = nav.findElements(By.xpath("//div[@id = \"idMsgError\"]/div/ul/li"));
 
+		for (WebElement element : list) {
+			System.out.println(element.getText());
+		}
+
+		if (list.get(0).getText().equals("Nome - Preenchimento obrigatório")) {
+			System.out.println(list.get(0).getText());
+			System.out.println("Existe");
+		} else {
+			System.out.println("Não Existe");
+			throw new RuntimeException();
+		}
+		if (list.get(1).getText().equals("Texto - Preenchimento obrigatório")) {
+			System.out.println(list.get(1).getText());
+			System.out.println("Existe");
+		} else {
+			System.out.println("Não Existe");
+			throw new RuntimeException();
+		}
+		if (list.get(2).getText().equals("Endereco - Preenchimento obrigatório")) {
+			System.out.println(list.get(2).getText());
+			System.out.println("Existe");
+		} else {
+			System.out.println("Não Existe");
+			throw new RuntimeException();
+		}
+		if (list.get(3).getText().equals("Local - Preenchimento obrigatório")) {
+			System.out.println(list.get(3).getText());
+			System.out.println("Existe");
+		} else {
+			System.out.println("Não Existe");
+			throw new RuntimeException();
+		}
+		
+
+		return this;
+	}
 	
 }

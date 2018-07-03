@@ -22,7 +22,7 @@ public class Produto_Hotel extends AbstractPage {
 
 	// FEATURE: PRODUTO
 
-	@Quando("^clicar para dicionar um novo hotel$")
+	@Quando("^clicar para adicionar um novo hotel$")
 	public void clicarParaDicionarUmNovoHotel() throws Throwable {
 
 		homeHotel.clickHotel();
@@ -60,5 +60,17 @@ public class Produto_Hotel extends AbstractPage {
 		// hotel.checkHotel();
 
 	}
+	
+	//VALIDAR CAMPOS OBRIGATÓRIOS
+	@Quando("^não preencher os campos obrigatórios do hotel$")
+	public void nãoPreencherOsCamposObrigatóriosDoHotel() throws Throwable {
+	    hotel.Salvar();
+	}
+
+	@Então("^ao salvar os campos do hotel deverão ser exibidos em um popup$")
+	public void aoSalvarOsCamposDoHotelDeverãoSerExibidosEmUmPopup() throws Throwable {
+	    hotel.popUpErro();
+	}
+
 
 }

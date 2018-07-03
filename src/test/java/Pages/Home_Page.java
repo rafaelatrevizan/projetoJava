@@ -13,6 +13,21 @@ public class Home_Page extends Base_Page {
 		super(nav);		
 	}	
 	
+	public Hotel_Page clickUnidades() {
+		nav.findElement(By.id("menuform:sm_leftmenu_0")).click();
+		return new Hotel_Page(nav);
+	}
+	
+	public Hotel_Page clickProfissionais() {
+		nav.findElement(By.id("menuform:sm_leftmenu_1")).click();
+		return new Hotel_Page(nav);
+	}
+	public Hotel_Page clickCambio() {
+		nav.findElement(By.id("menuform:sm_leftmenu_2")).click();
+		return new Hotel_Page(nav);
+	}
+		
+		
 	public Reservar_Hotel_Page clickMenuReservar() {
 		nav.findElement(By.xpath("//a[contains(text(), \"Reservar\")]")).click();			
 		return new Reservar_Hotel_Page(nav);

@@ -127,24 +127,24 @@ public class Reserva_Aereo_Cliente_Page extends Base_Page {
 //		return this;
 //	}
 	
-	public Reserva_Aereo_Cliente_Page textArea(String texto) {
-		
-		nav.findElement(By.id("frmNomeEdit:hotel:0:quarto:0:idDsObservacao")).sendKeys(texto);
-		
-		return this;
-	}
+//	public Reserva_Aereo_Cliente_Page textArea(String texto) {
+//		
+//		nav.findElement(By.id("frmNomeEdit:hotel:0:quarto:0:idDsObservacao")).sendKeys(texto);
+//		
+//		return this;
+//	}
 	
 	public Reserva_Aereo_Cliente_Page politica() {
 		String str = nav.findElement(By.xpath("//span[text() = \"Politicas\"]")).getText();		
 		
 		if(str.contains("Politicas")) {
 			nav.findElement(By.xpath("//input[@type = \"checkbox\"]")).click();			
-		} else return this;
-		return null;
+		} 
+		return this;
 		
 	}
 
-	public Reserva_Aereo_Cliente_Page dadosDoCLiente(String numero) {
+	public Reserva_Aereo_Cliente_Page dadosDoCliente() {
 		nav.findElement(By.xpath("//i[@class = \"icon-edit Fs18\"]")).click();
 		return this;
 	}

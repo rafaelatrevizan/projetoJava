@@ -60,6 +60,17 @@ public class Produto_Hotel_Tarifario extends AbstractPage {
 		tarifario.tarifario_tarifario_salvar();
 		tarifario.tarifario_publicar();
 	}
+	
+	//VALIDAR CAMPOS OBRIGATORIOS
+	@Quando("^não preencher os campos obrigatórios do tarifario$")
+	public void nãoPreencherOsCamposObrigatóriosDoTarifario() throws Throwable {
+	    tarifario.tarifario_publicar();
+	}
+
+	@Então("^ao salvar os campos do tarifario deverão ser exibidos em um popup$")
+	public void aoSalvarOsCamposDoTarifarioDeverãoSerExibidosEmUmPopup() throws Throwable {
+	    tarifario.popUpErro();
+	}
 
 
 }

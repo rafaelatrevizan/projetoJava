@@ -32,7 +32,7 @@ public class Common_StepDefinition extends AbstractPage {
 		nav.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 //		WebDriverWait wait = new WebDriverWait(nav,10);
 		nav.manage().window().maximize();
-		nav.get("http://192.168.15.100:8080/infotravel/login.xhtml");
+		nav.get("http://192.168.15.100:8082/infotravel/login.xhtml");
 		System.out.println("Começando");
 	}
 

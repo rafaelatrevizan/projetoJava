@@ -182,4 +182,51 @@ public class Hotel_Tarifario_Page extends Base_Page {
 		return this;
 	}
 	
+	public Hotel_Tarifario_Page popUpErro() {
+		java.util.List<WebElement> list = nav.findElements(By.xpath("//div[@id = \"idMsgError\"]/div/ul/li"));
+
+		for (WebElement element : list) {
+			System.out.println(element.getText());
+		}
+
+		if (list.get(0).getText().equals("Descrição - Preenchimento obrigatório")) {
+			System.out.println(list.get(0).getText());
+			System.out.println("Existe");
+		} else {
+			System.out.println("Não Existe");
+			throw new RuntimeException();
+		}
+		if (list.get(1).getText().equals("Fornecedor - Preenchimento obrigatório")) {
+			System.out.println(list.get(1).getText());
+			System.out.println("Existe");
+		} else {
+			System.out.println("Não Existe");
+			throw new RuntimeException();
+		}
+		if (list.get(2).getText().equals("Tipo - Preenchimento obrigatório")) {
+			System.out.println(list.get(2).getText());
+			System.out.println("Existe");
+		} else {
+			System.out.println("Não Existe");
+			throw new RuntimeException();
+		}
+		if (list.get(3).getText().equals("Validade inicial - Preenchimento obrigatório")) {
+			System.out.println(list.get(3).getText());
+			System.out.println("Existe");
+		} else {
+			System.out.println("Não Existe");
+			throw new RuntimeException();
+		}
+		if (list.get(4).getText().equals("Validade final - Preenchimento obrigatório")) {
+			System.out.println(list.get(4).getText());
+			System.out.println("Existe");
+		} else {
+			System.out.println("Não Existe");
+			throw new RuntimeException();
+		}
+		
+
+		return this;
+	}
+	
 }

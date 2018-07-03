@@ -6,10 +6,10 @@
         "value": "#language: pt"
       }
     ],
-    "line": 3,
+    "line": 4,
     "elements": [
       {
-        "line": 8,
+        "line": 9,
         "name": "",
         "description": "",
         "type": "background",
@@ -17,10 +17,10 @@
         "steps": [
           {
             "result": {
-              "duration": 4079336197,
+              "duration": 3303749591,
               "status": "passed"
             },
-            "line": 9,
+            "line": 10,
             "name": "que esteja na home",
             "match": {
               "location": "Common_StepDefinition.queEstejaNaHomeDoPortal()"
@@ -33,7 +33,7 @@
         "before": [
           {
             "result": {
-              "duration": 7879107265,
+              "duration": 6831595623,
               "status": "passed"
             },
             "match": {
@@ -41,14 +41,14 @@
             }
           }
         ],
-        "line": 38,
-        "name": "Deve validar a reserva aereo",
+        "line": 19,
+        "name": "Deve validar campos obrigatórios",
         "description": "",
-        "id": "reservar;deve-validar-a-reserva-aereo;;2",
+        "id": "cadastrar-um-cambio;deve-validar-campos-obrigatórios",
         "after": [
           {
             "result": {
-              "duration": 454039316,
+              "duration": 431141987,
               "status": "passed"
             },
             "match": {
@@ -57,7 +57,7 @@
           },
           {
             "result": {
-              "duration": 5804522958,
+              "duration": 5839222431,
               "status": "passed"
             },
             "match": {
@@ -66,146 +66,63 @@
           }
         ],
         "type": "scenario",
-        "keyword": "Esquema do Cenário",
+        "keyword": "Cenário",
         "steps": [
           {
             "result": {
-              "duration": 834669166,
+              "duration": 1874978417,
               "status": "passed"
             },
-            "line": 27,
-            "name": "clicar no menu Reserva",
+            "line": 20,
+            "name": "clicar para adicionar um Cambio",
             "match": {
-              "location": "Reserva_Aereo.clicarNoMenuReserva()"
+              "location": "Cambio.clicarParaAdicionarUmCambio()"
             },
             "keyword": "Quando "
           },
           {
             "result": {
-              "duration": 2613210987,
+              "duration": 2193669501,
               "status": "passed"
             },
-            "line": 28,
-            "name": "escolher a aba Passagens",
+            "line": 21,
+            "name": "não preencher os campos obrigatórios do cambio",
             "match": {
-              "location": "Reserva_Aereo.escolherAAbaPassagens()"
+              "location": "Cambio.nãoPreencherOsCamposObrigatóriosDoCambio()"
             },
             "keyword": "E "
           },
           {
             "result": {
-              "duration": 4544579973,
+              "duration": 552428348,
               "status": "passed"
             },
-            "line": 29,
-            "name": "preencher o campo \"São Paulo\" e \"Caldas novas\"",
+            "line": 22,
+            "name": "ao salvar os campos do cambio deverão ser exibidos em um popup",
             "match": {
-              "arguments": [
-                {
-                  "val": "São Paulo",
-                  "offset": 19
-                },
-                {
-                  "val": "Caldas novas",
-                  "offset": 33
-                }
-              ],
-              "location": "Reserva_Aereo.preencherOCampoE(String,String)"
-            },
-            "matchedColumns": [
-              0,
-              1
-            ],
-            "keyword": "E "
-          },
-          {
-            "result": {
-              "duration": 1722259318,
-              "status": "passed"
-            },
-            "line": 30,
-            "name": "preencher as datas de \"05072018\" e \"10072018\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "05072018",
-                  "offset": 23
-                },
-                {
-                  "val": "10072018",
-                  "offset": 36
-                }
-              ],
-              "location": "Reserva_Aereo.preencherAsDatasDeE(String,String)"
-            },
-            "matchedColumns": [
-              2,
-              3
-            ],
-            "keyword": "E "
-          },
-          {
-            "result": {
-              "duration": 1251121412,
-              "status": "passed"
-            },
-            "line": 31,
-            "name": "clicar no botão pesquisar para selecionar uma passagem",
-            "match": {
-              "location": "Reserva_Aereo.clicarNoBotãoPesquisarParaSelecionarUmaPassagem()"
-            },
-            "keyword": "E "
-          },
-          {
-            "result": {
-              "duration": 2243727639,
-              "status": "passed"
-            },
-            "line": 32,
-            "name": "selecionar a passagem",
-            "match": {
-              "location": "Reserva_Aereo.selecionarAPassagem()"
-            },
-            "keyword": "E "
-          },
-          {
-            "result": {
-              "duration": 1910561135,
-              "status": "passed"
-            },
-            "line": 33,
-            "name": "os campos para reserva de passagens devem ser preenchidos",
-            "match": {
-              "location": "Reserva_Aereo.osCamposParaReservaDePassagensDevemSerPreenchidos()"
+              "location": "Cambio.aoSalvarOsCamposDoCambioDeverãoSerExibidosEmUmPopup()"
             },
             "keyword": "Então "
-          },
-          {
-            "result": {
-              "duration": 2117854,
-              "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat br.com.RafaelaTrevizan.steps.Reserva_Aereo.aReservaDaPassagemDeveráSerFeitaComSucesso(Reserva_Aereo.java:77)\r\n\tat ✽.E a reserva da passagem deverá ser feita com sucesso(Reservar.feature:34)\r\n",
-              "status": "pending"
-            },
-            "line": 34,
-            "name": "a reserva da passagem deverá ser feita com sucesso",
-            "match": {
-              "location": "Reserva_Aereo.aReservaDaPassagemDeveráSerFeitaComSucesso()"
-            },
-            "keyword": "E "
           }
         ],
         "tags": [
           {
-            "line": 25,
-            "name": "@reservarAereo"
+            "line": 18,
+            "name": "@camposCambio"
           }
         ]
       }
     ],
-    "name": "Reservar",
-    "description": "Eu como Operador\r\nQuero entrar no Portal \r\nPara fazer uma reserva",
-    "id": "reservar",
+    "name": "Cadastrar um Cambio",
+    "description": "Eu como Operador\r\nQuero entrar no Portal \r\nPara fazer um cadastro de Cambio",
+    "id": "cadastrar-um-cambio",
     "keyword": "Funcionalidade",
-    "uri": "Reservar.feature"
+    "uri": "Cambio.feature",
+    "tags": [
+      {
+        "line": 3,
+        "name": "@cambio"
+      }
+    ]
   }
 ]
