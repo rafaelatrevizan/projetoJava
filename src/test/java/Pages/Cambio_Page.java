@@ -26,6 +26,8 @@ public class Cambio_Page extends Base_Page {
 	}
 
 	public Cambio_Page chooseMoeda() {
+		// YOSHI VAI MUDAR O ID DO UL
+
 		// //li[text() = "selecione..."]
 		// //li[text() = "REAL(BRL)"]
 		// //li[text() = "DOLAR(USD)"]
@@ -37,7 +39,9 @@ public class Cambio_Page extends Base_Page {
 			Thread.sleep(1000);
 		} catch (InterruptedException ex) {
 		}
-		nav.findElement(By.xpath("//form[@id  = \"frmCambioEdit\"]/div/div/div/label[text() = \"Moeda\"]/following-sibling::div/div/span")).click();
+		nav.findElement(By.xpath(
+				"//form[@id  = \"frmCambioEdit\"]/div/div/div/label[text() = \"Moeda\"]/following-sibling::div/div/span"))
+				.click();
 
 		try {
 			Thread.sleep(1000);
@@ -49,6 +53,8 @@ public class Cambio_Page extends Base_Page {
 	}
 
 	public Cambio_Page chooseCambio() {
+		// YOSHI VAI MUDAR O ID DO UL
+
 		// //li[text() = "selecione..."]
 		// //li[text() = "REAL(BRL)"]
 		// //li[text() = "DOLAR(USD)"]
@@ -60,7 +66,9 @@ public class Cambio_Page extends Base_Page {
 			Thread.sleep(1000);
 		} catch (InterruptedException ex) {
 		}
-		nav.findElement(By.xpath("//form[@id  = \"frmCambioEdit\"]/div/div/div/label[text() = \"Cambio\"]/following-sibling::div/div/span")).click();
+		nav.findElement(By.xpath(
+				"//form[@id  = \"frmCambioEdit\"]/div/div/div/label[text() = \"Cambio\"]/following-sibling::div/div/span"))
+				.click();
 
 		try {
 			Thread.sleep(1000);
@@ -82,7 +90,10 @@ public class Cambio_Page extends Base_Page {
 	}
 
 	public Cambio_Page clickSalvar() {
-		try {Thread.sleep(2000);} catch (InterruptedException ex) {}
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException ex) {
+		}
 		nav.findElement(By.xpath("//span[text() = \"Salvar\"]")).click();
 		return this;
 	}
@@ -122,7 +133,7 @@ public class Cambio_Page extends Base_Page {
 			System.out.println("Não Existe");
 			throw new RuntimeException();
 		}
-		
+
 		return this;
 	}
 

@@ -15,11 +15,8 @@ import cucumber.api.junit.Cucumber;
 		dryRun = false,
 		strict = false,
 		snippets = SnippetType.CAMELCASE,
-		tags = {"@camposCambio"}
+		tags = {"@fornecedorProf"}
 		)
 
-public class RunnerTest {
-	
-	
+public class RunnerTest {}
 
-}
