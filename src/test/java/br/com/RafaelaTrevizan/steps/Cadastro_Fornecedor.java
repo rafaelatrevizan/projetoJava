@@ -57,6 +57,7 @@ public class Cadastro_Fornecedor extends AbstractPage {
 	
 	@Quando("^selecionar o fornecedor$")
 	public void selecionarOFornecedor() throws Throwable {
+		home.clickCadastroFornecedor();
 	    fornecedor.pesqNome("Automação teste Rafa");
 	    fornecedor.clickPesquisar();
 	    fornecedor.selectFornecedor();
@@ -64,14 +65,17 @@ public class Cadastro_Fornecedor extends AbstractPage {
 
 	@Quando("^preencher as informações do profissional$")
 	public void preencherAsInformaçõesDoProfissional() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+	   fornecedor.abaProf();
+	   fornecedor.fillNamesProf("Automação Rafa", "Automação Rafa");
+	   fornecedor.fillUserProf("automatico");
+	   fornecedor.credenciaisAcesso();
+	   fornecedor.fillEmail("rafaela@infotera.com.br");
+	   fornecedor.fillCep("079033030");
 	}
 
 	@Então("^o profissional deve ser cadastrado com sucesso$")
 	public void oProfissionalDeveSerCadastradoComSucesso() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+	    fornecedor.clickSalvar();
 	}
 
 

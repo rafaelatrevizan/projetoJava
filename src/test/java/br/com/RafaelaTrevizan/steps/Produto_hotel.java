@@ -44,8 +44,6 @@ public class Produto_Hotel extends AbstractPage {
 		hotel.fillEmail();
 		hotel.fillEndereco("03335010", "Rua teste", "Caldas Novas");
 		hotel.localizacoes("Caldas Novas");
-
-		Frame frame = new Frame(nav);
 		frame.swithFrame(0);
 		hotel.fillDescription("Teste hotel automação rafa");
 

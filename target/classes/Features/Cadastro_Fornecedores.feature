@@ -1,6 +1,6 @@
 #language: pt
 
-@produtos
+@fornecedor
 Funcionalidade: Cadastrar um fornecedor
 Eu como Operador
 Quero entrar no Portal 

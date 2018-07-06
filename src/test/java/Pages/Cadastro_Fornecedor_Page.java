@@ -13,77 +13,128 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-
-
 @RunWith(DataDrivenTestRunner.class)
 
 public class Cadastro_Fornecedor_Page extends Base_Page {
 
 	public Cadastro_Fornecedor_Page(WebDriver nav) {
-		super(nav);		
+		super(nav);
 	}
-	
+
 	public Cadastro_Fornecedor_Page addFonecedor() {
 		nav.switchTo().frame(0);
 		WebElement webElement = nav.findElement(By.xpath("//span[text() = \"Adicionar\"]"));
 		webElement.click();
 		return this;
 	}
-	
+
 	public Cadastro_Fornecedor_Page fillNames(String nomeRazao, String nomeFantasia) {
-		try {Thread.sleep(1000);} catch (InterruptedException ex) {	}
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException ex) {
+		}
 		nav.findElement(By.id("idNmRazao")).sendKeys(nomeRazao);
 		nav.findElement(By.id("idNmFantasia")).sendKeys(nomeFantasia);
 		return this;
 	}
-	
-	public Cadastro_Fornecedor_Page fillDocumento (String doc) {
+
+	public Cadastro_Fornecedor_Page fillDocumento(String doc) {
 		nav.findElement(By.id("idNrCnpj")).sendKeys(doc);
 		return this;
 	}
-	
-	public Cadastro_Fornecedor_Page fillContato (String contato) {
+
+	public Cadastro_Fornecedor_Page fillContato(String contato) {
 		nav.findElement(By.id("idNmContato")).sendKeys(contato);
 		return this;
 	}
-	
-	public Cadastro_Fornecedor_Page fillEmail (String mail) {
+
+	public Cadastro_Fornecedor_Page fillEmail(String mail) {
 		nav.findElement(By.id("idEmail")).sendKeys(mail);
 		return this;
 	}
-	
+
 	public Cadastro_Fornecedor_Page fillCep(String numCep) {
 		WebElement cep = nav.findElement(By.id("idCep"));
 		cep.sendKeys(numCep);
 		cep.sendKeys(Keys.TAB);
-		try {Thread.sleep(1000);} catch (InterruptedException ex) {}		
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException ex) {
+		}
 		return this;
 	}
-	
-	public Cadastro_Fornecedor_Page clickSalvar() {			
-		try {Thread.sleep(1000);} catch (InterruptedException ex) {}		
-		nav.findElement(By.xpath("//span[text() = \"Salvar\"]")).click();			
+
+	public Cadastro_Fornecedor_Page clickSalvar() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException ex) {
+		}
+		nav.findElement(By.xpath("//span[text() = \"Salvar\"]")).click();
 		return this;
 	}
-	
-	public Cadastro_Fornecedor_Page clickPesquisar() {			
-		try {Thread.sleep(1000);} catch (InterruptedException ex) {}		
-		nav.findElement(By.xpath("//span[text() = \"Pesquisar\"]/parent::button")).click();			
+
+	public Cadastro_Fornecedor_Page clickPesquisar() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException ex) {
+		}
+		nav.findElement(By.xpath("//span[text() = \"Pesquisar\"]/parent::button")).click();
 		return this;
-	}	
-	
-	public Cadastro_Fornecedor_Page pesqNome(String nomeFornecedor) {			
-		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+	}
+
+	public Cadastro_Fornecedor_Page pesqNome(String nomeFornecedor) {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException ex) {
+		}
 		nav.switchTo().frame(0);
-		nav.findElement(By.id("idNomePesquisa")).sendKeys(nomeFornecedor);			
+		nav.findElement(By.id("idNomePesquisa")).sendKeys(nomeFornecedor);
+		return this;
+	}
+
+	public Cadastro_Fornecedor_Page selectFornecedor() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException ex) {
+		}
+		nav.findElement(By.xpath("//a[contains(@id, \"frmPesquisa:pnlFornecedorList\")]/i")).click();
 		return this;
 	}
 	
-	public Cadastro_Fornecedor_Page selectFornecedor() {			
-		try {Thread.sleep(1000);} catch (InterruptedException ex) {}		
-		nav.findElement(By.xpath("//a[contains(@id, \"frmPesquisa:pnlFornecedorList\")]/i")).click();		
+	public Cadastro_Fornecedor_Page abaProf() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException ex) {
+		}
+		nav.findElement(By.xpath("//li[@data-index = \"4\"]")).click();
+		nav.findElement(By.xpath("//span[text() = \"Profissionais\"]/following-sibling::a")).click();
 		return this;
 	}
+// idNmLogin
+	
+	
+	
+	public Cadastro_Fornecedor_Page fillNamesProf(String nomeProf, String apelidoProf) {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException ex) {
+		}
+		nav.findElement(By.id("idNome")).sendKeys(nomeProf);
+		nav.findElement(By.id("idApelido")).sendKeys(apelidoProf);
+		return this;
+	}
+	
+	public Cadastro_Fornecedor_Page fillUserProf(String user) {
+		nav.findElement(By.id("idNmLogin")).sendKeys(user);
+		return this;
+	}
+	
+	public Cadastro_Fornecedor_Page credenciaisAcesso() {
+		nav.findElement(By.xpath("//table[@id = \"idSelPerfilAgencia\"]/tbody/tr/td/div/following-sibling::label[text() = \"Agencia ADM\"]")).click();
+		return this;
+	}
+	
+	
 	
 	public Cadastro_Fornecedor_Page popUpErro() {
 		java.util.List<WebElement> list = nav.findElements(By.xpath("//div[@id = \"idMsgError\"]/div/ul/li"));
@@ -158,7 +209,5 @@ public class Cadastro_Fornecedor_Page extends Base_Page {
 
 		return this;
 	}
-	
-	
 
 }

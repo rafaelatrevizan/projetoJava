@@ -31,7 +31,20 @@ public class Home_Page extends Base_Page {
 		nav.findElement(By.id("menuform:sm_leftmenu_3")).click();
 		nav.findElement(By.id("menuform:sm_leftmenu_3_0")).click();
 		return new Hotel_Page(nav);
-	}		
+	}	
+	
+	public Hotel_Page clickCadastroCliente() {
+		nav.findElement(By.id("menuform:sm_leftmenu_3")).click();
+		nav.findElement(By.id("menuform:sm_leftmenu_3_1")).click();
+		return new Hotel_Page(nav);
+	}	
+	
+	public Hotel_Page clickCadastroTextoEmail() {
+		nav.findElement(By.id("menuform:sm_leftmenu_3")).click();
+		try {Thread.sleep(2000);} catch (InterruptedException ex) {}
+		nav.findElement(By.id("menuform:sm_leftmenu_3_8")).click();
+		return new Hotel_Page(nav);
+	}	
 		
 	public Reservar_Hotel_Page clickMenuReservar() {
 		nav.findElement(By.xpath("//a[contains(text(), \"Reservar\")]")).click();			
