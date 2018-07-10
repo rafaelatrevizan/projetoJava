@@ -27,6 +27,8 @@ public class Produto_Hotel_Tarifario extends AbstractPage {
 	
 	@Quando("^clicar para adicionar um novo tarifário de hotel$")
 	public void clicarParaAdicionarUmNovoTarifárioDeHotel() throws Throwable {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		nav.switchTo().parentFrame();
 		home.clickHotelTarifario();
 		frame.swithFrame(0);
 		tarifario.pesquisarHotel("Automação teste");
@@ -48,7 +50,7 @@ public class Produto_Hotel_Tarifario extends AbstractPage {
 		tarifario.pagamento();
 		tarifario.cobranca();
 		tarifario.periodo();
-		tarifario.tarifario_publicacao("29062018", "31122018");
+		tarifario.tarifario_publicacao("30072018", "31122018");
 		tarifario.tarifario_tarifa();
 		tarifario.tarifario_tarifa_regime();
 		tarifario.tarifario_tarifa_valores("10000", "10000");

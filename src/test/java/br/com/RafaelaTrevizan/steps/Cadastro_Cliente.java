@@ -65,7 +65,7 @@ public class Cadastro_Cliente extends AbstractPage {
 		cliente.selectCliente();
 	}
 
-	@Quando("^desativar o mesmo$")
+	@Quando("^desativar o cliente selecionado$")
 	public void desativarOMesmo() throws Throwable {
 		cliente.desativarCliente("Teste Automação desativar");
 		nav.findElement(By.xpath("//span[text() = \"Voltar\"]")).click();
@@ -78,7 +78,7 @@ public class Cadastro_Cliente extends AbstractPage {
 
 	// VALIDAR CLIENTE ATIVADO
 
-	@Quando("^ativar o mesmo$")
+	@Quando("^ativar o cliente selecionado$")
 	public void ativarOMesmo() throws Throwable {
 		cliente.ativarCliente("Teste Automação Ativar");
 		nav.findElement(By.xpath("//span[text() = \"Voltar\"]")).click();

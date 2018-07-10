@@ -1,6 +1,7 @@
 package Pages;
 
 import org.easetech.easytest.runner.DataDrivenTestRunner;
+import org.junit.Assert;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -19,9 +20,26 @@ public class Unidades_Page extends Base_Page {
 	}
 
 	public Unidades_Page addUnidade() {
-		nav.switchTo().frame(0);
 		WebElement webElement = nav.findElement(By.xpath("//span[text() = \"Adicionar\"]"));
 		webElement.click();
+		return this;
+	}
+	
+	public Unidades_Page pesqUnidade() {
+		WebElement webElement = nav.findElement(By.xpath("//button[contains(@onclick, \"frmPesquisa\")]/span/following-sibling::span"));
+		webElement.click();
+		return this;
+	}
+		
+	public Unidades_Page searchUnidade(String unidade) {
+		WebElement webElement = nav.findElement(By.xpath("//input[contains(@id, \"idNomePesquisa\")]"));
+		webElement.sendKeys(unidade);
+		return this;
+	}
+	
+	public Unidades_Page selectUnidade() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		nav.findElement(By.xpath("//a[contains(@id,  \"pnlUnidadeList\")]/i[contains(@class, \"icon-edit-1\")]")).click();
 		return this;
 	}
 
@@ -54,11 +72,11 @@ public class Unidades_Page extends Base_Page {
 		return this;
 	}
 
-	public Unidades_Page fillEmailNull(String mail) {
-		WebElement email = nav.findElement(By.id("idEmail"));
-		email.sendKeys(mail);
-		return this;
-	}
+//	public Unidades_Page fillEmailNull(String mail) {
+//		WebElement email = nav.findElement(By.id("idEmail"));
+//		email.sendKeys(mail);
+//		return this;
+//	}
 
 	public Unidades_Page fillCep(String numCep) {
 		WebElement cep = nav.findElement(By.id("idCep"));
@@ -143,6 +161,43 @@ public class Unidades_Page extends Base_Page {
 			throw new RuntimeException();
 		}
 
+		return this;
+	}
+	
+	public Unidades_Page desativarUnidade(String motivo) {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		nav.findElement(By.xpath("//span[text() = \"Desativar\"]")).click();
+		nav.findElement(By.id("frmLog:dsMotivo")).sendKeys(motivo);
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		nav.findElement(By.xpath("//span[text() = \"Sim\"]")).click();
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		return this;
+	}
+
+	public Unidades_Page checkDesativado() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		WebElement desativado = nav.findElement(By.xpath("//tbody[@id = \"frmPesquisa:pnlUnidadeList_data\"]/tr/td[8]"));
+		String desativar = desativado.getText();
+		Assert.assertEquals("Não", desativar);		
+		return this;
+	}
+
+	public Unidades_Page ativarUnidade(String motivo) {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		nav.findElement(By.xpath("//span[text() = \"Ativar\"]")).click();
+		nav.findElement(By.id("frmLog:dsMotivo")).sendKeys(motivo);
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		nav.findElement(By.xpath("//span[text() = \"Sim\"]")).click();
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		return this;
+	}
+
+	public Unidades_Page checkAtivado() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		WebElement ativado = nav.findElement(By.xpath("//tbody[@id = \"frmPesquisa:pnlUnidadeList_data\"]/tr/td[8]"));
+		String ativar = ativado.getText();
+		System.out.println(ativar);
+//		Assert.assertEquals("Sim", ativar);		
 		return this;
 	}
 

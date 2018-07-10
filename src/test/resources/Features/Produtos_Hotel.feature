@@ -9,7 +9,7 @@ Para fazer um cadastro de hotel
 Contexto: 
 Dado que esteja na home
 
-
+@cadastroHotel
 Cenário: Deve validar a cadastro de hotel
 Quando clicar para adicionar um novo hotel
 E preencher todas as informações

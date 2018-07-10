@@ -24,13 +24,13 @@ Então ao salvar os campos do cliente deverão ser exibidos em um popup
 @desativarCliente
 Cenário: Deve validar um cliente desativado
 Quando pesquisar um cliente
-E desativar o mesmo
+E desativar o cliente selecionado
 Então na coluna Ativo deverá ser exibido Não
 
 @ativarCliente
 Cenário: Deve validar um cliente ativado
 Quando pesquisar um cliente
-E ativar o mesmo
+E ativar o cliente selecionado
 Então na coluna Ativo deverá ser exibido Sim
 
 
