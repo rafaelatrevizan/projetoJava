@@ -1,5 +1,5 @@
 #language: pt
-
+@reservar
 Funcionalidade: Reservar
 Eu como Operador
 Quero entrar no Portal 
@@ -19,7 +19,7 @@ E a reserva deverá ser feita com sucesso
 
 Exemplos:
 |destino				|entrada		|saida	 |
-|Caldas novas 	|01072018		|06072018|
+|Caldas novas 	|11072018		|20072018|
 
 
 

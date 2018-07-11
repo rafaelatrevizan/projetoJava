@@ -61,15 +61,17 @@ public class Reserva_Hotel_Cliente_Page extends Base_Page {
 	public Reserva_Hotel_Cliente_Page fillDocument(String documento) {
 
 		nav.findElement(By.xpath(
-				"//label[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:0:idDocumentoTipo_label\"]/following-sibling::div"))
+				"//label[contains (@id, \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:0\") and text() = \"Documento\"]/following-sibling::div/div[@class = \"ui-selectonemenu-trigger ui-state-default ui-corner-right\"]"))
 				.click();
-		nav.findElement(By.xpath("//li[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:0:idDocumentoTipo_2\"]"))
+		// //label[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:0:idDocumentoTipo_label\"]/following-sibling::div
+		// 
+		nav.findElement(By.xpath("//li[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:0:idDocumentoTipo_1\"]"))
 				.click();
 		
 		// WebElement tipoDoc = nav.findElement(By.xpath("//select[@id =
 		// \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:0:idDocumentoTipo_input\"]"));
 		// new Select(tipoDoc).selectByVisibleText(tipo);
-
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		WebElement docPessoa1 = nav
 				.findElement(By.xpath("//input[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:0:idNrDocumento\"]"));
 		docPessoa1.sendKeys(documento);
@@ -83,9 +85,9 @@ public class Reserva_Hotel_Cliente_Page extends Base_Page {
 		nav.findElement(By.xpath(
 				"//label[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:1:idDocumentoTipo_label\"]/following-sibling::div"))
 				.click();
-		nav.findElement(By.xpath("//li[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:1:idDocumentoTipo_2\"]"))
+		nav.findElement(By.xpath("//li[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:1:idDocumentoTipo_1\"]"))
 				.click();
-		
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		WebElement docPessoa2 = nav
 				.findElement(By.xpath("//input[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:1:idNrDocumento\"]"));
 		docPessoa2.sendKeys(documento1);

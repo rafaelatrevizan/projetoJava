@@ -77,8 +77,10 @@ public class Reservar_Hotel_Page extends Base_Page {
 	
 	public Reserva_Hotel_Cliente_Page selectHotel() {
 			
-		try {Thread.sleep(1000);} catch (InterruptedException ex) {}		
-		nav.findElement(By.xpath("//span[@id = \"pnlResultadoHotel\"]/div/div/div/div/following-sibling::div/div/div/div/div/following-sibling::div/button")).click();
+		try {Thread.sleep(2000);} catch (InterruptedException ex) {}		
+		nav.findElement(By.xpath("//button[contains (@id, \"pnlHotelPesquisa\")]")).click();
+		
+		// //span[@id = \"pnlResultadoHotel\"]/div/div/div/div/following-sibling::div/div/div/div/div/following-sibling::div/button
 			
 		return new Reserva_Hotel_Cliente_Page(nav);
 	}
