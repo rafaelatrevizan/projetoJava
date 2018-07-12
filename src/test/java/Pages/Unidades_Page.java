@@ -13,7 +13,9 @@ import com.github.javafaker.Faker;
 @RunWith(DataDrivenTestRunner.class)
 
 public class Unidades_Page extends Base_Page {
+	
 	private Faker faker = new Faker();
+	private String nameUnidade;
 
 	public Unidades_Page(WebDriver nav) {
 		super(nav);
@@ -50,12 +52,16 @@ public class Unidades_Page extends Base_Page {
 		}
 		nav.findElement(By.id("idNmRazao")).sendKeys(nomeRazao);
 		nav.findElement(By.id("idNmFantasia")).sendKeys(nomeFantasia);
+		
+		nameUnidade = nomeRazao;
+		
 		return this;
 	}
 
 	public Unidades_Page fillCNPJ(String numberCnpj) {
 		WebElement webelement = nav.findElement(By.id("idNrCnpj"));
 		webelement.sendKeys(numberCnpj);
+
 		return this;
 	}
 
@@ -89,6 +95,15 @@ public class Unidades_Page extends Base_Page {
 		nav.findElement(By.xpath("//span[text() = \"Salvar\"]")).click();
 		return this;
 	}
+	
+//	public Unidades_Page checkUnidadeName() {
+//		WebElement nomeView = nav.findElement(By.id("idNmRazaoView"));
+//		nomeView.
+//		String nomeCadastro = nomeView.getText();
+//		System.out.println(nameUnidade+"="+nomeCadastro);
+//		Assert.assertEquals(nameUnidade, nomeCadastro);		
+//		return this;
+//	}
 
 	public Unidades_Page popUpErro() {
 		java.util.List<WebElement> list = nav.findElements(By.xpath("//div[@id = \"idMsgError\"]/div/ul/li"));

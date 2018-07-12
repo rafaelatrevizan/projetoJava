@@ -6,10 +6,10 @@
         "value": "#language: pt"
       }
     ],
-    "line": 3,
+    "line": 4,
     "elements": [
       {
-        "line": 8,
+        "line": 9,
         "name": "",
         "description": "",
         "type": "background",
@@ -17,10 +17,9 @@
         "steps": [
           {
             "result": {
-              "duration": 3623907037,
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 9,
+            "line": 10,
             "name": "que esteja na home",
             "match": {
               "location": "Common_StepDefinition.queEstejaNaHomeDoPortal()"
@@ -30,125 +29,58 @@
         ]
       },
       {
-        "before": [
-          {
-            "result": {
-              "duration": 6709142950,
-              "status": "passed"
-            },
-            "match": {
-              "location": "Common_StepDefinition.setUp()"
-            }
-          }
-        ],
-        "line": 12,
-        "name": "Validar inclusão de nova linha de Valor ao ser incluido outra acomodação",
+        "line": 13,
+        "name": "Deve validar a cadastro de pacote",
         "description": "",
-        "id": "editar-reserva;validar-inclusão-de-nova-linha-de-valor-ao-ser-incluido-outra-acomodação",
-        "after": [
-          {
-            "result": {
-              "duration": 490822517,
-              "status": "passed"
-            },
-            "match": {
-              "location": "Common_StepDefinition.screenShot(Scenario)"
-            }
-          },
-          {
-            "result": {
-              "duration": 5817409054,
-              "status": "passed"
-            },
-            "match": {
-              "location": "Common_StepDefinition.tearDown()"
-            }
-          }
-        ],
+        "id": "cadastrar-um-pacote;deve-validar-a-cadastro-de-pacote",
         "type": "scenario",
         "keyword": "Cenário",
         "steps": [
           {
             "result": {
-              "duration": 3536946288,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "clicar no menu Buscar",
-            "match": {
-              "location": "Buscar.clicarNoMenuBuscar()"
-            },
-            "keyword": "Quando "
-          },
-          {
-            "result": {
-              "duration": 2317690,
-              "error_message": "cucumber.api.PendingException: TODO: implement me\r\n\tat br.com.RafaelaTrevizan.steps.Buscar.buscarUmaReserva(Buscar.java:34)\r\n\tat ✽.E buscar uma reserva(EditarReserva.feature:14)\r\n",
-              "status": "pending"
+              "status": "undefined"
             },
             "line": 14,
-            "name": "buscar uma reserva",
-            "match": {
-              "location": "Buscar.buscarUmaReserva()"
-            },
-            "keyword": "E "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 15,
-            "name": "a reserva buscada deverá ser exibida",
-            "match": {
-              "location": "Buscar.aReservaBuscadaDeveráSerExibida()"
-            },
-            "keyword": "Então "
-          },
-          {
-            "result": {
-              "status": "skipped"
-            },
-            "line": 16,
-            "name": "editar a reserva",
-            "match": {
-              "location": "Editar_Reserva.editarAReserva()"
-            },
+            "name": "clicar para adicionar um novo pacote",
+            "match": {},
             "keyword": "Quando "
           },
           {
             "result": {
-              "status": "skipped"
+              "status": "undefined"
             },
-            "line": 17,
-            "name": "adicionar uma nova acomodação",
-            "match": {
-              "location": "Editar_Reserva.adicionarUmaNovaAcomodação()"
-            },
+            "line": 15,
+            "name": "preencher todas as informações do pacote",
+            "match": {},
             "keyword": "E "
           },
           {
             "result": {
-              "status": "skipped"
+              "status": "undefined"
             },
-            "line": 18,
-            "name": "uma nova linha de valores deverá ser exibida",
-            "match": {
-              "location": "Editar_Reserva.umaNovaLinhaDeValoresDeveráSerExibida()"
-            },
+            "line": 16,
+            "name": "o pacote deverá ser cadastrado com sucesso",
+            "match": {},
             "keyword": "Então "
+          }
+        ],
+        "tags": [
+          {
+            "line": 12,
+            "name": "@cadastroPacote"
           }
         ]
       }
     ],
-    "name": "Editar reserva",
-    "description": "Eu como Operador\r\nQuero entrar no Portal \r\nPara editar uma reserva",
-    "id": "editar-reserva",
+    "name": "Cadastrar um pacote",
+    "description": "Eu como Operador\r\nQuero entrar no Portal \r\nPara fazer um cadastro de pacote",
+    "id": "cadastrar-um-pacote",
     "keyword": "Funcionalidade",
-    "uri": "EditarReserva.feature",
+    "uri": "Produtos_Pacotes.feature",
     "tags": [
       {
-        "line": 2,
-        "name": "@editarReserva"
+        "line": 3,
+        "name": "@pacotes"
       }
     ]
   }

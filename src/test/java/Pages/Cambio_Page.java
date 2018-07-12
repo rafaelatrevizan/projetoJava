@@ -1,5 +1,7 @@
 package Pages;
 
+import java.util.List;
+
 import org.easetech.easytest.runner.DataDrivenTestRunner;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
@@ -13,6 +15,7 @@ import com.github.javafaker.Faker;
 
 public class Cambio_Page extends Base_Page {
 	private Faker faker = new Faker();
+//	private List<WebElement> moedas = nav.findElements(By.xpath("//li[text() = \"Peso chileno(CLP)\"]"));
 
 	public Cambio_Page(WebDriver nav) {
 		super(nav);
@@ -35,20 +38,13 @@ public class Cambio_Page extends Base_Page {
 		// //li[text() = "LIBRA ESTERLINA(GBP)"]
 		// //li[text() = "Peso chileno(CLP)"]
 
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException ex) {
-		}
-		nav.findElement(By.xpath(
-				"//form[@id  = \"frmCambioEdit\"]/div/div/div/label[text() = \"Moeda\"]/following-sibling::div/div/span"))
-				.click();
+		try {Thread.sleep(2000);} catch (InterruptedException ex) {}
+		nav.findElement(By.xpath("//label[text() = \"Moeda\"]/following-sibling::div/div[3]/span")).click();
+		try {Thread.sleep(2000);} catch (InterruptedException ex) {}
 
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException ex) {
-		}
-
-		nav.findElement(By.xpath("//li[text() = \"Peso chileno(CLP)\"]")).click();
+		List<WebElement> moedas = nav.findElements(By.xpath("//li[text() = \"Peso chileno(CLP)\"]"));
+		moedas.get(0).click();
+		
 		return this;
 	}
 
@@ -62,20 +58,12 @@ public class Cambio_Page extends Base_Page {
 		// //li[text() = "LIBRA ESTERLINA(GBP)"]
 		// //li[text() = "Peso chileno(CLP)"]
 
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException ex) {
-		}
-		nav.findElement(By.xpath(
-				"//form[@id  = \"frmCambioEdit\"]/div/div/div/label[text() = \"Cambio\"]/following-sibling::div/div/span"))
-				.click();
-
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException ex) {
-		}
-
-		nav.findElement(By.xpath("//li[text() = \"Peso chileno(CLP)\"]")).click();
+		try {Thread.sleep(2000);} catch (InterruptedException ex) {}
+		nav.findElement(By.xpath("//label[text() = \"Cambio\"]/following-sibling::div/div[3]/span")).click();		
+		try {Thread.sleep(2000);} catch (InterruptedException ex) {}
+		
+		List<WebElement> moedas = nav.findElements(By.xpath("//li[text() = \"REAL(BRL)\"]"));
+		moedas.get(1).click();
 		return this;
 	}
 

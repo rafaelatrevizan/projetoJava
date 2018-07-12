@@ -29,7 +29,7 @@ public class Cambio extends AbstractPage {
 	@Quando("^preencher todas as informações do Cambio$")
 	public void preencherTodasAsInformaçõesDoCambio() throws Throwable {
 		cambio.chooseMoeda();
-//		cambio.chooseCambio();
+		cambio.chooseCambio();
 		cambio.fillValor("300");
 		cambio.fillTaxa("300");
 	}

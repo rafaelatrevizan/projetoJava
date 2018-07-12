@@ -53,7 +53,7 @@ public class Reserva_Aereo extends AbstractPage {
 		aereo.fillDates(arg1, arg2);
 	}
 	
-	@Quando("^clicar no botão pesquisar para selecionar uma passagem$")
+	@Quando("^clicar no botão pesquisar passagem$")
 	public void clicarNoBotãoPesquisarParaSelecionarUmaPassagem() throws Throwable {
 	    aereo.clickPesquisar();
 	}

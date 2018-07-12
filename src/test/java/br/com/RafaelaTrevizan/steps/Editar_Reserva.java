@@ -28,14 +28,21 @@ public class Editar_Reserva extends AbstractPage{
 
 	@Quando("^adicionar uma nova acomodação$")
 	public void adicionarUmaNovaAcomodação() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		editar.addAcomodacao("Acomodação Automação", 
+								"Teste", 
+								"Café da manhã", 
+								"20/07/2018", 
+								"30/07/2018", 
+								"Teste", 
+								"Automação");
+	    editar.selectDocument("62016766867");
+	    editar.fillDataNasc("20/09/1992");
+	    editar.saveAcomodacao();
 	}
 
 	@Então("^uma nova linha de valores deverá ser exibida$")
 	public void umaNovaLinhaDeValoresDeveráSerExibida() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+	    editar.checkValores();
 	}
 
 }

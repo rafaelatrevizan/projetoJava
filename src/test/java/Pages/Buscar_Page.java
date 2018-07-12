@@ -22,6 +22,7 @@ public class Buscar_Page extends Base_Page {
 
 	public Buscar_Page fillId(String id) {
 		frame.swithFrame(0);
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		WebElement bla = nav.findElement(By.id("idPesquisa"));
 		bla.sendKeys(id);
 		idNumber = id;

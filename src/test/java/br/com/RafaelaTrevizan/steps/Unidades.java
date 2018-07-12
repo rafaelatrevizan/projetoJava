@@ -39,7 +39,7 @@ public class Unidades extends AbstractPage {
 	@Quando("^preencher todas as informaçõesda unidade$")
 	public void preencherTodasAsInformaçõesdaUnidade() throws Throwable {
 		unidade.fillNames("Automação teste rafa Unidade", "Automação");
-		unidade.fillCNPJ("66.270.588/0001-01");
+		unidade.fillCNPJ("40.548.330/0001-30");
 		unidade.Telefones("1111111111");
 		unidade.fillEmail();
 		unidade.fillCep("85870180");
@@ -48,6 +48,7 @@ public class Unidades extends AbstractPage {
 	@Então("^a unidade deverá ser cadastrado com sucesso$")
 	public void aUnidadeDeveráSerCadastradoComSucesso() throws Throwable {
 		unidade.clickSalvar();
+//		unidade.checkUnidadeName();
 	}
 
 	// VALIDAR CAMPOS OBRIGATÓRIOS

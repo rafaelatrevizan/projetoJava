@@ -34,7 +34,8 @@ public class Produto_Hotel_Facilidades extends AbstractPage{
 	@Então("^a facilidade deverá ser cadastrada com sucesso$")
 	public void aFacilidadeDeveráSerCadastradaComSucesso() throws Throwable {
 	    facil.salvaritem();
-	    facil.salvarFacil();    
+	    facil.salvarFacil();   
+//	    facil.checkFacil();
 	    
 	}
 

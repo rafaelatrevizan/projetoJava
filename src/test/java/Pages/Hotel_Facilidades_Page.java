@@ -10,7 +10,7 @@ import junit.framework.Assert;
 
 public class Hotel_Facilidades_Page extends Base_Page {
 	private String nomefacil;
-
+	
 	public Hotel_Facilidades_Page(WebDriver nav) {
 		super(nav);		
 	}
@@ -45,12 +45,13 @@ public class Hotel_Facilidades_Page extends Base_Page {
 	
 	
 	public Hotel_Facilidades_Page salvarFacil() {
-//			String bla;
-//			int cont = 0;
-		
 		try {Thread.sleep(2000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//span[text() = \"Salvar\"]")).click();
 		
+		return this;
+	}
+	
+//	public Hotel_Facilidades_Page checkFacil() {
 //		try {Thread.sleep(2000);} catch (InterruptedException ex) {}
 //		java.util.List<WebElement> list = nav.findElements(By.xpath("//li[@role = \"tab\"]"));
 //		String bla = list.get(1).getText();
@@ -58,15 +59,17 @@ public class Hotel_Facilidades_Page extends Base_Page {
 //		
 //		for (WebElement element: list) {
 //		      System.out.println(element.getText());
-//		      String lista = element.getText();
-//			if (lista.contains(nomefacil)) {
-//				System.out.println("Existe");
-//			} else {
-//				System.out.println("Não Existe");
-//				throw new RuntimeException();
-//				} 
-//			}
-	
-		return this;
-	}
+//		      String lala = element.getText();
+//		      lala.contains(nomefacil);
+//		}
+////			if (lista.contains(nomefacil)) {
+////				System.out.println("Existe");
+////			} else {
+////				System.out.println("Não Existe");
+////				throw new RuntimeException();
+////				} 
+////			}
+//		
+//		return this;
+//	}
 }
