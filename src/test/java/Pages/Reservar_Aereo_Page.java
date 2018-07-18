@@ -19,6 +19,7 @@ import org.openqa.selenium.WebElement;
 
 public class Reservar_Aereo_Page extends Base_Page {
 
+
 	public Reservar_Aereo_Page(WebDriver nav) {
 		super(nav);		
 	}
@@ -59,9 +60,15 @@ public class Reservar_Aereo_Page extends Base_Page {
 	}
 	
 	public Reservar_Aereo_Page clickPesquisar () {
-		try {Thread.sleep(1000);} catch (InterruptedException ex) {}		
-		nav.findElement(By.xpath("//form[@id = \"frmMotorAereo\"]/div/div/div/div[3]/button")).click();
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}	
+		nav.findElement(By.xpath("//div[@id = \"pnlMotorAereo\"]/div/div/div/button/span[2]")).click();
 		return this;
+	}
+	
+	public Reserva_Aereo_Cliente_Page selectAereo() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}		
+		nav.findElement(By.xpath("//span[@id = \"pnlResultadoAereo\"]/div/div[2]/div/div/button/span[2]")).click();
+		return new Reserva_Aereo_Cliente_Page(nav);
 	}
 	
 //	public Reservar_Aereo_Page comboQtClientes () {

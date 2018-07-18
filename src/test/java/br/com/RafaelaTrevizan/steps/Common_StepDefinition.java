@@ -13,6 +13,7 @@ import org.junit.runner.notification.Failure;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import Pages.Common_Page;
 import cucumber.api.Scenario;
@@ -30,6 +31,10 @@ public class Common_StepDefinition extends AbstractPage {
 	@Before
 	public void setUp() {
 		
+		if (nav == null) {
+			nav = new ChromeDriver();
+	    }
+	
 		nav.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 //		WebDriverWait wait = new WebDriverWait(nav,10);
 		nav.manage().window().maximize();
@@ -59,13 +64,9 @@ public class Common_StepDefinition extends AbstractPage {
 
 	@After(order = 0)
 	public void tearDown() {
-
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException ex) {
-		}
-
-		nav.quit();
+		try {Thread.sleep(5000);} catch (InterruptedException ex) {}		
+	    nav.quit();	  
+	    nav = null;
 	}
 
 }

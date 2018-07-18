@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import Pages.Cadastro_Cliente_Page;
 import Pages.Home_Page;
 import Pages.Unidades_Page;
+import Suporte.GeraCpfCnpj;
 import cucumber.api.PendingException;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
@@ -20,6 +21,7 @@ public class Unidades extends AbstractPage {
 	Home_Page home = new Home_Page(nav);
 	Unidades_Page unidade = new Unidades_Page(nav);
 	Cadastro_Cliente_Page cliente = new Cadastro_Cliente_Page(nav);
+	
 
 	// FEATURE: UNIDADES
 	
@@ -39,7 +41,7 @@ public class Unidades extends AbstractPage {
 	@Quando("^preencher todas as informaçõesda unidade$")
 	public void preencherTodasAsInformaçõesdaUnidade() throws Throwable {
 		unidade.fillNames("Automação teste rafa Unidade", "Automação");
-		unidade.fillCNPJ("40.548.330/0001-30");
+		unidade.fillCNPJ();		
 		unidade.Telefones("1111111111");
 		unidade.fillEmail();
 		unidade.fillCep("85870180");

@@ -1,6 +1,6 @@
 #language: pt
 
-@produtos
+@produtosHotel
 Funcionalidade: Cadastrar um hotel
 Eu como Operador
 Quero entrar no Portal 

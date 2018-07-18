@@ -1,5 +1,7 @@
 package br.com.RafaelaTrevizan.steps;
 
+import java.util.concurrent.TimeUnit;
+
 import org.easetech.easytest.runner.DataDrivenTestRunner;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
@@ -24,6 +26,7 @@ public class Reserva_Aereo extends AbstractPage {
 	Home_Page home = new Home_Page(nav);
 	Reserva_Aereo_Cliente_Page aereoCliente = new Reserva_Aereo_Cliente_Page(nav);
 	Comprovante_Page comp = new Comprovante_Page(nav);
+	
 
 	// FEATURE: RESERVAR AEREO
 
@@ -60,8 +63,9 @@ public class Reserva_Aereo extends AbstractPage {
 
 	@Quando("^selecionar a passagem$")
 	public void selecionarAPassagem() throws Throwable {
-		try {Thread.sleep(2000);} catch (InterruptedException ex) {}
-		nav.findElement(By.xpath("//span[text() = \"Reservar\"]")).click();
+		nav.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+		aereo.selectAereo();
 	}
 
 

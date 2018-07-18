@@ -9,11 +9,13 @@ import org.openqa.selenium.WebElement;
 
 import com.github.javafaker.Faker;
 
+import Suporte.GeraCpfCnpj;
 import junit.framework.Assert;
 
 public class Reserva_Hotel_Cliente_Page extends Base_Page {
 	private Faker faker = new Faker();
-
+	private GeraCpfCnpj gerador = new GeraCpfCnpj();
+	
 	public Reserva_Hotel_Cliente_Page(WebDriver nav) {
 		super(nav);
 	}
@@ -58,7 +60,7 @@ public class Reserva_Hotel_Cliente_Page extends Base_Page {
 		return this;
 	}
 
-	public Reserva_Hotel_Cliente_Page fillDocument(String documento) {
+	public Reserva_Hotel_Cliente_Page fillDocument() {
 
 		nav.findElement(By.xpath(
 				"//label[contains (@id, \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:0\") and text() = \"Documento\"]/following-sibling::div/div[@class = \"ui-selectonemenu-trigger ui-state-default ui-corner-right\"]"))
@@ -71,26 +73,29 @@ public class Reserva_Hotel_Cliente_Page extends Base_Page {
 		// WebElement tipoDoc = nav.findElement(By.xpath("//select[@id =
 		// \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:0:idDocumentoTipo_input\"]"));
 		// new Select(tipoDoc).selectByVisibleText(tipo);
+		
+		String cpf = gerador.cpf(true);
+//		System.out.printf("CPF: %s, Valido: %s\n", cpf, gerador.isCPF(cpf));
+
 		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		WebElement docPessoa1 = nav
 				.findElement(By.xpath("//input[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:0:idNrDocumento\"]"));
-		docPessoa1.sendKeys(documento);
+		docPessoa1.sendKeys(cpf);
 		
 		return this;
 	}
 
 	
-	public Reserva_Hotel_Cliente_Page fillDocument1(String documento1) {
+	public Reserva_Hotel_Cliente_Page fillDocument1() {
 	
-		nav.findElement(By.xpath(
-				"//label[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:1:idDocumentoTipo_label\"]/following-sibling::div"))
-				.click();
-		nav.findElement(By.xpath("//li[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:1:idDocumentoTipo_1\"]"))
-				.click();
+		nav.findElement(By.xpath("//label[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:1:idDocumentoTipo_label\"]/following-sibling::div")).click();
+		nav.findElement(By.xpath("//li[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:1:idDocumentoTipo_1\"]")).click();
 		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
-		WebElement docPessoa2 = nav
-				.findElement(By.xpath("//input[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:1:idNrDocumento\"]"));
-		docPessoa2.sendKeys(documento1);
+		
+		String cpf2 = gerador.cpf(true);
+		
+		WebElement docPessoa2 = nav.findElement(By.xpath("//input[@id = \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:1:idNrDocumento\"]"));
+		docPessoa2.sendKeys(cpf2);
 		return this;
 	}
 	public Reserva_Hotel_Cliente_Page fillSexo1() {

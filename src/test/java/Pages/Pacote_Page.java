@@ -23,9 +23,9 @@ public class Pacote_Page extends Base_Page {
 		return this;
 	}
 	
-	public Pacote_Page addTarifario() {
-		try {Thread.sleep(2000);} catch (InterruptedException ex) {}
-		nav.findElement(By.xpath("//a[@title = \"Adicionar tarifa\"]")).click();
+	public Pacote_Page addPacote() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		nav.findElement(By.xpath("//span[text() = \"Adicionar\"]")).click();
 		return this;
 	}
 	

@@ -53,6 +53,13 @@ public class Home_Page extends Base_Page {
 		return new Cadastro_TextoEmail_Page(nav);
 	}
 	
+	public Pacote_Page clickMenuPacotes() {
+		nav.findElement(By.id("menuform:sm_leftmenu_5")).click();
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		nav.findElement(By.id("menuform:sm_leftmenu_5_5")).click();
+		return new Pacote_Page(nav);
+	}
+	
 	public Buscar_Page clickMenuBuscar() {
 		nav.findElement(By.id("layout-menubar-resize")).click();
 		try {Thread.sleep(1000);} catch (InterruptedException ex) {}

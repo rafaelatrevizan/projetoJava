@@ -6,10 +6,10 @@
         "value": "#language: pt"
       }
     ],
-    "line": 4,
+    "line": 3,
     "elements": [
       {
-        "line": 9,
+        "line": 8,
         "name": "",
         "description": "",
         "type": "background",
@@ -17,9 +17,10 @@
         "steps": [
           {
             "result": {
-              "status": "skipped"
+              "duration": 3450279945,
+              "status": "passed"
             },
-            "line": 10,
+            "line": 9,
             "name": "que esteja na home",
             "match": {
               "location": "Common_StepDefinition.queEstejaNaHomeDoPortal()"
@@ -29,58 +30,189 @@
         ]
       },
       {
-        "line": 13,
-        "name": "Deve validar a cadastro de pacote",
+        "before": [
+          {
+            "result": {
+              "duration": 8645235373,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Common_StepDefinition.setUp()"
+            }
+          }
+        ],
+        "line": 37,
+        "name": "Deve validar a reserva de aereo",
         "description": "",
-        "id": "cadastrar-um-pacote;deve-validar-a-cadastro-de-pacote",
+        "id": "reservar;deve-validar-a-reserva-de-aereo;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 510636962,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Common_StepDefinition.screenShot(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 5799353294,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Common_StepDefinition.tearDown()"
+            }
+          }
+        ],
         "type": "scenario",
-        "keyword": "Cenário",
+        "keyword": "Esquema do Cenário",
         "steps": [
           {
             "result": {
-              "status": "undefined"
+              "duration": 771562201,
+              "status": "passed"
             },
-            "line": 14,
-            "name": "clicar para adicionar um novo pacote",
-            "match": {},
+            "line": 26,
+            "name": "clicar no menu Reserva",
+            "match": {
+              "location": "Reserva_Aereo.clicarNoMenuReserva()"
+            },
             "keyword": "Quando "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 2340970808,
+              "status": "passed"
             },
-            "line": 15,
-            "name": "preencher todas as informações do pacote",
-            "match": {},
+            "line": 27,
+            "name": "escolher a aba Passagens",
+            "match": {
+              "location": "Reserva_Aereo.escolherAAbaPassagens()"
+            },
             "keyword": "E "
           },
           {
             "result": {
-              "status": "undefined"
+              "duration": 4195117829,
+              "status": "passed"
             },
-            "line": 16,
-            "name": "o pacote deverá ser cadastrado com sucesso",
-            "match": {},
+            "line": 28,
+            "name": "preencher o campo \"São\" e \"Caldas\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "São",
+                  "offset": 19
+                },
+                {
+                  "val": "Caldas",
+                  "offset": 27
+                }
+              ],
+              "location": "Reserva_Aereo.preencherOCampoE(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 1799394951,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "preencher as datas de \"18072018\" e \"20072018\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "18072018",
+                  "offset": 23
+                },
+                {
+                  "val": "20072018",
+                  "offset": 36
+                }
+              ],
+              "location": "Reserva_Aereo.preencherAsDatasDeE(String,String)"
+            },
+            "matchedColumns": [
+              2,
+              3
+            ],
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 1217856983,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "clicar no botão pesquisar passagem",
+            "match": {
+              "location": "Reserva_Aereo.clicarNoBotãoPesquisarParaSelecionarUmaPassagem()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 4917015516,
+              "error_message": "org.openqa.selenium.WebDriverException: unknown error: Element \u003cspan class\u003d\"ui-button-icon-left ui-icon ui-c fa fa-check white Fs16\"\u003e\u003c/span\u003e is not clickable at point (1458, 273). Other element would receive the click: \u003cdiv id\u003d\"j_idt23_blocker\" class\u003d\"ui-blockui ui-widget-overlay ui-helper-hidden ui-corner-all\" style\u003d\"z-index: 1006; display: block; opacity: 0.269242;\"\u003e\u003c/div\u003e\n  (Session info: chrome\u003d67.0.3396.99)\n  (Driver info: chromedriver\u003d2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform\u003dWindows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nBuild info: version: \u00273.12.0\u0027, revision: \u00277c6e0b3\u0027, time: \u00272018-05-08T14:04:26.12Z\u0027\nSystem info: host: \u0027DESKTOP-F8BMU42\u0027, ip: \u0027192.168.15.26\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_171\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.35.528161 (5b82f2d2aae0ca..., userDataDir: C:\\Users\\Laercio\\AppData\\Lo...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 67.0.3396.99, webStorageEnabled: true}\nSession ID: 3382dbd446ae100de6e82aabffb62387\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)\r\n\tat Pages.Reservar_Aereo_Page.selectAereo(Reservar_Aereo_Page.java:71)\r\n\tat br.com.RafaelaTrevizan.steps.Reserva_Aereo.selecionarAPassagem(Reserva_Aereo.java:68)\r\n\tat ✽.E selecionar a passagem(Reservar.feature:31)\r\n",
+              "status": "failed"
+            },
+            "line": 31,
+            "name": "selecionar a passagem",
+            "match": {
+              "location": "Reserva_Aereo.selecionarAPassagem()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 32,
+            "name": "os campos para reserva de passagens devem ser preenchidos",
+            "match": {
+              "location": "Reserva_Aereo.osCamposParaReservaDePassagensDevemSerPreenchidos()"
+            },
             "keyword": "Então "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 33,
+            "name": "a reserva da passagem deverá ser feita com sucesso",
+            "match": {
+              "location": "Reserva_Aereo.aReservaDaPassagemDeveráSerFeitaComSucesso()"
+            },
+            "keyword": "E "
           }
         ],
         "tags": [
           {
-            "line": 12,
-            "name": "@cadastroPacote"
+            "line": 2,
+            "name": "@reservar"
+          },
+          {
+            "line": 24,
+            "name": "@reservaaereo"
           }
         ]
       }
     ],
-    "name": "Cadastrar um pacote",
-    "description": "Eu como Operador\r\nQuero entrar no Portal \r\nPara fazer um cadastro de pacote",
-    "id": "cadastrar-um-pacote",
+    "name": "Reservar",
+    "description": "Eu como Operador\r\nQuero entrar no Portal \r\nPara fazer uma reserva",
+    "id": "reservar",
     "keyword": "Funcionalidade",
-    "uri": "Produtos_Pacotes.feature",
+    "uri": "Reservar.feature",
     "tags": [
       {
-        "line": 3,
-        "name": "@pacotes"
+        "line": 2,
+        "name": "@reservar"
       }
     ]
   }

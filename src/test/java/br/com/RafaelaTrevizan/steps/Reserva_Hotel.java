@@ -55,12 +55,12 @@ public class Reserva_Hotel extends AbstractPage{
 		    Reserva_Hotel_Cliente_Page clientes = new Reserva_Hotel_Cliente_Page(nav);
 		     		
 		    clientes.fillNames1();	   
-		    clientes.fillDocument("81627258736");    
+		    clientes.fillDocument();    
 		    clientes.fillSexo1();	    
 		    clientes.fillDate1();
 		    
 		    clientes.fillNames2();
-		    clientes.fillDocument1("32040476601");
+		    clientes.fillDocument1();
 		    clientes.fillSexo2();
 		    clientes.fillDate2();
 		    

@@ -12,10 +12,10 @@ import cucumber.api.junit.Cucumber;
 		glue = "br.com.RafaelaTrevizan.steps",
 		plugin = {"pretty", "html:target/report-html", "json:target/report-json"},
 		monochrome = false,		
-		dryRun = true,
+		dryRun = false,
 		strict = false,
 		snippets = SnippetType.CAMELCASE,
-		tags = {"@cadastroPacote"}
+		tags = {"@reservaaereo"}
 		)
 
 public class RunnerTest {}

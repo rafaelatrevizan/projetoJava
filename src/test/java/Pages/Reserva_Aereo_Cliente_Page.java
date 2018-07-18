@@ -9,10 +9,13 @@ import org.openqa.selenium.WebElement;
 
 import com.github.javafaker.Faker;
 
+import Suporte.GeraCpfCnpj;
 import junit.framework.Assert;
 
 public class Reserva_Aereo_Cliente_Page extends Base_Page {
 	private Faker faker = new Faker();
+	private GeraCpfCnpj gerador = new GeraCpfCnpj();
+
 
 	public Reserva_Aereo_Cliente_Page(WebDriver nav) {
 		super(nav);
@@ -67,9 +70,10 @@ public class Reserva_Aereo_Cliente_Page extends Base_Page {
 		// WebElement tipoDoc = nav.findElement(By.xpath("//select[@id =
 		// \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:0:idDocumentoTipo_input\"]"));
 		// new Select(tipoDoc).selectByVisibleText(tipo);
+		String cpf = gerador.cpf(true);
 
 		WebElement docPessoa1 = nav.findElement(By.xpath("//input[contains(@id, \"idNrDocumento\")]"));
-		docPessoa1.sendKeys(documento);
+		docPessoa1.sendKeys(cpf);
 		
 		return this;
 	}

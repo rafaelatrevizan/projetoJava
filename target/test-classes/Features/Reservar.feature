@@ -19,7 +19,7 @@ E a reserva deverá ser feita com sucesso
 
 Exemplos:
 |destino				|entrada		|saida	 |
-|Caldas novas 	|11072018		|20072018|
+|Caldas novas 	|18072018		|20072018|
 
 @reservaaereo
 Esquema do Cenário: Deve validar a reserva de aereo
@@ -34,5 +34,5 @@ E a reserva da passagem deverá ser feita com sucesso
 
 Exemplos:
 |origem		 |destino		|entrada		|saida	 |
-|São  |Caldas  	|15072018		|20072018|
+|São  |Caldas  	|18072018		|20072018|
 

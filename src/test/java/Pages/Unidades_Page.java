@@ -10,11 +10,15 @@ import org.openqa.selenium.WebElement;
 
 import com.github.javafaker.Faker;
 
+import Suporte.GeraCpfCnpj;
+
 @RunWith(DataDrivenTestRunner.class)
 
 public class Unidades_Page extends Base_Page {
 	
 	private Faker faker = new Faker();
+	private GeraCpfCnpj gerador = new GeraCpfCnpj(); 
+	
 	private String nameUnidade;
 
 	public Unidades_Page(WebDriver nav) {
@@ -58,9 +62,14 @@ public class Unidades_Page extends Base_Page {
 		return this;
 	}
 
-	public Unidades_Page fillCNPJ(String numberCnpj) {
+	public Unidades_Page fillCNPJ() {		
+		String cnpj = gerador.cnpj(true);
+//		String numberCnpj = cnpj;
+		
 		WebElement webelement = nav.findElement(By.id("idNrCnpj"));
-		webelement.sendKeys(numberCnpj);
+		webelement.sendKeys(cnpj);		
+		
+//		System.out.printf("CPF: %s, Valido: %s\n", cnpj, gerador.isCNPJ(cnpj));
 
 		return this;
 	}

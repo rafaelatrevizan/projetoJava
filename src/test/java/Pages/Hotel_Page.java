@@ -133,10 +133,12 @@ public class Hotel_Page extends Base_Page {
 		return this;
 	}
 
-	public Hotel_Page fillEndereco(String cep, String rua, String local) {
+	public Hotel_Page fillEndereco(String rua, String local) {
 		// PREENCHER O CEP
 		// String cepp = faker.address().zipCode();
-		nav.findElement(By.id("idCep")).sendKeys(cep);
+		
+		String lala = faker.address().zipCode();
+		nav.findElement(By.id("idCep")).sendKeys(lala);		
 
 		// PREENCHER A RUA
 		// String rua = faker.address().streetAddress();
