@@ -30,11 +30,6 @@ public class Common_StepDefinition extends AbstractPage {
 
 	@Before
 	public void setUp() {
-		
-		if (nav == null) {
-			nav = new ChromeDriver();
-	    }
-	
 		nav.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 //		WebDriverWait wait = new WebDriverWait(nav,10);
 		nav.manage().window().maximize();
