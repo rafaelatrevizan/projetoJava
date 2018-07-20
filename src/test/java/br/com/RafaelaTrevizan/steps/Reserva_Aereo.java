@@ -63,8 +63,7 @@ public class Reserva_Aereo extends AbstractPage {
 
 	@Quando("^selecionar a passagem$")
 	public void selecionarAPassagem() throws Throwable {
-		nav.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
+		aereo.getValorBusca();
 		aereo.selectAereo();
 	}
 
@@ -77,12 +76,16 @@ public class Reserva_Aereo extends AbstractPage {
 		aereoCliente.fillDate1();
 //		aereoCliente.politica();
 		aereoCliente.dadosDoCliente();
+		aereo.getValorReserva();
 	}
 
 	@Então("^a reserva da passagem deverá ser feita com sucesso$")
 	public void aReservaDaPassagemDeveráSerFeitaComSucesso() throws Throwable {
-		aereoCliente.clickReservar();		
+		aereoCliente.clickReservar();	
+		aereo.getValorComprovante();
 		comp.idReserva();
+//		frame.swithFrame(5);
+		aereo.compararValores();
 	}
 
 }

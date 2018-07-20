@@ -63,18 +63,18 @@ public class Reserva_Aereo_Cliente_Page extends Base_Page {
 //	}
 
 	public Reserva_Aereo_Cliente_Page fillDocument(String documento) {
-
-		nav.findElement(By.xpath("//label[contains(@id, \"idDocumentoTipo_label\")]/following-sibling::div")).click();
-		nav.findElement(By.xpath("//li[contains(@id, \"idDocumentoTipo_2\")]")).click();
+		//idDocumentoTipo_0 	= RG
+		//idDocumentoTipo_1 	=  CPF
+		//;idDocumentoTipo_2 	= Passaporte
+		//idDocumentoTipo_3 	= CNH
 		
-		// WebElement tipoDoc = nav.findElement(By.xpath("//select[@id =
-		// \"frmNomeEdit:hotel:0:quarto:0:pnlNome:nome:0:idDocumentoTipo_input\"]"));
-		// new Select(tipoDoc).selectByVisibleText(tipo);
-		String cpf = gerador.cpf(true);
-
+//		nav.findElement(By.xpath("//label[contains(@id, \"idDocumentoTipo_label\")]/following-sibling::div")).click();
+//		nav.findElement(By.xpath("//li[contains(@id, \"idDocumentoTipo_1\")]")).click();
 		WebElement docPessoa1 = nav.findElement(By.xpath("//input[contains(@id, \"idNrDocumento\")]"));
-		docPessoa1.sendKeys(cpf);
-		
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		String cpf = gerador.cpf(true);
+		docPessoa1.click();		
+		docPessoa1.sendKeys(cpf);		
 		return this;
 	}
 

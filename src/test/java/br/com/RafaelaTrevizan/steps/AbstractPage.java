@@ -7,7 +7,7 @@ public class AbstractPage {
 	
 	protected static WebDriver nav;
 	
-	protected WebDriver getDriver() {
+	protected static WebDriver getDriver() {
 		
 		if(nav == null) {
 			nav = new ChromeDriver();

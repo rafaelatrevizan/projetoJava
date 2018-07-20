@@ -33,6 +33,6 @@ Então os campos para reserva de passagens devem ser preenchidos
 E a reserva da passagem deverá ser feita com sucesso
 
 Exemplos:
-|origem		 |destino		|entrada		|saida	 |
-|São  |Caldas  	|18072018		|20072018|
+|origem		 |destino		|entrada				|saida	 |
+|Sao  		 |Natal 		| 20/08/2018		| 22/08/2018|
 

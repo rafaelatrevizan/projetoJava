@@ -22,15 +22,28 @@ Quando clicar para adicionar uma nova Unidade
 E não preencher os campos obrigatórios
 Então ao salvar os campos deverão ser exibidos em um popup
 
-@desativarUnidade
-Cenário: Deve validar unidade desativada
+@ativarDesativarUnidade
+Esquema do Cenário: Deve validar status da unidade
 Quando pesquisar uma unidade
-E desativar a unidade selecionada
-Então na coluna Ativo de unidade deverá ser exibido Não
+E <status> a unidade selecionada
+Então na coluna Ativo de unidade deverá ser exibido <opcao>
 
-@ativarUnidade
-Cenário: Deve validar unidade ativado
-Quando pesquisar uma unidade
-E ativar a unidade selecionada
-Então na coluna Ativo de unidade deverá ser exibido Sim
+
+Exemplos:
+|status			|opcao	|	  
+|desativar	|Não		|
+|ativar			|Sim	  |
+
+
+#@desativarUnidade
+#Cenário: Deve validar unidade desativada
+#Quando pesquisar uma unidade
+#E desativar a unidade selecionada
+#Então na coluna Ativo de unidade deverá ser exibido Não
+#
+#@ativarUnidade
+#Cenário: Deve validar unidade ativado
+#Quando pesquisar uma unidade
+#E ativar a unidade selecionada
+#Então na coluna Ativo de unidade deverá ser exibido Sim
 
