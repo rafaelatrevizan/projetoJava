@@ -33,7 +33,7 @@ public class Produto_Hotel extends AbstractPage {
 	@Quando("^preencher todas as informações$")
 	public void preencherTodasAsInformações() throws Throwable {
 		Hotel_Page hotel = new Hotel_Page(nav);
-		hotel.fillInformations("Automação rafa teste");
+		hotel.fillInformations("HOTEL AUTOMAÇÃO RAFAELA");
 		hotel.fillStar();
 		// hotel.fillActive();
 		// hotel.fillCoin();
@@ -44,8 +44,10 @@ public class Produto_Hotel extends AbstractPage {
 		hotel.fillEmail();
 		hotel.fillEndereco("Rua teste", "Caldas Novas");
 		hotel.localizacoes("Caldas Novas");
+		hotel.localizacoes("Rio de Janeiro");
+		hotel.localizacoes("Natal");
 		frame.swithFrame(0);
-		hotel.fillDescription("Automação rafa teste");
+		hotel.fillDescription("HOTEL AUOTMAÇÃO RAFAELA");
 
 	}
 

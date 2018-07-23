@@ -11,7 +11,15 @@ public class AbstractPage {
 		
 		if(nav == null) {
 			nav = new ChromeDriver();
+		}else {
+			
+			boolean hasQuit = nav.toString().contains("(null)");
+			if (hasQuit) {
+				nav = new ChromeDriver();
+				
+			}
 		}
+	
 		return nav;
 	}
 

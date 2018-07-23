@@ -15,7 +15,7 @@ import java.io.IOException;
 
 public class Comprovante_Page extends Base_Page {
 	
-	private static final String FILE_NAME = "C:\\Users\\Laercio\\Documents\\Automação\\Infotera\\target\\Teste.xlsx";
+	private static final String FILE_NAME = "C:\\Users\\Laercio\\Documents\\Automação\\Infotera\\target\\Reservas.xlsx";
 
 	public Comprovante_Page(WebDriver nav) {
 		super(nav);

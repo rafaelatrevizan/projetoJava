@@ -17,42 +17,36 @@ public class Reserva_Hotel extends AbstractPage{
 	
 	WebDriver nav = getDriver();
 	
+	Home_Page home = new Home_Page(nav);
+	Reservar_Hotel_Page reservar = new Reservar_Hotel_Page(nav);
+    Reserva_Hotel_Cliente_Page clientes = new Reserva_Hotel_Cliente_Page(nav);
+	Comprovante_Page comp = new Comprovante_Page(nav);
 		
 	// FEATURE: RESERVAR
 
 		@Quando("^clicar no menu Reserva e preencher o campo \"([^\"]*)\"$")
-		public void clicarNoMenuReservaEPreencherOCampo(String arg1) throws Throwable {
-			Home_Page home = new Home_Page(nav);
-			Reservar_Hotel_Page reservar = new Reservar_Hotel_Page(nav);
-			
+		public void clicarNoMenuReservaEPreencherOCampo(String arg1) throws Throwable {			
 			home.clickMenuReservar();		
-			reservar.fillDestino(arg1);					
-			   
+			reservar.fillDestino(arg1);					   
 		}
 
 		@Quando("^preencher as datas \"([^\"]*)\" e \"([^\"]*)\"$")
 		public void preencherAsDatasE(String arg1, String arg2) throws Throwable {
-			Reservar_Hotel_Page reservar = new Reservar_Hotel_Page(nav);
-			reservar.fillDates(arg1, arg2);	
-		   
+			reservar.fillDates(arg1, arg2);			   
 		}
 
 		@Quando("^clicar no botão pesquisar$")
 		public void clicarNoBotãoPesquisar() throws Throwable {
-			Reservar_Hotel_Page reservar = new Reservar_Hotel_Page(nav);
 			reservar.clickPesquisar();
 			}
 
 		@Quando("^selecionar o hotel$")
 		public void selecionarOHotel() throws Throwable {
-			Reservar_Hotel_Page reservar = new Reservar_Hotel_Page(nav);
-			reservar.selectHotel();
-		
+			reservar.selectHotel();		
 		}
 
 		@Então("^os campos para reserva devem ser preenchidos$")
 		public void osCamposParaReservaDevemSerPreenchidos() throws Throwable {
-		    Reserva_Hotel_Cliente_Page clientes = new Reserva_Hotel_Cliente_Page(nav);
 		     		
 		    clientes.fillNames1();	   
 		    clientes.fillDocument();    
@@ -73,7 +67,6 @@ public class Reserva_Hotel extends AbstractPage{
 
 		@Então("^a reserva deverá ser feita com sucesso$")
 		public void aReservaDeveráSerFeitaComSucesso() throws Throwable {
-			Comprovante_Page comp = new Comprovante_Page(nav);
 			comp.idReserva();
 		}
 }

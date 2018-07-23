@@ -8,7 +8,7 @@ Para fazer uma reserva
 Contexto: 
 Dado que esteja na home
 
-@hotel
+@reservarHotel
 Esquema do Cenário: Deve validar a reserva de hotel
 Quando clicar no menu Reserva e preencher o campo "<destino>"
 E preencher as datas "<entrada>" e "<saida>"
@@ -19,9 +19,9 @@ E a reserva deverá ser feita com sucesso
 
 Exemplos:
 |destino				|entrada		|saida	 |
-|Caldas novas 	|18072018		|20072018|
+|Caldas novas 	|23072018		|25072018|
 
-@reservaaereo
+@reservaAereo
 Esquema do Cenário: Deve validar a reserva de aereo
 Quando clicar no menu Reserva 
 E escolher a aba Passagens
@@ -34,5 +34,5 @@ E a reserva da passagem deverá ser feita com sucesso
 
 Exemplos:
 |origem		 |destino		|entrada				|saida	 |
-|Sao  		 |Natal 		| 20/08/2018		| 22/08/2018|
+|Sao  		 |Rio 		| 01/08/2018		| 05/08/2018|
 

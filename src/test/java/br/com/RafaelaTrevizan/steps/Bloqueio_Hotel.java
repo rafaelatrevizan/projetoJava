@@ -32,8 +32,8 @@ public class Bloqueio_Hotel extends AbstractPage {
 	@Quando("^preencher todas as informações do bloqueio$")
 	public void preencherTodasAsInformaçõesDoBloqueio() throws Throwable {
 	    frame.swithFrame(0);
-	    bloq.periodo("02072018", "03072018");
-	    bloq.hotel("Automação teste");
+	    bloq.periodo("24072018", "01082018");
+	    bloq.hotel("AUTOMAÇÃO");
 	    bloq.buttonPesquisar();
 	    bloq.buttonEditar();
 	    bloq.selectQuantidade();

@@ -27,7 +27,8 @@ public class Reservar_Aereo_Page extends Base_Page {
 		super(nav);		
 	}
 	
-	public Reservar_Aereo_Page fillOrigem(String origem) {			
+	public Reservar_Aereo_Page fillOrigem(String origem) {	
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}	
 		WebElement webelement = nav.findElement(By.xpath("//input[contains(@id, \"rptTrajeto:0:idAeroOrigem_input\")]"));
 		webelement.click();
 		webelement.sendKeys(origem);
@@ -74,18 +75,21 @@ public class Reservar_Aereo_Page extends Base_Page {
 	}
 	
 	public Reservar_Aereo_Page getValorBusca() {
+		try {Thread.sleep(2000);} catch (InterruptedException ex) {}	
 		String valorBusca = nav.findElement(By.xpath("//span[@id = \"rptAereo:0:pnlPrecoAereo\"]/div/following-sibling::span[3]")).getText();
 		System.out.println(valorBusca);
 		return this;
 	}
 	
 	public Reservar_Aereo_Page getValorReserva() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}	
 		String valorReserva = nav.findElement(By.xpath("//div[@class = \"Fs12 TexAlRight\"]")).getText();
 		System.out.println(valorReserva);
 		return this;
 	}
 	
 	public Reservar_Aereo_Page getValorComprovante() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}	
 		List<WebElement>  valorComprovante = nav.findElements(By.xpath("//div[contains(text(), \"Total da compra\")]/span"));
 		valorComprovante.get(2).getText();
 		System.out.println(valorComprovante);

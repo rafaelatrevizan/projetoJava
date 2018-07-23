@@ -25,7 +25,8 @@ public class Reservar_Hotel_Page extends Base_Page {
 	
 	public Reservar_Hotel_Page fillDestino(String destino) {
 		nav.switchTo().frame(0);
-		nav.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+
 		WebElement webElement = nav.findElement(By.xpath("//input[contains(@id, \"frmMotorHotel:idDestinoHotel_input\")]"));
 		webElement.click();
 		webElement.sendKeys(destino);

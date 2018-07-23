@@ -25,8 +25,8 @@ public class Produto_Hotel_Facilidades extends AbstractPage{
 	
 	@Quando("^preencher todas as informações da facilidade$")
 	public void preencherTodasAsInformações() throws Throwable {
-		facil.fillName("Piscina");
-		facil.fillItens("Boias", "teste", "Para as crianças se divertirem");
+		facil.fillName("Rafaela");
+		facil.fillItens("Teste", "teste", "Para testar com automação");
 		
 		
 	}

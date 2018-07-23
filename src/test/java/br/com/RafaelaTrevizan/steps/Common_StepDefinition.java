@@ -3,18 +3,13 @@ package br.com.RafaelaTrevizan.steps;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
-
 import org.apache.commons.io.FileUtils;
 import org.easetech.easytest.runner.DataDrivenTestRunner;
-import org.junit.internal.runners.statements.Fail;
 import org.junit.runner.RunWith;
-import org.junit.runner.notification.Failure;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
 
 import Pages.Common_Page;
 import cucumber.api.Scenario;
@@ -26,18 +21,19 @@ import cucumber.api.java.pt.Dado;
 
 public class Common_StepDefinition extends AbstractPage {
 	WebDriver nav = getDriver();
+	Common_Page login = new Common_Page(nav);
 
 	@Before
-	public void setUp() {
-		nav.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	public void setUp() {		
+		nav = getDriver();
 		nav.manage().window().maximize();
-		nav.get("http://192.168.15.100:8082/infotravel/login.xhtml");
+		nav.get("http://192.168.15.100:8080/infotravel/login.xhtml");
 		System.out.println("Começando");
 	}
 
 	@Dado("^que esteja na home$")
 	public void queEstejaNaHomeDoPortal() throws Throwable {
-		Common_Page login = new Common_Page(nav);
+
 		login.doLogin("homo", "homolog", "123456");
 	}
 
@@ -51,12 +47,12 @@ public class Common_StepDefinition extends AbstractPage {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	@After(order = 0)
 	public void tearDown() {
-		nav.quit();		
+		System.out.println("Acabou");
+		nav.quit();
 	}
 
 }
