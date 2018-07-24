@@ -8,8 +8,7 @@ import org.openqa.selenium.WebDriver;
 import Pages.Cadastro_Cliente_Page;
 import Pages.Home_Page;
 import Pages.Unidades_Page;
-import Suporte.GeraCpfCnpj;
-import cucumber.api.PendingException;
+import Suporte.Frame;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
 
@@ -21,6 +20,7 @@ public class Unidades extends AbstractPage {
 	Home_Page home = new Home_Page(nav);
 	Unidades_Page unidade = new Unidades_Page(nav);
 	Cadastro_Cliente_Page cliente = new Cadastro_Cliente_Page(nav);
+	Frame frame = new Frame(nav);
 	
 
 	// FEATURE: UNIDADES
@@ -34,7 +34,7 @@ public class Unidades extends AbstractPage {
 	//CADASTRAR NOVA UNIDADE
 	@Quando("^clicar para adicionar uma nova Unidade$")
 	public void clicarParaDicionarUmaNovaUnidade() throws Throwable {	
-		nav.switchTo().frame(0);
+		frame.swithFrame(0);
 		unidade.addUnidade();
 	}
 
@@ -59,8 +59,8 @@ public class Unidades extends AbstractPage {
 		unidade.clickSalvar();
 	}
 
-	@Então("^ao salvar os campos deverão ser exibidos em um popup$")
-	public void aoSalvarOsCamposDeverãoSerExibidosEmUmPopup() throws Throwable {		
+	@Então("^ao salvar os campos unidade deverão ser exibidos em um popup$")
+	public void aoSalvarOsCamposDeverãoSerExibidosEmUmPopup() throws Throwable {	
 		unidade.popUpErro();
 	}
 	

@@ -78,7 +78,7 @@ public class Reservar_Hotel_Page extends Base_Page {
 	
 	public Reserva_Hotel_Cliente_Page selectHotel() {
 			
-		try {Thread.sleep(2000);} catch (InterruptedException ex) {}		
+		try {Thread.sleep(3000);} catch (InterruptedException ex) {}		
 		nav.findElement(By.xpath("//button[contains (@id, \"pnlHotelPesquisa\")]")).click();
 		
 		// //span[@id = \"pnlResultadoHotel\"]/div/div/div/div/following-sibling::div/div/div/div/div/following-sibling::div/button

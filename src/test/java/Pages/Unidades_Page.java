@@ -1,5 +1,7 @@
 package Pages;
 
+import java.util.List;
+
 import org.easetech.easytest.runner.DataDrivenTestRunner;
 import org.junit.Assert;
 import org.junit.runner.RunWith;
@@ -20,12 +22,15 @@ public class Unidades_Page extends Base_Page {
 	private GeraCpfCnpj gerador = new GeraCpfCnpj(); 
 	
 	private String nameUnidade;
+	private String teste;
 
 	public Unidades_Page(WebDriver nav) {
 		super(nav);
 	}
 
 	public Unidades_Page addUnidade() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+
 		WebElement webElement = nav.findElement(By.xpath("//span[text() = \"Adicionar\"]"));
 		webElement.click();
 		return this;
@@ -101,6 +106,7 @@ public class Unidades_Page extends Base_Page {
 	}
 
 	public Unidades_Page clickSalvar() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//span[text() = \"Salvar\"]")).click();
 		return this;
 	}
@@ -115,12 +121,18 @@ public class Unidades_Page extends Base_Page {
 //	}
 
 	public Unidades_Page popUpErro() {
-		java.util.List<WebElement> list = nav.findElements(By.xpath("//div[@id = \"idMsgError\"]/div/ul/li"));
+		
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 
-		for (WebElement element : list) {
-			System.out.println(element.getText());
-		}
+//		System.out.println(nav.findElement(By.xpath("//div[@id = \"idMsgError\"]/div/ul/li/span[1]")).getText());
+		
+		List<WebElement> list = nav.findElements(By.xpath("//div[@id = \"idMsgError\"]/div/ul/li"));
 
+		for (WebElement element : list) {			
+			System.out.println(element.getText());				
+		}			
+	
+		
 		if (list.get(0).getText().equals("Razão social - Preenchimento obrigatório")) {
 			System.out.println(list.get(0).getText());
 			System.out.println("Existe");

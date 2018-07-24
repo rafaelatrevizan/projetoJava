@@ -27,11 +27,11 @@ public class Produto_Hotel_Tarifario extends AbstractPage {
 	
 	@Quando("^clicar para adicionar um novo tarifário de hotel$")
 	public void clicarParaAdicionarUmNovoTarifárioDeHotel() throws Throwable {
-		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
-		nav.switchTo().parentFrame();
+//		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+//		nav.switchTo().parentFrame();
 		home.clickHotelTarifario();
 		frame.swithFrame(0);
-		tarifario.pesquisarHotel("Automação teste");
+		tarifario.pesquisarHotel("HOTEL AUTOMAÇÃO RAFAELA");
 		hotel.buttonPesquisar();
 		tarifario.addTarifario();
 		
@@ -42,15 +42,15 @@ public class Produto_Hotel_Tarifario extends AbstractPage {
 		tarifario.descricao("Automação Tarifa teste Rafa");
 		tarifario.selectFornecedor();
 		tarifario.selectTipo();
-		tarifario.selectDataVenda("02072018", "31122018");
+		tarifario.selectDataVenda("24072018", "31122018");
 		tarifario.abaTarifario();
-		tarifario.infoTarifario("Automação tarifa Junho"); 
+		tarifario.infoTarifario("Automação tarifa Julho"); 
 		tarifario.tabela();
 		tarifario.margem();
 		tarifario.pagamento();
 		tarifario.cobranca();
 		tarifario.periodo();
-		tarifario.tarifario_publicacao("30072018", "31122018");
+		tarifario.tarifario_publicacao("24072018", "31122018");
 		tarifario.tarifario_tarifa();
 		tarifario.tarifario_tarifa_regime();
 		tarifario.tarifario_tarifa_valores("10000", "10000");

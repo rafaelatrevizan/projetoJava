@@ -23,6 +23,7 @@ public class Hotel_Acomodacao_Page extends Base_Page {
 	}
 
 	public Hotel_Acomodacao_Page selectHotel() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//a[contains(@id, \"frmPesquisa:pnlHotelList\")]")).click();
 		return this;
 	}
@@ -33,6 +34,7 @@ public class Hotel_Acomodacao_Page extends Base_Page {
 	}
 
 	public Hotel_Acomodacao_Page editAcomodacao() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.linkText("Acomodações")).click();
 		nav.findElement(By.xpath("//span[text() = \"Acomodações\"]/following-sibling::a")).click();
 		return this;

@@ -1,0 +1,141 @@
+[
+  {
+    "comments": [
+      {
+        "line": 1,
+        "value": "#language: pt"
+      }
+    ],
+    "line": 4,
+    "elements": [
+      {
+        "line": 9,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Contexto",
+        "steps": [
+          {
+            "result": {
+              "duration": 3598149353,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "que esteja na home",
+            "match": {
+              "location": "Common_StepDefinition.queEstejaNaHomeDoPortal()"
+            },
+            "keyword": "Dado "
+          },
+          {
+            "result": {
+              "duration": 1275889070,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "clicar no menu Unidade",
+            "match": {
+              "location": "Unidades.clicarNoMenuUnidade()"
+            },
+            "keyword": "Quando "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 8315861444,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Common_StepDefinition.setUp()"
+            }
+          }
+        ],
+        "line": 20,
+        "name": "Deve validar campos obrigatórios",
+        "description": "",
+        "id": "cadastrar-uma-unidade;deve-validar-campos-obrigatórios",
+        "after": [
+          {
+            "result": {
+              "duration": 460278774,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Common_StepDefinition.screenShot(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 3789623121,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Common_StepDefinition.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Cenário",
+        "steps": [
+          {
+            "result": {
+              "duration": 1530570625,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "clicar para adicionar uma nova Unidade",
+            "match": {
+              "location": "Unidades.clicarParaDicionarUmaNovaUnidade()"
+            },
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "duration": 1204044448,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "não preencher os campos obrigatórios",
+            "match": {
+              "location": "Unidades.nãoPreencherOsCamposObrigatórios()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 1419427383,
+              "error_message": "java.lang.RuntimeException\r\n\tat Pages.Unidades_Page.popUpErro(Unidades_Page.java:162)\r\n\tat br.com.RafaelaTrevizan.steps.Unidades.aoSalvarOsCamposDeverãoSerExibidosEmUmPopup(Unidades.java:64)\r\n\tat ✽.Então ao salvar os campos unidade deverão ser exibidos em um popup(Unidades.feature:23)\r\n",
+              "status": "failed"
+            },
+            "line": 23,
+            "name": "ao salvar os campos unidade deverão ser exibidos em um popup",
+            "match": {
+              "location": "Unidades.aoSalvarOsCamposDeverãoSerExibidosEmUmPopup()"
+            },
+            "keyword": "Então "
+          }
+        ],
+        "tags": [
+          {
+            "line": 19,
+            "name": "@camposUnidade"
+          }
+        ]
+      }
+    ],
+    "name": "Cadastrar uma Unidade",
+    "description": "Eu como Operador\r\nQuero entrar no Portal \r\nPara fazer um cadastro de uma Unidade",
+    "id": "cadastrar-uma-unidade",
+    "keyword": "Funcionalidade",
+    "uri": "Unidades.feature",
+    "tags": [
+      {
+        "line": 3,
+        "name": "@unidade"
+      }
+    ]
+  }
+]

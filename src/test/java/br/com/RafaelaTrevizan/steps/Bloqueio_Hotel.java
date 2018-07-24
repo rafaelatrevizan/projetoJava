@@ -33,7 +33,7 @@ public class Bloqueio_Hotel extends AbstractPage {
 	public void preencherTodasAsInformaçõesDoBloqueio() throws Throwable {
 	    frame.swithFrame(0);
 	    bloq.periodo("24072018", "01082018");
-	    bloq.hotel("AUTOMAÇÃO");
+	    bloq.hotel("HOTEL AUTOMAÇÃO RAFAELA");
 	    bloq.buttonPesquisar();
 	    bloq.buttonEditar();
 	    bloq.selectQuantidade();

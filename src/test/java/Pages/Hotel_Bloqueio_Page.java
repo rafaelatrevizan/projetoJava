@@ -30,11 +30,13 @@ public class Hotel_Bloqueio_Page extends Base_Page {
 	}
 	
 	public Hotel_Bloqueio_Page buttonPesquisar() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//form[@id = \"frmUhBloqueio\"]/div/div/div/div/div/button/span[text() = \"Pesquisar\"]")).click();
 		return this;
 	}
 	
 	public Hotel_Bloqueio_Page buttonEditar() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//form[@id = \"frmUhBloqueio\"]/div/div/div/div/div/button/span[text() = \"Editar\"]")).click();
 		return this;
 	}
@@ -51,7 +53,7 @@ public class Hotel_Bloqueio_Page extends Base_Page {
 		// //li[text() = "Aumentar"]
 		// //li[text() = "Diminuir"]
 		// //li[text() = "Fixar"]
-		
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//span[@id = \"pnlAltQtBloqueio\"]/div/div/span")).click();		
 		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//li[text() = \"Fixar\"]")).click();

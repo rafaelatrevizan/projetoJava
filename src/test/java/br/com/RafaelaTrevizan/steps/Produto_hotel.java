@@ -20,7 +20,7 @@ public class Produto_Hotel extends AbstractPage {
 	Hotel_Page hotel = new Hotel_Page(nav);
 	Frame frame = new Frame(nav);
 
-	// FEATURE: PRODUTO
+	// FEATURE: PRODUTO HOTEL
 
 	@Quando("^clicar para adicionar um novo hotel$")
 	public void clicarParaDicionarUmNovoHotel() throws Throwable {
@@ -44,9 +44,12 @@ public class Produto_Hotel extends AbstractPage {
 		hotel.fillEmail();
 		hotel.fillEndereco("Rua teste", "Caldas Novas");
 		hotel.localizacoes("Caldas Novas");
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		hotel.localizacoes("Rio de Janeiro");
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		hotel.localizacoes("Natal");
 		frame.swithFrame(0);
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		hotel.fillDescription("HOTEL AUOTMAÇÃO RAFAELA");
 
 	}

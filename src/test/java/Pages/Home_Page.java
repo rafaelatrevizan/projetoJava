@@ -91,7 +91,7 @@ public class Home_Page extends Base_Page {
 	}
 
 	public Hotel_Page clickHotelTarifario() {		
-		nav.findElement(By.xpath("//div[@id = \"buttonArea\"]/a")).click();
+//		nav.findElement(By.xpath("//div[@id = \"buttonArea\"]/a")).click();
 		nav.findElement(By.id("menuform:sm_leftmenu_5")).click();
 		nav.findElement(By.id("menuform:sm_leftmenu_5_0")).click();
 		try {

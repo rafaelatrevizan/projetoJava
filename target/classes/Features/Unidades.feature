@@ -20,7 +20,7 @@ Então a unidade deverá ser cadastrado com sucesso
 Cenário: Deve validar campos obrigatórios
 Quando clicar para adicionar uma nova Unidade
 E não preencher os campos obrigatórios
-Então ao salvar os campos deverão ser exibidos em um popup
+Então ao salvar os campos unidade deverão ser exibidos em um popup
 
 @ativarDesativarUnidade
 Esquema do Cenário: Deve validar status da unidade

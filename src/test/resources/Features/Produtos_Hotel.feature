@@ -10,7 +10,7 @@ Contexto:
 Dado que esteja na home
 
 @cadastroHotel
-Cenário: Deve validar a cadastro de hotel
+Cenário: Deve validar a cadastro de hotel com acomodação
 Quando clicar para adicionar um novo hotel
 E preencher todas as informações
 Então o hotel deverá ser cadastrado com sucesso 

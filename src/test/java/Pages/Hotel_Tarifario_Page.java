@@ -30,6 +30,7 @@ public class Hotel_Tarifario_Page extends Base_Page {
 	}
 	
 	public Hotel_Tarifario_Page descricao(String descricao) {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.id("idDsTarifa")).sendKeys(descricao);
 		return this;
 	}
@@ -72,6 +73,7 @@ public class Hotel_Tarifario_Page extends Base_Page {
 	
 	
 	public Hotel_Tarifario_Page infoTarifario(String nometarifario) {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.id("idNmTarifa")).sendKeys(nometarifario);
 		return this;
 	}
@@ -137,9 +139,11 @@ public class Hotel_Tarifario_Page extends Base_Page {
 	
 	public Hotel_Tarifario_Page tarifario_publicacao(String dataInicioPub, String dataFimPub) {
 		nav.findElement(By.linkText("Publicação")).click();
-		nav.findElement(By.xpath("//table[@class = \"tblPadrao\"]/tbody/tr/th/a")).click();		
+		nav.findElement(By.xpath("//table[@class = \"tblPadrao\"]/tbody/tr/th/a")).click();	
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.id("repeatTSP:0:dtInicio_input")).click();
 		nav.findElement(By.id("repeatTSP:0:dtInicio_input")).sendKeys(dataInicioPub);
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.id("repeatTSP:0:dtFim_input")).click();
 		nav.findElement(By.id("repeatTSP:0:dtFim_input")).sendKeys(dataFimPub);		
 		return this;
@@ -155,7 +159,7 @@ public class Hotel_Tarifario_Page extends Base_Page {
 		//li[@data-label = "All Inclusive"]
 		//li[@data-label = "Café da manhã"]
 		//li[@data-label = "Café da manhã e jantar"]
-			
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//label[contains(@id, \"pnlTarifario:0:rptTarifaUh\")]/following-sibling::div")).click();		
 		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//li[@data-label = \"All Inclusive\"]")).click();		
@@ -163,6 +167,7 @@ public class Hotel_Tarifario_Page extends Base_Page {
 	}
 	
 	public Hotel_Tarifario_Page tarifario_tarifa_valores(String valorInd, String valorAdc) {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//span[@class = \"ui-chkbox-icon ui-icon ui-icon-blank ui-c\"]")).click();		
 		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//input[contains(@id, \"pnlTarifario:0:rptTarifaUh:0:repeatTarifa:0\") and @type = \"text\"]")).sendKeys(valorInd);	
@@ -171,6 +176,7 @@ public class Hotel_Tarifario_Page extends Base_Page {
 	}
 	
 	public Hotel_Tarifario_Page tarifario_tarifario_salvar() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//form[@id = \"frmTarifaUhEdit\"]/div/div/button")).click();		
 		return this;
 	}

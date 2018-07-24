@@ -159,6 +159,7 @@ public class Reserva_Hotel_Cliente_Page extends Base_Page {
 	}
 	
 	public Comprovante_Page clickReservar () {
+		try {Thread.sleep(2000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//span[text() = \"Reservar\"]")).click();
 		return new Comprovante_Page(nav);
 	}

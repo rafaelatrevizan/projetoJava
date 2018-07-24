@@ -32,7 +32,8 @@ public class Reserva_Aereo_Cliente_Page extends Base_Page {
 //				numero ++;
 //		} while (numero >= 0) ;
 		
-	
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+
 		WebElement nomePessoa1 = nav
 				.findElement(By.xpath("//input[contains(@id, \"idNome\")]"));
 		WebElement sobrenomePessoa1 = nav
@@ -40,8 +41,9 @@ public class Reserva_Aereo_Cliente_Page extends Base_Page {
 
 		String firstName = faker.name().firstName();
 		String lastName = faker.name().lastName();
-
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nomePessoa1.sendKeys(firstName);
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		sobrenomePessoa1.sendKeys(lastName);
 
 		return this;
@@ -94,6 +96,7 @@ public class Reserva_Aereo_Cliente_Page extends Base_Page {
 //	}
 	
 	public Reserva_Aereo_Cliente_Page fillSexo1() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath(
 				"//label[contains(@id, \"idSexo_label\")]/following-sibling::div"))
 				.click();
@@ -154,6 +157,7 @@ public class Reserva_Aereo_Cliente_Page extends Base_Page {
 	}
 	
 	public Comprovante_Page clickReservar () {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//span[text() = \"Reservar\"]")).click();
 		return new Comprovante_Page(nav);
 	}
