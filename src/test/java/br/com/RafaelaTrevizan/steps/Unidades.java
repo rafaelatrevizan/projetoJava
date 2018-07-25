@@ -40,7 +40,7 @@ public class Unidades extends AbstractPage {
 
 	@Quando("^preencher todas as informaçõesda unidade$")
 	public void preencherTodasAsInformaçõesdaUnidade() throws Throwable {
-		unidade.fillNames("Automação teste rafa Unidade", "Automação");
+		unidade.fillNames("Automação Trevizan", "trevs");
 		unidade.fillCNPJ();		
 		unidade.Telefones("1111111111");
 		unidade.fillEmail();
@@ -50,6 +50,8 @@ public class Unidades extends AbstractPage {
 	@Então("^a unidade deverá ser cadastrado com sucesso$")
 	public void aUnidadeDeveráSerCadastradoComSucesso() throws Throwable {
 		unidade.clickSalvar();
+		try {Thread.sleep(2000);} catch (InterruptedException ex) {}
+
 //		unidade.checkUnidadeName();
 	}
 
@@ -57,6 +59,7 @@ public class Unidades extends AbstractPage {
 	@Quando("^não preencher os campos obrigatórios$")
 	public void nãoPreencherOsCamposObrigatórios() throws Throwable {
 		unidade.clickSalvar();
+
 	}
 
 	@Então("^ao salvar os campos unidade deverão ser exibidos em um popup$")
@@ -69,7 +72,7 @@ public class Unidades extends AbstractPage {
 	@Quando("^pesquisar uma unidade$")
 	public void pesquisarUmaUnidade() throws Throwable {
 		nav.switchTo().frame(0);
-	    unidade.searchUnidade("Automação");
+	    unidade.searchUnidade("trevs");
 	    unidade.pesqUnidade();
 	    unidade.selectUnidade();
 	}
@@ -77,6 +80,8 @@ public class Unidades extends AbstractPage {
 	//VALIDAR UNIDADE DESATIVADA
 	@Quando("^desativar a unidade selecionada$")
 	public void desativarAUnidadeSelecionada() throws Throwable {
+		unidade.campoMotivoDesativar();
+		
 		unidade.desativarUnidade("teste desativar unidade");
 		nav.findElement(By.xpath("//span[text() = \"Voltar\"]")).click();
 		
@@ -89,6 +94,8 @@ public class Unidades extends AbstractPage {
 	//VALIDAR UNIDADE ATIVADA
 	@Quando("^ativar a unidade selecionada$")
 	public void ativarAUnidadeSelecionada() throws Throwable {
+		unidade.campoMotivoAtivar();
+		
 		unidade.ativarUnidade("teste ativar unidade");
 		nav.findElement(By.xpath("//span[text() = \"Voltar\"]")).click();		
 	}
@@ -97,6 +104,13 @@ public class Unidades extends AbstractPage {
 	public void naColunaAtivoDeUnidadeDeveráSerExibidoSim() throws Throwable {
 		unidade.checkAtivado();
 	}
+	
+	//CADASTRAR PROFISSIONAL DENTRO DA UNIDADE
+	@Quando("^clicar na aba profissional$")
+	public void clicarNaAbaProfissional() throws Throwable {
+		unidade.chooseProfissional();
+	}
+
 
 
 }

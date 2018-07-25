@@ -21,16 +21,21 @@ Quando clicar para adicionar um novo cliente
 E não preencher os campos obrigatórios do cliente
 Então ao salvar os campos do cliente deverão ser exibidos em um popup
 
-@desativarCliente
-Cenário: Deve validar um cliente desativado
+@desativarAtivarCliente
+Esquema do Cenário: Deve validar o status de um cliente 
 Quando pesquisar um cliente
-E desativar o cliente selecionado
-Então na coluna Ativo deverá ser exibido Não
+E <status> o cliente selecionado
+Então na coluna Ativo deverá ser exibido <opcao>
 
-@ativarCliente
-Cenário: Deve validar um cliente ativado
-Quando pesquisar um cliente
-E ativar o cliente selecionado
-Então na coluna Ativo deverá ser exibido Sim
+Exemplos:
+|status			|opcao	|	  
+|desativar	|Não		|
+|ativar			|Sim	  |
+
+#@ativarCliente
+#Cenário: Deve validar um cliente ativado
+#Quando pesquisar um cliente
+#E ativar o cliente selecionado
+#Então na coluna Ativo deverá ser exibido Sim
 
 

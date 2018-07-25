@@ -2,20 +2,16 @@ package br.com.RafaelaTrevizan.steps;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+
 import org.apache.commons.io.FileUtils;
 import org.easetech.easytest.runner.DataDrivenTestRunner;
-import org.junit.Rule;
-import org.junit.rules.TestRule;
-import org.junit.rules.TestWatcher;
-import org.junit.runner.Description;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
 
 import Pages.Common_Page;
 import Suporte.geradorNumero;
@@ -30,19 +26,18 @@ public class Common_StepDefinition extends AbstractPage {
 	WebDriver nav = getDriver();
 	Common_Page login = new Common_Page(nav);
 	geradorNumero gerador = new geradorNumero();
+	Date data = new Date();
 	
+	static String horas() {
+        DateFormat dateFormat = new SimpleDateFormat("d-MM-yy");
+        Date date = new Date();
+        return dateFormat.format(date);
+    }
 
-	// @Rule
-	// public TestRule listen = new TestWatcher() {
-	//
-	// @Override
-	// public void failed(Throwable t, Description description) {
-	// System.out.println("test failed");
-	// System.out.println(description.getClassName() + "," +
-	// description.getMethodName());
-	// }
-	// };
-
+//    public static void main(String[] args){
+//        System.out.println(horas());
+//    }
+//	
 	@Before
 	public void setUp() {
 		nav = getDriver();
@@ -56,23 +51,14 @@ public class Common_StepDefinition extends AbstractPage {
 		login.doLogin("homo", "homolog", "123456");
 	}
 
-	
-//	@AfterMethod
-//	public void scrennShotMethod(ITestResult result) throws IOException {
-//		if (result.getStatus() == ITestResult.FAILURE ){
-//			   TakesScreenshot ts = (TakesScreenshot)nav;
-//			   File srcFile = ts.getScreenshotAs(OutputType.FILE);
-//			   FileUtils.copyFile(srcFile, new File("target/ScreenShot/" + result.getName()+".jpg"));		
-//														}
-//	}
-
 	@After(order = 1)
-	public void screenShot(Scenario cenario) {		
-		    
+	public void screenShot(Scenario cenario) {				    
 		File file = ((TakesScreenshot) nav).getScreenshotAs(OutputType.FILE);
-		Date data = new Date();
 		try {
-			FileUtils.copyFile(file, new File("target/ScreenShot/"+ cenario.getStatus()+ " - " + cenario.getId() + "-" + data.getDate() + "-" + data.getMonth() + "-" + data.getYear() + ".jpg"));
+			try {Thread.sleep(2000);} catch (InterruptedException ex) {}
+			FileUtils.copyFile(file, new File("target/ScreenShot/"+ horas() +"/"+ cenario.getStatus().toUpperCase() + " - " + cenario.getName()
+			+ "-" + data.getHours() + data.getMinutes() + data.getSeconds() +".jpg"));
+//			FileUtils.copyFile(file, new File("target/ScreenShot/"+ cenario.getStatus()+ " - " + cenario.getId() + "-" + data.getDate() + "-" + data.getMonth() + "-" + data.getYear() + data.getTime()+ ".jpg"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -84,7 +70,7 @@ public class Common_StepDefinition extends AbstractPage {
 	public void tearDown() {
 		System.out.println("Acabou");
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 		} catch (InterruptedException ex) {
 		}
 		nav.quit();

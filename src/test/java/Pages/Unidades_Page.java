@@ -2,6 +2,7 @@ package Pages;
 
 import java.util.List;
 
+import org.apache.poi.util.SystemOutLogger;
 import org.easetech.easytest.runner.DataDrivenTestRunner;
 import org.junit.Assert;
 import org.junit.runner.RunWith;
@@ -154,7 +155,7 @@ public class Unidades_Page extends Base_Page {
 			System.out.println("Não Existe");
 			throw new RuntimeException();
 		}
-		if (list.get(3).getText().equals("Telefone fixo - Preenchimento obrigatório")) {
+		if (list.get(3).getText().equals("Telefone principal - Preenchimento obrigatório")) {
 			System.out.println(list.get(3).getText());
 			System.out.println("Existe");
 		} else {
@@ -200,10 +201,52 @@ public class Unidades_Page extends Base_Page {
 		return this;
 	}
 	
+	public Unidades_Page campoMotivoDesativar() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+
+//		WebElement botaoDesativar = nav.findElement(By.xpath("//span[text() = \"Desativar\"]"));
+//		WebElement botaoAtivar = nav.findElement(By.xpath("//span[text() = \"Ativar\"]"));
+		
+		nav.findElement(By.xpath("//span[text() = \"Desativar\"]")).click();
+		
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		nav.findElement(By.xpath("//span[text() = \"Sim\"]")).click();
+		
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		
+		if (nav.findElement(By.xpath("//label[@class = \"dsMotivo-label ui-state-error\"]")).isDisplayed()){
+			System.out.println("Está como obrigatório");
+		}else {
+			System.out.println("Não está como obrigatório, portanto está errado");
+			throw new RuntimeException();
+		}
+		
+		return this;
+	}
+	
+	public Unidades_Page campoMotivoAtivar() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		
+		nav.findElement(By.xpath("//span[text() = \"Ativar\"]")).click();
+		
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		nav.findElement(By.xpath("//span[text() = \"Sim\"]")).click();
+		
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		
+		if (nav.findElement(By.xpath("//label[@class = \"dsMotivo-label ui-state-error\"]")).isDisplayed()){
+			System.out.println("Está como obrigatório");
+		}else {
+			System.out.println("Não está como obrigatório, portanto está errado");
+			throw new RuntimeException();
+		}
+		
+		return this;
+	}
 	
 	public Unidades_Page desativarUnidade(String motivo) {
-		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
-		nav.findElement(By.xpath("//span[text() = \"Desativar\"]")).click();
+//		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+//		nav.findElement(By.xpath("//span[text() = \"Desativar\"]")).click();
 		nav.findElement(By.id("frmLog:dsMotivo")).sendKeys(motivo);
 		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//span[text() = \"Sim\"]")).click();
@@ -220,8 +263,8 @@ public class Unidades_Page extends Base_Page {
 	}
 
 	public Unidades_Page ativarUnidade(String motivo) {
-		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
-		nav.findElement(By.xpath("//span[text() = \"Ativar\"]")).click();
+//		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+//		nav.findElement(By.xpath("//span[text() = \"Ativar\"]")).click();
 		nav.findElement(By.id("frmLog:dsMotivo")).sendKeys(motivo);
 		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//span[text() = \"Sim\"]")).click();
@@ -238,4 +281,14 @@ public class Unidades_Page extends Base_Page {
 		return this;
 	}
 
+	
+	public Unidades_Page chooseProfissional() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		nav.findElement(By.xpath("//a[text() = \"Profissionais\"]")).click();
+		
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		nav.findElement(By.className("icon-plus")).click();
+		
+		return this;
+	}
 }

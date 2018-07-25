@@ -26,7 +26,7 @@ public class Produto_Hotel_Acomodacao extends AbstractPage {
 	public void selencionarOHotelDesejado() throws Throwable {
 		homeHotel.clickHotel();
 		frame.swithFrame(0);
-		acomodacao.pesquisarHotel("HOTEL AUTOMAÇÃO RAFAELA");
+		acomodacao.pesquisarHotel("HOTEL TREVIZAN LINDO");
 		hotel.buttonPesquisar();
 		acomodacao.selectHotel();
 	}

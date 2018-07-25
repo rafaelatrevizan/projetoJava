@@ -25,9 +25,9 @@ public class Buscar extends AbstractPage {
 		home.clickMenuBuscar();
 	}
 
-	@Quando("^buscar uma reserva$")
+	@Quando("^buscar uma reserva pelo ID$")
 	public void buscarUmaReserva() throws Throwable {
-		buscar.fillId("2573");
+		buscar.fillId("3054");
 	}
 
 	@Então("^a reserva buscada deverá ser exibida$")

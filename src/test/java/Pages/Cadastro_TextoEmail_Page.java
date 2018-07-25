@@ -20,6 +20,8 @@ public class Cadastro_TextoEmail_Page extends Base_Page {
 
 	public Cadastro_TextoEmail_Page addTexto() {
 	    nav.switchTo().frame(0);
+	    try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+
 		WebElement webElement = nav.findElement(By.xpath("//span[text() = \"Adicionar\"]"));
 		webElement.click();
 		return this;
@@ -55,11 +57,15 @@ public class Cadastro_TextoEmail_Page extends Base_Page {
 	
 
 	public Cadastro_TextoEmail_Page clickSalvar() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+
 		nav.findElement(By.xpath("//span[text() = \"Salvar\"]")).click();
 		return this;
 	}
 
 	public Cadastro_TextoEmail_Page popUpErro() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+
 		java.util.List<WebElement> list = nav.findElements(By.xpath("//div[@id = \"idMsgError\"]/div/ul/li"));
 
 		for (WebElement element : list) {

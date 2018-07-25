@@ -65,6 +65,8 @@ public class Hotel_Page extends Base_Page {
 	}
 
 	public Hotel_Page fillDescription(String descricao) {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+
 		nav.findElement(By.id("pasteConteudo")).sendKeys(descricao);
 		return this;
 	}
@@ -136,34 +138,45 @@ public class Hotel_Page extends Base_Page {
 	public Hotel_Page fillEndereco(String rua, String local) {
 		// PREENCHER O CEP
 		// String cepp = faker.address().zipCode();
-		
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+
 		String lala = faker.address().zipCode();
 		nav.findElement(By.id("idCep")).sendKeys(lala);		
 
 		// PREENCHER A RUA
 		// String rua = faker.address().streetAddress();
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.id("idNMEndereco")).sendKeys(rua);
 
 		// PREENCHER LOCAL
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.id("idNmLocal")).sendKeys(local);
 
 		return this;
 	}
 
 	public Hotel_Page localizacoes(String lugar) {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+
 		WebElement inputPlace = nav.findElement(By.id("idOrigem_input"));
 		inputPlace.sendKeys(lugar);
+		
 		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		inputPlace.sendKeys(Keys.ENTER);
+		
 		return this;
 	}
 
 	public Hotel_Page Salvar() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+
 		nav.findElement(By.xpath("//span[text() = \"Salvar\"]")).click();
 		return this;
 	}
 
 	public Hotel_Page Cancelar() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+
 		nav.findElement(By.xpath("//span[text() = \"Cancelar\"]")).click();
 		return this;
 	}
@@ -181,6 +194,8 @@ public class Hotel_Page extends Base_Page {
 	
 	
 	public Hotel_Page popUpErro() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+
 		java.util.List<WebElement> list = nav.findElements(By.xpath("//div[@id = \"idMsgError\"]/div/ul/li"));
 
 		for (WebElement element : list) {

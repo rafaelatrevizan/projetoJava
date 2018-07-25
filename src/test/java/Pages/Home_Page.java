@@ -38,6 +38,7 @@ public class Home_Page extends Base_Page {
 	}
 
 	public Hotel_Page clickCadastroCliente() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.id("menuform:sm_leftmenu_3")).click();
 		nav.findElement(By.id("menuform:sm_leftmenu_3_1")).click();
 		return new Hotel_Page(nav);

@@ -7,9 +7,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.github.javafaker.Faker;
+
 @RunWith(DataDrivenTestRunner.class)
 
 public class Cadastro_Cliente_Page extends Base_Page {
+	private Faker faker = new Faker();
 
 	public Cadastro_Cliente_Page(WebDriver nav) {
 		super(nav);
@@ -36,8 +39,9 @@ public class Cadastro_Cliente_Page extends Base_Page {
 		return this;
 	}
 
-	public Cadastro_Cliente_Page fillEmail(String mail) {
-		nav.findElement(By.id("idEmail")).sendKeys(mail);
+	public Cadastro_Cliente_Page fillEmail() {
+		String email = faker.internet().emailAddress();
+		nav.findElement(By.id("idEmail")).sendKeys(email);
 		return this;
 	}
 
@@ -78,11 +82,14 @@ public class Cadastro_Cliente_Page extends Base_Page {
 	
 
 	public Cadastro_Cliente_Page clickSalvar() {
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException ex) {
-		}
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//span[text() = \"Salvar\"]")).click();
+		
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		if (nav.findElement(By.id("pnlErro")).isDisplayed()) {
+			throw new RuntimeException();
+		}
+		
 		return this;
 	}
 	
@@ -116,6 +123,8 @@ public class Cadastro_Cliente_Page extends Base_Page {
 	}
 
 	public Cadastro_Cliente_Page popUpErro() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+
 		java.util.List<WebElement> list = nav.findElements(By.xpath("//div[@id = \"idMsgError\"]/div/ul/li"));
 
 		for (WebElement element : list) {
@@ -161,9 +170,53 @@ public class Cadastro_Cliente_Page extends Base_Page {
 		return this;
 	}
 	
+	public Cadastro_Cliente_Page campoMotivoDesativar() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+
+//		WebElement botaoDesativar = nav.findElement(By.xpath("//span[text() = \"Desativar\"]"));
+//		WebElement botaoAtivar = nav.findElement(By.xpath("//span[text() = \"Ativar\"]"));
+		
+		nav.findElement(By.xpath("//span[text() = \"Desativar\"]")).click();
+		
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		nav.findElement(By.xpath("//span[text() = \"Sim\"]")).click();
+		
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		
+		if (nav.findElement(By.xpath("//label[@class = \"dsMotivo-label ui-state-error\"]")).isDisplayed()){
+			System.out.println("Está como obrigatório");
+		}else {
+			System.out.println("Não está como obrigatório, portanto está errado");
+			throw new RuntimeException();
+		}
+		
+		return this;
+	}
+	
+	public Cadastro_Cliente_Page campoMotivoAtivar() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		
+		nav.findElement(By.xpath("//span[text() = \"Ativar\"]")).click();
+		
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		nav.findElement(By.xpath("//span[text() = \"Sim\"]")).click();
+		
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		
+		if (nav.findElement(By.xpath("//label[@class = \"dsMotivo-label ui-state-error\"]")).isDisplayed()){
+			System.out.println("Está como obrigatório");
+		}else {
+			System.out.println("Não está como obrigatório, portanto está errado");
+			throw new RuntimeException();
+		}
+		
+		return this;
+	}
+	
+	
 	public Cadastro_Cliente_Page desativarCliente(String motivo) {
 		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
-		nav.findElement(By.xpath("//span[text() = \"Desativar\"]")).click();
+//		nav.findElement(By.xpath("//span[text() = \"Desativar\"]")).click();
 		nav.findElement(By.id("frmLog:dsMotivo")).sendKeys(motivo);
 		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//span[text() = \"Sim\"]")).click();
@@ -181,7 +234,7 @@ public class Cadastro_Cliente_Page extends Base_Page {
 
 	public Cadastro_Cliente_Page ativarCliente(String motivo) {
 		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
-		nav.findElement(By.xpath("//span[text() = \"Ativar\"]")).click();
+//		nav.findElement(By.xpath("//span[text() = \"Ativar\"]")).click();
 		nav.findElement(By.id("frmLog:dsMotivo")).sendKeys(motivo);
 		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//span[text() = \"Sim\"]")).click();

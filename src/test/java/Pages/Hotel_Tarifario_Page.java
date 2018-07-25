@@ -189,6 +189,8 @@ public class Hotel_Tarifario_Page extends Base_Page {
 	}
 	
 	public Hotel_Tarifario_Page popUpErro() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+
 		java.util.List<WebElement> list = nav.findElements(By.xpath("//div[@id = \"idMsgError\"]/div/ul/li"));
 
 		for (WebElement element : list) {

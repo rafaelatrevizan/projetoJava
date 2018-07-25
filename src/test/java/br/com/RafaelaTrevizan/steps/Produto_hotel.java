@@ -33,7 +33,7 @@ public class Produto_Hotel extends AbstractPage {
 	@Quando("^preencher todas as informações$")
 	public void preencherTodasAsInformações() throws Throwable {
 		Hotel_Page hotel = new Hotel_Page(nav);
-		hotel.fillInformations("HOTEL AUTOMAÇÃO RAFAELA");
+		hotel.fillInformations("HOTEL TREVIZAN LINDO");
 		hotel.fillStar();
 		// hotel.fillActive();
 		// hotel.fillCoin();
@@ -42,15 +42,15 @@ public class Produto_Hotel extends AbstractPage {
 		// hotel.fillMinDeNoites("");
 		hotel.fillPhones();
 		hotel.fillEmail();
-		hotel.fillEndereco("Rua teste", "Caldas Novas");
-		hotel.localizacoes("Caldas Novas");
-		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
-		hotel.localizacoes("Rio de Janeiro");
-		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+		hotel.fillEndereco("Rua armindo guaraná", "Caldas Novas");
+		
+		hotel.localizacoes("Caldas Novas");		
+		hotel.localizacoes("Rio de Janeiro");		
 		hotel.localizacoes("Natal");
+		
 		frame.swithFrame(0);
-		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
-		hotel.fillDescription("HOTEL AUOTMAÇÃO RAFAELA");
+		
+		hotel.fillDescription("HOTEL TREVIZAN LINDO FEITO PELA AUTOMAÇÃO");
 
 	}
 
@@ -58,7 +58,6 @@ public class Produto_Hotel extends AbstractPage {
 	public void oHotelDeveráSerCadastradoComSucesso() throws Throwable {
 		// PARA VOLTAR PARA O IFRAME ANTERIOR
 		nav.switchTo().parentFrame();
-		Hotel_Page hotel = new Hotel_Page(nav);
 		hotel.Salvar();
 		// hotel.checkHotel();
 

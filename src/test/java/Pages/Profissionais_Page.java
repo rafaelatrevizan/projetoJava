@@ -22,6 +22,8 @@ public class Profissionais_Page extends Base_Page {
 
 	public Profissionais_Page addProf() {
 		nav.switchTo().frame(0);
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+
 		WebElement webElement = nav.findElement(By.xpath("//span[text() = \"Adicionar\"]"));
 		webElement.click();
 		return this;
@@ -37,8 +39,9 @@ public class Profissionais_Page extends Base_Page {
 		return this;
 	}
 
-	public Profissionais_Page fillUser(String usuario) {
+	public Profissionais_Page fillUser() {
 		WebElement webelement = nav.findElement(By.id("idNmLogin"));
+		String usuario = faker.name().name(); 
 		webelement.sendKeys(usuario);
 		return this;
 	}
@@ -58,6 +61,8 @@ public class Profissionais_Page extends Base_Page {
 	}
 
 	public Profissionais_Page clickSalvar() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+
 		nav.findElement(By.xpath("//span[text() = \"Salvar\"]")).click();
 		return this;
 	}
@@ -76,6 +81,8 @@ public class Profissionais_Page extends Base_Page {
 
 	//
 	public Profissionais_Page popUpErro() {
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
+
 		java.util.List<WebElement> list = nav.findElements(By.xpath("//div[@id = \"idMsgError\"]/div/ul/li"));
 
 		for (WebElement element : list) {

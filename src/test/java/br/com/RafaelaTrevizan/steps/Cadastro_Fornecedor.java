@@ -29,8 +29,8 @@ public class Cadastro_Fornecedor extends AbstractPage {
 
 	@Quando("^preencher todas as informações do fornecedor$")
 	public void preencherTodasAsInformaçõesDoFornecedor() throws Throwable {
-	   fornecedor.fillNames("Automação teste Rafa", "Automação teste Rafa");
-	   fornecedor.fillDocumento("41.521.155/0001-50");
+	   fornecedor.fillNames("AUTOMAÇÃO TREVIZAN", "AUTOMAÇÃO TREVIZAN");
+	   fornecedor.fillDocumento();
 	   fornecedor.fillContato("Jose Maria");
 	   fornecedor.fillEmail("rafaela@infotera.com.br");
 	   fornecedor.fillCep("77006078");
@@ -58,7 +58,7 @@ public class Cadastro_Fornecedor extends AbstractPage {
 	@Quando("^selecionar o fornecedor$")
 	public void selecionarOFornecedor() throws Throwable {
 		home.clickCadastroFornecedor();
-	    fornecedor.pesqNome("Automação teste Rafa");
+	    fornecedor.pesqNome("AUTOMAÇÃO TREVIZAN");
 	    fornecedor.clickPesquisar();
 	    fornecedor.selectFornecedor();
 	}
@@ -66,8 +66,8 @@ public class Cadastro_Fornecedor extends AbstractPage {
 	@Quando("^preencher as informações do profissional$")
 	public void preencherAsInformaçõesDoProfissional() throws Throwable {
 	   fornecedor.abaProf();
-	   fornecedor.fillNamesProf("Automação Rafa", "Automação Rafa");
-	   fornecedor.fillUserProf("automatico");
+	   fornecedor.fillNamesProf("AUTOMAÇÃO TREVIZAN", "AUTOMAÇÃO TREVIZAN");
+	   fornecedor.fillUserProf();
 	   fornecedor.credenciaisAcesso();
 	   fornecedor.fillEmail("rafaela@infotera.com.br");
 	   fornecedor.fillCep("079033030");

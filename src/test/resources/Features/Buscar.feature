@@ -11,7 +11,7 @@ Dado que esteja na home
 
 Cenário: Validar a busca de uma reserva
 Quando clicar no menu Buscar
-E buscar uma reserva
+E buscar uma reserva pelo ID
 Então a reserva buscada deverá ser exibida
 
 

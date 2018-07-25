@@ -31,7 +31,7 @@ public class Produto_Hotel_Tarifario extends AbstractPage {
 //		nav.switchTo().parentFrame();
 		home.clickHotelTarifario();
 		frame.swithFrame(0);
-		tarifario.pesquisarHotel("HOTEL AUTOMAÇÃO RAFAELA");
+		tarifario.pesquisarHotel("HOTEL TREVIZAN LINDO");
 		hotel.buttonPesquisar();
 		tarifario.addTarifario();
 		
@@ -39,18 +39,18 @@ public class Produto_Hotel_Tarifario extends AbstractPage {
 
 	@Quando("^preencher todas as informações de tarifário de hotel$")
 	public void preencherTodasAsInformaçõesDeTarifárioDeHotel() throws Throwable {
-		tarifario.descricao("Automação Tarifa teste Rafa");
+		tarifario.descricao("Automação Tarifa TREVIZAN LINDO");
 		tarifario.selectFornecedor();
 		tarifario.selectTipo();
-		tarifario.selectDataVenda("24072018", "31122018");
+		tarifario.selectDataVenda("25072018", "31122018");
 		tarifario.abaTarifario();
-		tarifario.infoTarifario("Automação tarifa Julho"); 
+		tarifario.infoTarifario("Automação tarifa Julho TREVIZAN LINDO"); 
 		tarifario.tabela();
 		tarifario.margem();
 		tarifario.pagamento();
 		tarifario.cobranca();
 		tarifario.periodo();
-		tarifario.tarifario_publicacao("24072018", "31122018");
+		tarifario.tarifario_publicacao("25072018", "31122018");
 		tarifario.tarifario_tarifa();
 		tarifario.tarifario_tarifa_regime();
 		tarifario.tarifario_tarifa_valores("10000", "10000");

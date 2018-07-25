@@ -1,21 +1,21 @@
 package Pages;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
-import org.apache.xmlbeans.impl.xb.xsdschema.All;
 import org.easetech.easytest.runner.DataDrivenTestRunner;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.github.javafaker.Faker;
+
+import Suporte.GeraCpfCnpj;
+
 @RunWith(DataDrivenTestRunner.class)
 
 public class Cadastro_Fornecedor_Page extends Base_Page {
+	private Faker faker = new Faker();
+	private GeraCpfCnpj gerador = new GeraCpfCnpj();
 
 	public Cadastro_Fornecedor_Page(WebDriver nav) {
 		super(nav);
@@ -23,6 +23,10 @@ public class Cadastro_Fornecedor_Page extends Base_Page {
 
 	public Cadastro_Fornecedor_Page addFonecedor() {
 		nav.switchTo().frame(0);
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException ex) {
+		}
 		WebElement webElement = nav.findElement(By.xpath("//span[text() = \"Adicionar\"]"));
 		webElement.click();
 		return this;
@@ -38,8 +42,14 @@ public class Cadastro_Fornecedor_Page extends Base_Page {
 		return this;
 	}
 
-	public Cadastro_Fornecedor_Page fillDocumento(String doc) {
-		nav.findElement(By.id("idNrCnpj")).sendKeys(doc);
+	public Cadastro_Fornecedor_Page fillDocumento() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException ex) {
+		}
+		String cnpj = gerador.cnpj(true);
+
+		nav.findElement(By.id("idNrCnpj")).sendKeys(cnpj);
 		return this;
 	}
 
@@ -70,6 +80,15 @@ public class Cadastro_Fornecedor_Page extends Base_Page {
 		} catch (InterruptedException ex) {
 		}
 		nav.findElement(By.xpath("//span[text() = \"Salvar\"]")).click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException ex) {
+		}
+
+		if (nav.findElement(By.id("pnlErro")).isDisplayed()) {
+			throw new RuntimeException();
+		}
+
 		return this;
 	}
 
@@ -100,20 +119,16 @@ public class Cadastro_Fornecedor_Page extends Base_Page {
 		nav.findElement(By.xpath("//a[contains(@id, \"frmPesquisa:pnlFornecedorList\")]/i")).click();
 		return this;
 	}
-	
+
 	public Cadastro_Fornecedor_Page abaProf() {
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException ex) {
-		}
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//li[@data-index = \"4\"]")).click();
+		try {Thread.sleep(1000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//span[text() = \"Profissionais\"]/following-sibling::a")).click();
 		return this;
 	}
-// idNmLogin
-	
-	
-	
+	// idNmLogin
+
 	public Cadastro_Fornecedor_Page fillNamesProf(String nomeProf, String apelidoProf) {
 		try {
 			Thread.sleep(1000);
@@ -123,20 +138,26 @@ public class Cadastro_Fornecedor_Page extends Base_Page {
 		nav.findElement(By.id("idApelido")).sendKeys(apelidoProf);
 		return this;
 	}
-	
-	public Cadastro_Fornecedor_Page fillUserProf(String user) {
+
+	public Cadastro_Fornecedor_Page fillUserProf() {
+		String user = faker.name().name();
 		nav.findElement(By.id("idNmLogin")).sendKeys(user);
 		return this;
 	}
-	
+
 	public Cadastro_Fornecedor_Page credenciaisAcesso() {
-		nav.findElement(By.xpath("//table[@id = \"idSelPerfilAgencia\"]/tbody/tr/td/div/following-sibling::label[text() = \"Agencia ADM\"]")).click();
+		nav.findElement(By.xpath(
+				"//table[@id = \"idSelPerfilAgencia\"]/tbody/tr/td/div/following-sibling::label[text() = \"Agencia ADM\"]"))
+				.click();
 		return this;
 	}
-	
-	
-	
+
 	public Cadastro_Fornecedor_Page popUpErro() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException ex) {
+		}
+
 		java.util.List<WebElement> list = nav.findElements(By.xpath("//div[@id = \"idMsgError\"]/div/ul/li"));
 
 		for (WebElement element : list) {

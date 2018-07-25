@@ -32,7 +32,7 @@ public class Cadastro_Cliente extends AbstractPage {
 	public void preencherTodasAsInformaçõesDoCliente() throws Throwable {
 		cliente.fillName("Automação teste Rafa");
 		cliente.fillTelefone("11123456789");
-		cliente.fillEmail("teste@teste.com.br");
+		cliente.fillEmail();
 		cliente.fillEstado();
 		cliente.fillMunicipio();
 
@@ -67,6 +67,8 @@ public class Cadastro_Cliente extends AbstractPage {
 
 	@Quando("^desativar o cliente selecionado$")
 	public void desativarOMesmo() throws Throwable {
+		cliente.campoMotivoDesativar();
+		
 		cliente.desativarCliente("Teste Automação desativar");
 		nav.findElement(By.xpath("//span[text() = \"Voltar\"]")).click();
 	}
@@ -80,6 +82,7 @@ public class Cadastro_Cliente extends AbstractPage {
 
 	@Quando("^ativar o cliente selecionado$")
 	public void ativarOMesmo() throws Throwable {
+		cliente.campoMotivoAtivar();
 		cliente.ativarCliente("Teste Automação Ativar");
 		nav.findElement(By.xpath("//span[text() = \"Voltar\"]")).click();
 	}

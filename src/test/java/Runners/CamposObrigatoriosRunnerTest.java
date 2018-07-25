@@ -15,7 +15,7 @@ import cucumber.api.junit.Cucumber;
 		dryRun = false,
 		strict = false,
 		snippets = SnippetType.CAMELCASE,
-		tags = {"@camposUnidade"}
+		tags = {"@camposUnidade, @camposTexto, @camposProf, @camposHotel, @camposHotelTarifario, @camposCambio, @camposFornecedor, @camposCliente"}
 		)
 
 public class CamposObrigatoriosRunnerTest {}

@@ -29,15 +29,17 @@ public class Profissionais extends AbstractPage {
 
 	@Quando("^preencher todas as informações do Profissional$")
 	public void preencherTodasAsInformaçõesDoProfissional() throws Throwable {
-	    prof.fillInformation("Automação teste Rafa", "Aut teste Rafa");
-	    prof.fillUser("aut");
+	    prof.fillInformation("Automação Trevizan", "Aut Trevizan");
+	    prof.fillUser();
 	    prof.fillEmail("rafaela@infotera.com.br");
-	    prof.fillCep("09973290");
+	    prof.fillCep("03335000");
 	}
 
 	@Então("^o Profissional deverá ser cadastrado com sucesso$")
 	public void oProfissionalDeveráSerCadastradoComSucesso() throws Throwable {
 	    prof.clickSalvar();
+	    try {Thread.sleep(2000);} catch (InterruptedException ex) {}
+
 //	    prof.checkProf();
 	}
 

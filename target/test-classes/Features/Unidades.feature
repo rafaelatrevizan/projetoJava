@@ -16,6 +16,13 @@ Quando clicar para adicionar uma nova Unidade
 E preencher todas as informaçõesda unidade
 Então a unidade deverá ser cadastrado com sucesso 
 
+@cadastroProfissional
+Cenário: Deve validar a cadastro de Unidade
+Quando pesquisar uma unidade
+E clicar na aba profissional
+E preencher todas as informações do Profissional
+Então o Profissional deverá ser cadastrado com sucesso 
+
 @camposUnidade
 Cenário: Deve validar campos obrigatórios
 Quando clicar para adicionar uma nova Unidade
