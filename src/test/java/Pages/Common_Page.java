@@ -17,6 +17,7 @@ public class Common_Page extends Base_Page {
 		nav.findElement(By.xpath("//input[@id=\"j_idt15:j_idt17\"]")).sendKeys(usuario);
 		nav.findElement(By.xpath("//input[@placeholder = \"Senha\"]")).sendKeys(senha);	
 		nav.findElement(By.xpath("//button[@id=\"j_idt15:j_idt21\"]")).click();
+		try {Thread.sleep(2000);} catch (InterruptedException ex) {}
 		nav.findElement(By.xpath("//input[@id=\"frmAuth:j_idt42\"]")).sendKeys(senha2);
 		nav.findElement(By.xpath("//span[contains(@class, \"ui-button-text ui-c\")]")).click();
 		nav.findElement(By.xpath("//div[contains(@style, \"text-align:\")]"));
